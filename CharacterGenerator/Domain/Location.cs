@@ -6,5 +6,7 @@ namespace CharacterGenerator
 {
     class Location
     {
+        //Will finish adding variables before Friday
+
     }
 }

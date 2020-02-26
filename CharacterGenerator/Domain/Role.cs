@@ -6,5 +6,6 @@ namespace CharacterGenerator
 {
     class Role
     {
+        //Will finish adding variables before Friday
     }
 }

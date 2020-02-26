@@ -6,5 +6,6 @@ namespace CharacterGenerator
 {
     class Wizard : Person
     {
+        //Will finish adding variables before Friday
     }
 }

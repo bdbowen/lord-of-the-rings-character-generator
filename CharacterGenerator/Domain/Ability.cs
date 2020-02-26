@@ -6,5 +6,7 @@ namespace CharacterGenerator
 {
     class Ability
     {
+        //Will finish adding variables before Friday
+
     }
 }

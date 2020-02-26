@@ -6,5 +6,7 @@ namespace CharacterGenerator
 {
     class Hobbit : Person
     {
+        //Will finish adding variables before Friday
+
     }
 }

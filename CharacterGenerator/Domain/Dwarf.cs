@@ -6,5 +6,7 @@ namespace CharacterGenerator
 {
     class Dwarf : Person
     {
+        //Will finish adding variables before Friday
+
     }
 }

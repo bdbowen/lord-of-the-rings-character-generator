@@ -6,5 +6,7 @@ namespace CharacterGenerator
 {
     class Adventure
     {
+        //Will finish adding variables before Friday
+
     }
 }
