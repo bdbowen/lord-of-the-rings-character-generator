@@ -17,6 +17,7 @@ namespace CharacterGenerator
         public char Gender { get; set; }
 
         //Other important information
+        public Location HomeTown { get; set; }
         public Role Position { get; set; }
         public Adventure[] Adventures { get; }
         public string WeaponOfChoice { get; set; }
@@ -29,7 +30,7 @@ namespace CharacterGenerator
         }
         public Person(int numberOfAdventures)
         {
-            //calls generate random person
+            //calls generate random person with specific number of adventures
         }
 
         public void AddAdventure(Adventure newAdventure)
