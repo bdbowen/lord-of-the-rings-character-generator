@@ -6,7 +6,7 @@ namespace CharacterGenerator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("This Program is under development");
         }
     }
 }
