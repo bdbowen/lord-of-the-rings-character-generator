@@ -31,5 +31,11 @@ namespace CharacterGenerator
         {
             //randomly assign each attribute a value
         }
+
+        public override string ToString()
+        {
+            //return a more logical string eventually
+            return base.ToString();
+        }
     }
 }
