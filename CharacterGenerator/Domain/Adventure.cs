@@ -8,7 +8,7 @@ namespace CharacterGenerator
     {
         public string LeaderName { get; set; }
         public Location WhereTo { get; set; }
-        public string[] CompanionNames { get; set; }
+        public string[] CompanionNames { get; }
         public bool Successful { get; set; }
         public bool Fatal { get; set; }
 
@@ -21,6 +21,11 @@ namespace CharacterGenerator
         public Adventure(int numberOfCompanions)
         {
             //generate a random Adventure with set number of Adventures
+        }
+
+        public void AddCompanion(string name)
+        {
+            //adds a companion to the list of companion names
         }
         public void GenerateRandomAdventure(int numberOfCompanions)
         {

@@ -6,7 +6,25 @@ namespace CharacterGenerator
 {
     class Ability
     {
-        //Will finish adding variables before Friday
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int DifficultyLevel { get; set; }
+        public bool Exhausting { get; set; }
 
+        public Ability()
+        {
+            //generate random ability with random values for each attribute
+        }
+
+        public void GenerateRandomAbility()
+        {
+            //assigns random values to all of the class attributes
+        }
+
+        public override string ToString()
+        {
+            //return a string that makes more sense for the ability class
+            return base.ToString();
+        }
     }
 }
