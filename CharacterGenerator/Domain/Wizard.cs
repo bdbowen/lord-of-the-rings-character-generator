@@ -11,7 +11,15 @@ namespace CharacterGenerator
         public string WizardColor { get; set; }
         public Magical[] MagicalFeats { get; }
         public Physical[] PhysicalAbilities { get; }
-        
+
+        //data for randomization 
+        public static string[] MaleFirstNames = new string[] { "Gandalf", "Saruman", "Radagast", "Ikron", "Obus", "Grumaex", "Ageor", "Ifaris", "Vraxeor", 
+            "Stamanor", "Orass", "Zoshann", "Omenoran"};
+        public static string[] FemaleFirstNames = new string[] {"Uthal", "Azetosh", "Shehaen", "Murune", "Ezanydae", "Virish", "Iserune", "Thagreth", 
+            "Aphior", "Adrisse"};
+        public static string[] WizardColors = new string[] {"White", "Blue", "Green", "Red", "Brown", "Gray", "Many-Colored", "Orange", "Gold", 
+            "Silver", "Purple"};
+
         //constructors
         public Wizard()
         {
@@ -46,6 +54,27 @@ namespace CharacterGenerator
         {
             // return a more logical string 
             return base.ToString();
+        }
+
+        public static string GenerateWizardName(string gender)
+        {
+            string firstName, color;
+            Random rand = new Random();
+            int index;
+            if (gender.ToLower() == "female")
+            {
+                index = rand.Next(0, FemaleFirstNames.Length);
+                firstName = FemaleFirstNames[index];
+            }
+            else
+            {
+                index = rand.Next(0, MaleFirstNames.Length);
+                firstName = MaleFirstNames[index];
+            }
+            index = rand.Next(0, WizardColors.Length);
+            color = WizardColors[index];
+
+            return firstName + ", the " + color;
         }
     }
 }
