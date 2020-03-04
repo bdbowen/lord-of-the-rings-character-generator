@@ -63,23 +63,23 @@ namespace CharacterGenerator
             //randomize Title
             if (gender == "male")
             {
-                index = rand.Next(1, MaleTitleOptions.Length) - 1;
+                index = rand.Next(0, MaleTitleOptions.Length);
                 Title = MaleTitleOptions[index];
             } else if (gender == "female")
             {
-                index = rand.Next(1, FemaleTitleOptions.Length) - 1;
+                index = rand.Next(0, FemaleTitleOptions.Length);
                 Title = FemaleTitleOptions[index];
             } else
             {
                 string[] intersection = MaleTitleOptions.Intersect(FemaleTitleOptions).ToArray();
-                index = rand.Next(1, intersection.Length) - 1;
+                index = rand.Next(0, intersection.Length);
                 Title = intersection[index];
             }
             //set description
             Description = DescriptionOptions[Title];
 
             //set Primary Race
-            index = rand.Next(1, RaceOptions.Length) - 1;
+            index = rand.Next(0, RaceOptions.Length);
             PrimaryRace = RaceOptions[index];
 
             //set length of occupancy 
