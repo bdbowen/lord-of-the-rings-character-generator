@@ -6,8 +6,8 @@ namespace CharacterGenerator
     {
         static void Main(string[] args)
         {
-            Adventure adventure = new Adventure(15);
-            Console.WriteLine(adventure);
+            Person person = new Person();
+            Console.WriteLine(person);
             /*for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine(Human.GenerateHumanName("male"));

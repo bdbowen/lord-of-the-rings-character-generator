@@ -67,7 +67,7 @@ namespace CharacterGenerator
         public override string ToString()
         {
             string companions = "";
-            string lastCompanion = (string) CompanionNames[CompanionNames.Count - 1];
+            string lastCompanion = CompanionNames.Count > 0 ? (string) CompanionNames[CompanionNames.Count - 1] : null;
             foreach (string companion in CompanionNames)
             {
                 if (companion != lastCompanion)
