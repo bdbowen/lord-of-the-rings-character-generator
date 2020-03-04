@@ -45,6 +45,7 @@ namespace CharacterGenerator
             {"Buglar", "A thief, who is good at sneaking around" }
 
         };
+        public static string[] SupremeRoles = new string[] { "King", "Queen", "Dragon Slayer" };
         public Role()
         {
             GenerateRandomRole();
@@ -87,12 +88,15 @@ namespace CharacterGenerator
 
             //set number of subordinates
             NumberOfSubordinates = rand.Next();
+
+            //set whether it is a Supreme Role
+            SupremeRole = SupremeRoles.Contains(Title);
         }
 
         public override string ToString()
         {
             string classString = "Title: " + Title + "\n Description: " + Description + "\n Primary Race for this Role: " + PrimaryRace + 
-                "\n Amount of Time this Person occupied this Role: " + LenthOfOccupancy + " years \n Number of Subordinants: " + NumberOfSubordinates;
+                "\n Amount of Time this Person occupied this Role: " + LenthOfOccupancy + " years \n Number of Subordinants: " + NumberOfSubordinates +"\n Supreme Role: " + SupremeRole;
             return classString;
         }
     }
