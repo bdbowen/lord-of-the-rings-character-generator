@@ -6,7 +6,13 @@ namespace CharacterGenerator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This Program is under development");
+            Role myRole = new Role();
+            Role myMaleRole = new Role("male");
+            Role myFemaleRole = new Role("female", 100);
+            Console.WriteLine("Neutral:\n {0}", myRole);
+            Console.WriteLine("Male:\n {0}", myMaleRole);
+            Console.WriteLine("Female:\n {0}", myFemaleRole);
+
         }
     }
 }
