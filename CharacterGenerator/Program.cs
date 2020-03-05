@@ -6,7 +6,12 @@ namespace CharacterGenerator
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
+            /*for (int i = 0; i < 10; i++)
+            {
+                string name = Wizard.GenerateWizardName("male");
+                Console.WriteLine(name);
+            }*/
+            Elf person = new Elf();
             Console.WriteLine(person);
             /*for (int i = 0; i < 5; i++)
             {

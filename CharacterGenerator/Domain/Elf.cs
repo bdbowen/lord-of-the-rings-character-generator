@@ -13,9 +13,9 @@ namespace CharacterGenerator
         public bool OwnsRingOfPower { get; set; }
 
         //Abilities
-        public Mental[] ScholarlyUnderstandings { get; }
-        public Physical[] PhysicalAbilities { get; }
-        public Magical[] MagicalFeats { get; }
+        public List<Mental> ScholarlyUnderstandings { get; } = new List<Mental>();
+        public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
+        public List<Magical> MagicalFeats { get; } = new List<Magical>();
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] {"Elrond", "Mithrandir", "Sylvan", "Legolas", "Glorfindel", "Gildor", "Elrohir", "Thranduil", "Elkhazel", 
@@ -24,45 +24,84 @@ namespace CharacterGenerator
             "Zentha", "Kenia", "Ialantha" };
         public static string[] LastNames = new string[] { "Oriric", "Facaryn", "Inglorien", "Valran", "Kelsalor", "Xilfir", "Daecaryn", "Greenleaf", "Gregeiros", 
             "Beiquinal", "Shomar" };
+        public static string[] ElfTypeOptions = new string[] { "Vanyar", "Noldor", "Teleri", "Avari", "Sindar", "Nandor - Silvan", "Nandor - Laiquendi", "Avari"  };
+
         //constructors
         public Elf()
         {
-            //randomly initialize elf with random number of each ability type
+            Random rand = new Random();
+            int physical = rand.Next(1, 3);
+            int mental = rand.Next(1, 3);
+            int magical = rand.Next(1, 3);
+
+            GenerateRandomElf(physical, mental, magical);
         }
         
         public Elf(int numberOfAbilities)
         {
-            //randomly initialize elf with desired giving each ability type the desired number of abilities
+            GenerateRandomElf(numberOfAbilities, numberOfAbilities, numberOfAbilities);
         }
 
         public Elf(int numberOfPhysical, int numberOfMental, int numberOfMagical)
         {
-            //randomly initialize elf with each type of ability its desired amount
-        }
-        public void AddUnderstanding(Mental newUnderstanding)
-        {
-            //add the new understanding to the ScholarlyUderstandings Array
-        }
-
-        public void AddPhysicalAbility(Physical newAbility)
-        {
-            //add the new ability to PhysicalAbilities
-        }
-
-        public void AddMagic(Magical newSpell)
-        {
-            //add the new spell to the magical feats
+            GenerateRandomElf(numberOfPhysical, numberOfMental, numberOfMagical);
         }
 
         public void GenerateRandomElf(int numberOfPhysical, int numberOfMental, int numberOfMagical)
         {
+            Random rand = new Random();
+            int index;
+            //set Elf
+            Name = GenerateElfName(Gender);
+            
+            //set Elf Type
+            index = rand.Next(0, ElfTypeOptions.Length);
+            ElfType = ElfTypeOptions[index];
+            
+            //set owns ring of power
+            OwnsRingOfPower = rand.Next(2) == 1;
+
+            //set abilities
+            for(int i=0; i<numberOfPhysical; i++)
+            {
+                PhysicalAbilities.Add(new Physical());
+            }
+
+            for (int i = 0; i < numberOfMental; i++)
+            {
+                ScholarlyUnderstandings.Add(new Mental());
+            }
+
+            for (int i = 0; i < numberOfMagical; i++)
+            {
+                MagicalFeats.Add(new Magical());
+            }
+
             //assign attributes randomly to elf based on the number of each ability
         }
 
         public override string ToString()
         {
-            //will eventually return Elf in a more logical way
-            return base.ToString();
+            string physicalString = "";
+            foreach(Physical phys in PhysicalAbilities)
+            {
+                physicalString += phys.ToString();
+            }
+
+            string mentalString = "";
+            foreach (Mental ment in ScholarlyUnderstandings)
+            {
+                mentalString += ment.ToString();
+            }
+
+            string magicalString = "";
+            foreach (Magical spell in MagicalFeats)
+            {
+                magicalString += spell.ToString();
+            }
+            string classString = "Elf Type: " + ElfType + "\nOwns Elven Ring: " + OwnsRingOfPower + "\n" + base.ToString() + "\nPhysical Abilities: " + 
+                physicalString + "\nScholarly Understandings: " + mentalString + "\nMagical Feats: " + magicalString;
+            return classString;
         }
 
         public static string GenerateElfName(string gender)

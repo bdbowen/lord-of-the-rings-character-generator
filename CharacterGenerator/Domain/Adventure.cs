@@ -78,8 +78,8 @@ namespace CharacterGenerator
                     companions += companion;
                 }
             }
-            string classString = "Leader: " + LeaderName + "\n\nCompanions: " + companions + "\n\nAdventure Destination: \n" + WhereTo.ToString() + "\n\nSuccessful: " +
-                Successful + "\n\nFatal: " + Fatal;
+            string classString = "Leader: " + LeaderName + "\nCompanions: " + companions + "\nAdventure Destination: \n" + WhereTo.ToString() + "\nSuccessful: " +
+                Successful + "\nFatal: " + Fatal;
             return classString;
         }
     }

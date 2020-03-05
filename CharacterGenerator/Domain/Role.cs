@@ -42,7 +42,8 @@ namespace CharacterGenerator
             {"Warrior", "A valiant fighter, who gives their life for king and country" },
             {"Knight", "A male fighter, who is employed by lords" },
             {"Dragon Slayer", "One who has slain a dragon" },
-            {"Buglar", "A thief, who is good at sneaking around" }
+            {"Burglar", "A thief, who is good at sneaking around" },
+            {"General", "A male leader of knights and warriors" }
 
         };
         public static string[] SupremeRoles = new string[] { "King", "Queen", "Dragon Slayer" };

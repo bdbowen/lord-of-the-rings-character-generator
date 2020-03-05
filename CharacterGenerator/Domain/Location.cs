@@ -58,7 +58,7 @@ namespace CharacterGenerator
             { "Minas Morgul", "Human" },
             {"Mirkwood Forest", "Elf" },
             { "Erebor", "Dwarf" },
-            { "Esgaroth", "Man" },
+            { "Esgaroth", "Human" },
             { "Dol Guldur", "Wizard" },
             {"Rivendell", "Elf"},
             { "The Mines of Moria", "Dwarf" },
