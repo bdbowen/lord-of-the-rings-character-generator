@@ -30,9 +30,9 @@ namespace CharacterGenerator
         public Elf()
         {
             Random rand = new Random();
-            int physical = rand.Next(1, 3);
-            int mental = rand.Next(1, 3);
-            int magical = rand.Next(1, 3);
+            int physical = rand.Next(5);
+            int mental = rand.Next(5);
+            int magical = rand.Next(5);
 
             GenerateRandomElf(physical, mental, magical);
         }
@@ -76,8 +76,6 @@ namespace CharacterGenerator
             {
                 MagicalFeats.Add(new Magical());
             }
-
-            //assign attributes randomly to elf based on the number of each ability
         }
 
         public override string ToString()

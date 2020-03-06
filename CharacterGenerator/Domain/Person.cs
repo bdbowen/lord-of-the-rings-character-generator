@@ -110,7 +110,7 @@ namespace CharacterGenerator
             string adventures = "";
             foreach(Adventure adventure in Adventures)
             {
-                adventures += adventure.ToString();
+                adventures += adventure.ToString() + "\n";
             }
             string classString = "Name: " + Name + "\nAge: " + Age + "\nGender: " + Gender + "\nHair Color: " + HairColor + "\nEye Color: " + EyeColor +
                 "\nSkin Tone: " + SkinComplexion + "\nHometown: " + HomeTown.ToString() + "\nPosition: " + Position.ToString() + "\nEvil: " + Evil.ToString() +
