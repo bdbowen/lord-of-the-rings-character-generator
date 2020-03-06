@@ -1,47 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CharacterGenerator
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            /*for (int i = 0; i < 10; i++)
-            {
-                string name = Wizard.GenerateWizardName("male");
-                Console.WriteLine(name);
-            }*/
-            Human person = new Human();
-            Console.WriteLine(person);
-            /*for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(Human.GenerateHumanName("male"));
-                Console.WriteLine(Human.GenerateHumanName("female"));
-            }
-                
-            Console.WriteLine("Would you like to generate a location or role?");
-            string input = Console.ReadLine().ToLower();
-            if (input == "location")
-            {
-                for (int i=0; i<5; i++)
-                {
-                    Location myLocation = new Location();
-                    Console.WriteLine("Location:\n {0}\n", myLocation);
-
-                }
-            } else if (input == "role")
-            {
-                Role myRole = new Role();
-                Role myMaleRole = new Role("male");
-                Role myFemaleRole = new Role("female", 100);
-                Console.WriteLine("Neutral:\n {0}", myRole);
-                Console.WriteLine("Male:\n {0}", myMaleRole);
-                Console.WriteLine("Female:\n {0}", myFemaleRole);
-            } else
-            {
-                Console.WriteLine("Not an option, Have a nice day!");
-            }
-            */
+            
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }
