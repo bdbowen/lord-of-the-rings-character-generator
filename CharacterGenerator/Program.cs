@@ -11,7 +11,7 @@ namespace CharacterGenerator
                 string name = Wizard.GenerateWizardName("male");
                 Console.WriteLine(name);
             }*/
-            Wizard person = new Wizard();
+            Human person = new Human();
             Console.WriteLine(person);
             /*for (int i = 0; i < 5; i++)
             {

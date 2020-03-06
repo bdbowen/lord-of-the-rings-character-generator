@@ -20,31 +20,56 @@ namespace CharacterGenerator
             "Adele", "Pervinca", "Basina", "Rotrude", "Cassandra"};
         public static string[] LastNames = new string[] {"Took", "Baggins", "Brandybuck", "Proudfoot", "Sackville", "Sackville-Baggins", "Gamgee",
         "Boffin", "Bolger", "Bracegirdle", "Burrowes", "Chubb", "Grubb", "Hornblower", "Sandyman", "Underhill"};
+        public static string[] HomeTypeOptions = new string[] { "Hobbit Hole", "Above Ground House" };
         //constructors
         public Hobbit()
         {
-            //instantiates hobbit with random number of abilities
+            Random rand = new Random();
+            GenerateRandomHobbit(rand.Next(5));
         }
 
         public Hobbit(int numberOfAbilities)
         {
-            //instantiates hobbit with random attributes and the chosen number of abilities
-        }
-
-        public void AddAbility(Physical newAbility)
-        {
-            //adds new ability to array Physical Abilities
+            GenerateRandomHobbit(numberOfAbilities);
         }
 
         public void GenerateRandomHobbit(int numberOfAbilities)
         {
-            //assigns random values to each of the attributes listed
+            Random rand = new Random();
+            int index;
+
+            //set Name
+            Name = GenerateHobbitName(Gender);
+
+            //reset age
+            Age = rand.Next(1, MAXAGE);
+
+            //set Home type
+            index = rand.Next(0, HomeTypeOptions.Length);
+            HomeType = HomeTypeOptions[index];
+
+            //set Booleans
+            OwnsOneRing = rand.Next(2) == 1;
+            IsAdventurer = rand.Next(2) == 1;
+
+            //set abilities
+            for (int i = 0; i < numberOfAbilities; i++)
+            {
+                PhysicalAbilities.Add(new Physical());
+            }
         }
 
         public override string ToString()
         {
-            //eventually return a more readable string with all class attributes
-            return base.ToString();
+            string physicalString = "";
+            foreach (Physical phys in PhysicalAbilities)
+            {
+                physicalString += phys.ToString();
+            }
+
+            string classString = base.ToString() + "\nHome Type: " + HomeType + "\nPhysical Abilities: " +
+                physicalString + "\nIs Adventurer: " + IsAdventurer + "\nOwns the One Ring: " + OwnsOneRing;
+            return classString;
         }
         public static string GenerateHobbitName(string gender)
         {
