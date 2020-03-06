@@ -8,11 +8,10 @@ namespace CharacterGenerator
     {
         //class attributes
         public static int MAXAGE = 100;
-        public string FamilyGroup { get; set; }
-        public string HomeStructure { get; set; } //Whether in a hobbit hole or an actual house
+        public string HomeType { get; set; } //Whether in a hobbit hole or an actual house
         public bool IsAdventurer { get; set; }
         public bool OwnsOneRing { get; set; }
-        public Physical[] PhysicalAbilities { get; }
+        public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] { "Frodo", "Bilbo", "Samwise", "Perigrin", "Lotho", "Radigis", "Ramnulf", "Humbert", 

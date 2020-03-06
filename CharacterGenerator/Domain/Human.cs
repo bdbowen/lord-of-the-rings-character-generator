@@ -55,8 +55,15 @@ namespace CharacterGenerator
 
         public override string ToString()
         {
-            //return a more logical string eventually
-            return base.ToString();
+            string physicalString = "";
+            foreach (Physical phys in PhysicalAbilities)
+            {
+                physicalString += phys.ToString();
+            }
+
+            string classString = "Ancestral Line: " + AncestralLine + "\n" + base.ToString() + "\nPhysical Abilities: " +
+                physicalString;
+            return classString;
         }
 
         public static string GenerateHumanName(string gender)
