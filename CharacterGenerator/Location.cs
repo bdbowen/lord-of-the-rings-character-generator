@@ -74,12 +74,16 @@ namespace CharacterGenerator
 
         public Location()
         {
-            GenerateRandomLocation();
+            GenerateRandomLocation(new Random());
         }
 
-        public void GenerateRandomLocation()
+        public Location(Random rand)
         {
-            Random rand = new Random();
+            GenerateRandomLocation(rand);
+        }
+
+        public void GenerateRandomLocation(Random rand)
+        {
             int index = 0;
             //Set Region
             index = rand.Next(0, RegionOptions.Length);
@@ -103,8 +107,8 @@ namespace CharacterGenerator
 
         public override string ToString()
         {
-            string classString = "Location: " + Title + "\nRegion of Middle Earth: " + Region + "\nPrimary Race of Location: " + InhabitantsPrimaryRace +
-                "\nQuadrant of Map: " + RelativeMapPosition.ToString() + "\nFree Land: " + FreeLand.ToString();
+            string classString = "\tLocation: " + Title + "\n\tRegion of Middle Earth: " + Region + "\n\tPrimary Race of Location: " + InhabitantsPrimaryRace +
+                "\n\tQuadrant of Map: " + RelativeMapPosition.ToString() + "\n\tFree Land: " + FreeLand.ToString();
             return classString;
         }
 

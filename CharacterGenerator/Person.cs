@@ -53,24 +53,21 @@ namespace CharacterGenerator
         public Person()
         {
             Random rand = new Random();
-            GenerateRandomPerson(rand.Next(1, 5));
+            GenerateRandomPerson(rand.Next(1, 5), rand);
+        }
+
+        public Person(Random rand)
+        {
+            GenerateRandomPerson(rand.Next(1, 5), rand);
         }
         public Person(int numberOfAdventures)
         {
-            GenerateRandomPerson(numberOfAdventures);
+            GenerateRandomPerson(numberOfAdventures, new Random());
         }
 
-        public Person(int numberOfAdventures, int maxAge, string[] firstNameOptions, string[] lastNameOptions)
+        public void GenerateRandomPerson(int numberOfAdventures, Random rand)
         {
-            //to be used mainly with Person's sub classes, this allows more control of randomization
-            //that way a wizard name sounds more wizardly and a human name sounds more human 
-            //and age is more logical - you don't get a 2000 year old human
-        }
-
-        public void GenerateRandomPerson(int numberOfAdventures)
-        {
-            Random rand = new Random();
-            int index = 0;
+            int index;
             //Let Name be set by subclass
             //Randomize Age
             Age = rand.Next(1, 10000);
@@ -97,9 +94,15 @@ namespace CharacterGenerator
             Position = new Role(Gender, Age);
 
             //Adventures
+
+            int randIndex = rand.Next();
+            int incrementValue = rand.Next();
             for (int i = 0; i < numberOfAdventures; i++)
             {
-                Adventures.Add(new Adventure());
+                Random rand2 = new Random(randIndex);
+
+                Adventures.Add(new Adventure(rand2));
+                randIndex += incrementValue;
             }
 
             //Weapon of Choice

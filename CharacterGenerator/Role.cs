@@ -53,17 +53,21 @@ namespace CharacterGenerator
         public static string[] SupremeRoles = new string[] { "King", "Queen", "Dragon Slayer" };
         public Role()
         {
-            GenerateRandomRole();
+            GenerateRandomRole(new Random());
+        }
+
+        public Role(Random rand)
+        {
+            GenerateRandomRole(rand);
         }
 
         public Role(string gender, int maxAge = -1)
         {
-            GenerateRandomRole(gender.ToLower(), maxAge);
+            GenerateRandomRole(new Random(), gender.ToLower(), maxAge);
         }
 
-        public void GenerateRandomRole(string gender = null, int maxAge = -1)
+        public void GenerateRandomRole(Random rand, string gender = null, int maxAge = -1)
         {
-            Random rand = new Random();
             int index;
             //randomize Title
             if (gender == "male")

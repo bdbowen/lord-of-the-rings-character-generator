@@ -9,7 +9,7 @@ namespace CharacterGenerator
     class Hobbit : Person
     {
         //class attributes
-        public static int MAXAGE = 100;
+        public static int MAXAGE = 130;
         public string HomeType { get; set; } //Whether in a hobbit hole or an actual house
         public bool IsAdventurer { get; set; }
         public bool OwnsOneRing { get; set; }
@@ -27,21 +27,25 @@ namespace CharacterGenerator
         public Hobbit()
         {
             Random rand = new Random();
-            GenerateRandomHobbit(rand.Next(5));
+            GenerateRandomHobbit(rand.Next(5), rand);
+        }
+
+        public Hobbit(Random rand)
+        {
+            GenerateRandomHobbit(rand.Next(5), rand);
         }
 
         public Hobbit(int numberOfAbilities)
         {
-            GenerateRandomHobbit(numberOfAbilities);
+            GenerateRandomHobbit(numberOfAbilities, new Random());
         }
 
-        public void GenerateRandomHobbit(int numberOfAbilities)
+        public void GenerateRandomHobbit(int numberOfAbilities, Random rand)
         {
-            Random rand = new Random();
             int index;
 
             //set Name
-            Name = GenerateHobbitName(Gender);
+            Name = GenerateHobbitName(Gender, rand);
 
             //reset age
             Age = rand.Next(1, MAXAGE);
@@ -73,10 +77,9 @@ namespace CharacterGenerator
                 physicalString + "\nIs Adventurer: " + IsAdventurer + "\nOwns the One Ring: " + OwnsOneRing;
             return classString;
         }
-        public static string GenerateHobbitName(string gender)
+        public static string GenerateHobbitName(string gender, Random rand)
         {
             string firstName, lastName;
-            Random rand = new Random();
             int index;
             if (gender.ToLower() == "female")
             {

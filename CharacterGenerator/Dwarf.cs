@@ -9,7 +9,7 @@ namespace CharacterGenerator
     class Dwarf : Person
     {
         //Class Attributes
-        public static int MAXAGE = 150;
+        public static int MAXAGE = 250;
         public string DwarfGroup { get; set; }
         public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
 
@@ -26,21 +26,24 @@ namespace CharacterGenerator
         public Dwarf()
         {
             Random rand = new Random();
-
-            GenerateRandomDwarf(rand.Next(5));
+            GenerateRandomDwarf(rand.Next(5), rand);
         }
 
         public Dwarf(int numberOfAbilities)
         {
-            GenerateRandomDwarf(numberOfAbilities);
+            GenerateRandomDwarf(numberOfAbilities, new Random());
         }
 
-        public void GenerateRandomDwarf(int numberOfAbilities)
+        public Dwarf(Random rand)
         {
-            Random rand = new Random();
+            GenerateRandomDwarf(rand.Next(5), rand);
+        }
+
+        public void GenerateRandomDwarf(int numberOfAbilities, Random rand)
+        {
             int index;
             //set name
-            Name = GenerateDwarfName(Gender);
+            Name = GenerateDwarfName(Gender, rand);
 
             //reset age
             Age = rand.Next(1, MAXAGE);
@@ -67,10 +70,9 @@ namespace CharacterGenerator
             return classString;
         }
 
-        public static string GenerateDwarfName(string gender)
+        public static string GenerateDwarfName(string gender, Random rand)
         {
             string firstName, lastName;
-            Random rand = new Random();
             int index;
             if (gender.ToLower() == "female")
             {

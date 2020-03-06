@@ -28,30 +28,36 @@ namespace CharacterGenerator
             Random rand = new Random();
             int physical = rand.Next(5);
             int magical = rand.Next(5);
-            GenerateRandomWizard(physical, magical);
+            GenerateRandomWizard(physical, magical, rand);
+        }
+
+        public Wizard(Random rand)
+        {
+            int physical = rand.Next(5);
+            int magical = rand.Next(5);
+            GenerateRandomWizard(physical, magical, rand);
         }
 
         public Wizard(int numberOfAbilities)
         {
-            GenerateRandomWizard(numberOfAbilities, numberOfAbilities);
+            GenerateRandomWizard(numberOfAbilities, numberOfAbilities, new Random());
         }
 
         public Wizard(int numberOfPhysical, int numberOfMagical)
         {
-            GenerateRandomWizard(numberOfPhysical, numberOfMagical);
+            GenerateRandomWizard(numberOfPhysical, numberOfMagical, new Random());
         }
 
 
-        public void GenerateRandomWizard(int numberOfPhysical, int numberOfMagic)
+        public void GenerateRandomWizard(int numberOfPhysical, int numberOfMagic, Random rand)
         {
-            Random rand = new Random();
             int index;
             //set wizard color
             index = rand.Next(0, WizardColors.Length);
             WizardColor = WizardColors[index];
 
             //set Name
-            Name = GenerateWizardName(Gender, WizardColor);
+            Name = GenerateWizardName(Gender, rand, WizardColor);
 
             //Generate Magic Type
             index = rand.Next(0, MagicTypeOptions.Length);
@@ -87,10 +93,9 @@ namespace CharacterGenerator
             return classString;
         }
 
-        public static string GenerateWizardName(string gender, string color = null)
+        public static string GenerateWizardName(string gender, Random rand, string color = null)
         {
             string firstName;
-            Random rand = new Random();
             int index;
             if (gender.ToLower() == "female")
             {

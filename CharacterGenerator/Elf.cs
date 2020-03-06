@@ -36,25 +36,32 @@ namespace CharacterGenerator
             int mental = rand.Next(5);
             int magical = rand.Next(5);
 
-            GenerateRandomElf(physical, mental, magical);
+            GenerateRandomElf(physical, mental, magical, rand);
         }
 
+        public Elf(Random rand)
+        {
+            int physical = rand.Next(5);
+            int mental = rand.Next(5);
+            int magical = rand.Next(5);
+
+            GenerateRandomElf(physical, mental, magical, rand);
+        }
         public Elf(int numberOfAbilities)
         {
-            GenerateRandomElf(numberOfAbilities, numberOfAbilities, numberOfAbilities);
+            GenerateRandomElf(numberOfAbilities, numberOfAbilities, numberOfAbilities, new Random());
         }
 
         public Elf(int numberOfPhysical, int numberOfMental, int numberOfMagical)
         {
-            GenerateRandomElf(numberOfPhysical, numberOfMental, numberOfMagical);
+            GenerateRandomElf(numberOfPhysical, numberOfMental, numberOfMagical, new Random());
         }
 
-        public void GenerateRandomElf(int numberOfPhysical, int numberOfMental, int numberOfMagical)
+        public void GenerateRandomElf(int numberOfPhysical, int numberOfMental, int numberOfMagical, Random rand)
         {
-            Random rand = new Random();
             int index;
             //set Elf
-            Name = GenerateElfName(Gender);
+            Name = GenerateElfName(Gender, rand);
 
             //set Elf Type
             index = rand.Next(0, ElfTypeOptions.Length);
@@ -104,10 +111,9 @@ namespace CharacterGenerator
             return classString;
         }
 
-        public static string GenerateElfName(string gender)
+        public static string GenerateElfName(string gender, Random rand)
         {
             string firstName, lastName;
-            Random rand = new Random();
             int index;
             if (gender.ToLower() == "female")
             {

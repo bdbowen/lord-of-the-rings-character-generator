@@ -20,26 +20,30 @@ namespace CharacterGenerator
             "Mai", "Jei", "Mi", "Jhairrunill"};
         public static string[] LastNames = new string[] {"Rhehlon", "Morketsk", "Zoltanzefk", "Gendadrin", "Mao", "Duulueltrab", "Stiknuz", "Binzelbul",
             "Gryedabyevu", "Horazor","Gendilbo", "Nen"  };
-        public static string[] AncestralLineOptions = new string[] {"Edain", "Dunadain", "Black Numenorians", "Haradrim", "Easterlings", "Northmen", "Dunlendings",
+        public static string[] AncestralLineOptions = new string[] {"Dunadain", "Black Numenorians", "Haradrim", "Easterlings", "Northmen", "Dunlendings",
             "Druedain"};
         //constructors
         public Human()
         {
             Random rand = new Random();
 
-            GenerateRandomHuman(rand.Next(5));
+            GenerateRandomHuman(rand.Next(5), rand);
+        }
+
+        public Human(Random rand)
+        {
+            GenerateRandomHuman(rand.Next(5), rand);
         }
         public Human(int numberOfAbilities)
         {
-            GenerateRandomHuman(numberOfAbilities);
+            GenerateRandomHuman(numberOfAbilities, new Random());
         }
 
-        public void GenerateRandomHuman(int numberOfAbilities)
+        public void GenerateRandomHuman(int numberOfAbilities, Random rand)
         {
-            Random rand = new Random();
             int index;
             //set name
-            Name = GenerateHumanName(Gender);
+            Name = GenerateHumanName(Gender, rand);
 
             //reset age
             Age = rand.Next(1, MAXAGE);
@@ -68,10 +72,9 @@ namespace CharacterGenerator
             return classString;
         }
 
-        public static string GenerateHumanName(string gender)
+        public static string GenerateHumanName(string gender, Random rand)
         {
             string firstName, lastName;
-            Random rand = new Random();
             int index;
             if (gender.ToLower() == "female")
             {

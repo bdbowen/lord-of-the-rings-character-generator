@@ -18,46 +18,72 @@ namespace CharacterGenerator
         public Adventure()
         {
             Random rand = new Random();
-            GenerateRandomAdventure(rand.Next(0, 20));
+            GenerateRandomAdventure(rand.Next(0, 20), rand);
+        }
+        public Adventure(Random rand)
+        {
+            GenerateRandomAdventure(rand.Next(0, 20), rand);
         }
 
         public Adventure(int numberOfCompanions)
         {
-            GenerateRandomAdventure(numberOfCompanions);
+            Random rand = new Random();
+            GenerateRandomAdventure(numberOfCompanions, rand);
         }
 
-        public void GenerateRandomAdventure(int numberOfCompanions)
+        public void GenerateRandomAdventure(int numberOfCompanions, Random rand)
         {
-            Random rand = new Random();
-
             //randomly assign leader 
-            LeaderName = Wizard.GenerateWizardName(rand.Next(2) == 1 ? "female" : "male");
+            LeaderName = Wizard.GenerateWizardName(rand.Next(2) == 1 ? "female" : "male", rand);
 
             //set WhereTo
-            WhereTo = new Location();
+            WhereTo = new Location(rand);
 
             for (int i = 0; i < numberOfCompanions; i++)
             {
                 int randomNum = rand.Next(1, 5);
                 string gender = rand.Next(2) == 1 ? "female" : "male";
+                string name;
                 if (randomNum == 1)
                 {
-                    CompanionNames.Add(Hobbit.GenerateHobbitName(gender));
+                    name = Hobbit.GenerateHobbitName(gender, rand);
 
+                    while (CompanionNames.Contains(name))
+                    {
+                        name = Hobbit.GenerateHobbitName(gender, rand);
+                    }
+                    CompanionNames.Add(name);
                 }
                 else if (randomNum == 2)
                 {
-                    CompanionNames.Add(Elf.GenerateElfName(gender));
+                    name = Elf.GenerateElfName(gender, rand);
+
+                    while (CompanionNames.Contains(name))
+                    {
+                        name = Elf.GenerateElfName(gender, rand);
+                    }
+                    CompanionNames.Add(name);
 
                 }
                 else if (randomNum == 3)
                 {
-                    CompanionNames.Add(Dwarf.GenerateDwarfName(gender));
+                    name = Dwarf.GenerateDwarfName(gender, rand);
+
+                    while (CompanionNames.Contains(name))
+                    {
+                        name = Dwarf.GenerateDwarfName(gender, rand);
+                    }
+                    CompanionNames.Add(name);
                 }
                 else if (randomNum == 4)
                 {
-                    CompanionNames.Add(Human.GenerateHumanName(gender));
+                    name = Human.GenerateHumanName(gender, rand);
 
+                    while (CompanionNames.Contains(name))
+                    {
+                        name = Human.GenerateHumanName(gender, rand);
+                    }
+                    CompanionNames.Add(name);
                 }
 
             }
@@ -71,10 +97,9 @@ namespace CharacterGenerator
         public override string ToString()
         {
             string companions = "";
-            string lastCompanion = CompanionNames.Count > 0 ? (string)CompanionNames[CompanionNames.Count - 1] : null;
             foreach (string companion in CompanionNames)
             {
-                if (companion != lastCompanion)
+                if (CompanionNames.IndexOf(companion) != CompanionNames.Count - 1)
                 {
                     companions += companion + ", ";
                 }
