@@ -12,6 +12,7 @@ namespace CharacterGenerator
         public static int MAXAGE = 100;
         public string AncestralLine { get; set; }
         public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
+        public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] { "Theodred", "Aragorn", "Arathorn", "Boromir", "Faramir", "Denathor", "Beren", "Eomer", "Theoden",
@@ -27,19 +28,22 @@ namespace CharacterGenerator
         {
             Random rand = new Random();
 
-            GenerateRandomHuman(rand.Next(5), rand);
+            GenerateRandomHuman(rand.Next(5), rand.Next(5), rand);
         }
 
         public Human(Random rand) : base(rand)
         {
-            GenerateRandomHuman(rand.Next(5), rand);
+            GenerateRandomHuman(rand.Next(5), rand.Next(5), rand);
         }
         public Human(int numberOfAbilities)
         {
-            GenerateRandomHuman(numberOfAbilities, new Random());
+            GenerateRandomHuman(numberOfAbilities, numberOfAbilities, new Random());
         }
-
-        public void GenerateRandomHuman(int numberOfAbilities, Random rand)
+        public Human(int numberOfPhysical, int numberOfMental)
+        {
+            GenerateRandomHuman(numberOfPhysical, numberOfMental, new Random());
+        }
+        public void GenerateRandomHuman(int numberOfPhysical, int numberOfMental, Random rand)
         {
             RaceType = "Human";
             int index;
@@ -54,9 +58,13 @@ namespace CharacterGenerator
             AncestralLine = AncestralLineOptions[index];
 
             //set abilities
-            for (int i = 0; i < numberOfAbilities; i++)
+            for (int i = 0; i < numberOfPhysical; i++)
             {
                 PhysicalAbilities.Add(new Physical(rand));
+            }
+            for (int i = 0; i < numberOfMental; i++)
+            {
+                FieldsOfWisdom.Add(new Mental(rand));
             }
         }
 
@@ -68,8 +76,14 @@ namespace CharacterGenerator
                 physicalString += phys.ToString();
             }
 
+            string mentalString = "";
+            foreach (Mental ment in FieldsOfWisdom)
+            {
+                mentalString += ment.ToString();
+            }
+
             string classString = "Ancestral Line: " + AncestralLine + "\n" + base.ToString() + "\nPhysical Abilities: " +
-                physicalString;
+                physicalString + "\nFields of Wisdom: " + FieldsOfWisdom;
             return classString;
         }
 

@@ -13,6 +13,7 @@ namespace CharacterGenerator
         public string WizardColor { get; set; }
         public List<Magical> MagicalFeats { get; } = new List<Magical>();
         public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
+        public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();
 
         //data for randomization 
         public static string[] MaleFirstNames = new string[] { "Gandalf", "Saruman", "Radagast", "Ikron", "Obus", "Grumaex", "Ageor", "Ifaris", "Vraxeor",
@@ -28,28 +29,32 @@ namespace CharacterGenerator
             Random rand = new Random();
             int physical = rand.Next(5);
             int magical = rand.Next(5);
-            GenerateRandomWizard(physical, magical, rand);
+            int mental = rand.Next(5);
+
+            GenerateRandomWizard(physical, magical, mental, rand);
         }
 
         public Wizard(Random rand) : base(rand)
         {
             int physical = rand.Next(5);
             int magical = rand.Next(5);
-            GenerateRandomWizard(physical, magical, rand);
+            int mental = rand.Next(5);
+
+            GenerateRandomWizard(physical, magical, mental, rand);
         }
 
         public Wizard(int numberOfAbilities)
         {
-            GenerateRandomWizard(numberOfAbilities, numberOfAbilities, new Random());
+            GenerateRandomWizard(numberOfAbilities, numberOfAbilities, numberOfAbilities, new Random());
         }
 
-        public Wizard(int numberOfPhysical, int numberOfMagical)
+        public Wizard(int numberOfPhysical, int numberOfMagical, int numberOfMental)
         {
-            GenerateRandomWizard(numberOfPhysical, numberOfMagical, new Random());
+            GenerateRandomWizard(numberOfPhysical, numberOfMagical, numberOfMental, new Random());
         }
 
 
-        public void GenerateRandomWizard(int numberOfPhysical, int numberOfMagic, Random rand)
+        public void GenerateRandomWizard(int numberOfPhysical, int numberOfMagic, int numberOfMental, Random rand)
         {
             RaceType = "Wizard";
             int index;
@@ -74,6 +79,10 @@ namespace CharacterGenerator
             {
                 MagicalFeats.Add(new Magical(rand));
             }
+            for (int i = 0; i < numberOfMental; i++)
+            {
+                MagicalFeats.Add(new Mental(rand));
+            }
         }
 
         public override string ToString()
@@ -89,8 +98,13 @@ namespace CharacterGenerator
             {
                 magicalString += spell.ToString();
             }
+            string mentalString = "";
+            foreach (Mental lore in FieldsOfWisdom)
+            {
+                mentalString += lore.ToString();
+            }
             string classString = "Magic Type: " + MagicType + "\nWizard Color: " + WizardColor + "\n" + base.ToString() + "\nPhysical Abilities: " +
-                physicalString + "\nMagical Feats: " + magicalString;
+                physicalString + "\nMagical Feats: " + magicalString + "\nFields of Wisdom" + FieldsOfWisdom;
             return classString;
         }
 

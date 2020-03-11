@@ -62,7 +62,7 @@ namespace CharacterGenerator
             {
                 PhysicalAbilities.Add(new Physical(rand));
             }
-            for (int i = 0; i < numberofMental; i++)
+            for (int i = 0; i < numberOfMental; i++)
             {
                 FieldsOfWisdom.Add(new Mental(rand));
             }
