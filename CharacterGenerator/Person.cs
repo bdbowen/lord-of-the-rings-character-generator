@@ -39,6 +39,7 @@ namespace CharacterGenerator
         public List<Adventure> Adventures { get; } = new List<Adventure>();
         public string WeaponOfChoice { get; set; }
         public bool Evil { get; set; }
+        public string RaceType { get; set; }
 
         //random data
         public static string[] HairColorOptions = new string[] { "Black", "Dark Brown", "Light Brown", "Brown", "Auburn", "Golden Blonde", "Blonde", "Red",

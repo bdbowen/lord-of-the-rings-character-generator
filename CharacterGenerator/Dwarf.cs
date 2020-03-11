@@ -12,6 +12,7 @@ namespace CharacterGenerator
         public static int MAXAGE = 250;
         public string DwarfGroup { get; set; }
         public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
+        public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] { "Gimli", "Thorin", "Thrain", "Thror", "Fili", "Kili", "Bifur", "Bofur", "Bombur", "Oin",
@@ -26,21 +27,26 @@ namespace CharacterGenerator
         public Dwarf()
         {
             Random rand = new Random();
-            GenerateRandomDwarf(rand.Next(5), rand);
+            GenerateRandomDwarf(rand.Next(5), rand.Next(5), rand);
         }
 
         public Dwarf(int numberOfAbilities)
         {
-            GenerateRandomDwarf(numberOfAbilities, new Random());
+            GenerateRandomDwarf(numberOfAbilities, numberOfAbilities, new Random());
         }
 
+        public Dwarf(int numberOfPhysical, int numberOfMental)
+        {
+            GenerateRandomDwarf(numberOfPhysical, numberOfMental, new Random());
+        }
         public Dwarf(Random rand) : base(rand)
         {
-            GenerateRandomDwarf(rand.Next(5), rand);
+            GenerateRandomDwarf(rand.Next(5), rand.Next(5), rand);
         }
 
-        public void GenerateRandomDwarf(int numberOfAbilities, Random rand)
+        public void GenerateRandomDwarf(int numberOfPhysical, int numberOfMental, Random rand)
         {
+            RaceType = "Dwarf";
             int index;
             //set name
             Name = GenerateDwarfName(Gender, rand);
@@ -52,21 +58,31 @@ namespace CharacterGenerator
             index = rand.Next(0, DwarfGroupOptions.Length);
             DwarfGroup = DwarfGroupOptions[index];
             //set abilities
-            for (int i = 0; i < numberOfAbilities; i++)
+            for (int i = 0; i < numberOfPhysical; i++)
             {
                 PhysicalAbilities.Add(new Physical(rand));
+            }
+            for (int i = 0; i < numberofMental; i++)
+            {
+                FieldsOfWisdom.Add(new Mental(rand));
             }
 
         }
         public override string ToString()
         {
             string physicalString = "";
+            string mentalString = "";
             foreach (Physical phys in PhysicalAbilities)
             {
                 physicalString += phys.ToString();
             }
+            foreach (Mental ment in FieldsOfWisdom)
+            {
+                mentalString += ment.ToString();
+            }
 
-            string classString = "Dwarf Type: " + DwarfGroup + "\n" + base.ToString() + "\nPhysical Abilities: " + physicalString;
+            string classString = "Dwarf Type: " + DwarfGroup + "\n" + base.ToString() + "\nPhysical Abilities: " + physicalString + 
+                "\nFields of Wisdom: " + FieldsOfWisdom;
             return classString;
         }
 

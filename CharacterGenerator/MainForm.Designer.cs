@@ -59,6 +59,11 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.editButton = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.magicBtn = new System.Windows.Forms.Button();
+            this.physicalBtn = new System.Windows.Forms.Button();
+            this.mentalBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -445,12 +450,85 @@
             this.editButton.Visible = false;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
+            // saveBtn
+            // 
+            this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.saveBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Location = new System.Drawing.Point(463, 340);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(88, 28);
+            this.saveBtn.TabIndex = 25;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Visible = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cancelBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Location = new System.Drawing.Point(681, 340);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(87, 28);
+            this.cancelBtn.TabIndex = 26;
+            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Visible = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // magicBtn
+            // 
+            this.magicBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.magicBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.magicBtn.Location = new System.Drawing.Point(787, 216);
+            this.magicBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.magicBtn.Name = "magicBtn";
+            this.magicBtn.Size = new System.Drawing.Size(140, 28);
+            this.magicBtn.TabIndex = 27;
+            this.magicBtn.Text = "Magical Feats";
+            this.magicBtn.UseVisualStyleBackColor = false;
+            this.magicBtn.Visible = false;
+            this.magicBtn.Click += new System.EventHandler(this.magicBtn_Click);
+            // 
+            // physicalBtn
+            // 
+            this.physicalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.physicalBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.physicalBtn.Location = new System.Drawing.Point(787, 253);
+            this.physicalBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.physicalBtn.Name = "physicalBtn";
+            this.physicalBtn.Size = new System.Drawing.Size(140, 28);
+            this.physicalBtn.TabIndex = 28;
+            this.physicalBtn.Text = "Physical Abilities";
+            this.physicalBtn.UseVisualStyleBackColor = false;
+            this.physicalBtn.Visible = false;
+            this.physicalBtn.Click += new System.EventHandler(this.physicalBtn_Click);
+            // 
+            // mentalBtn
+            // 
+            this.mentalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mentalBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mentalBtn.Location = new System.Drawing.Point(787, 291);
+            this.mentalBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.mentalBtn.Name = "mentalBtn";
+            this.mentalBtn.Size = new System.Drawing.Size(140, 28);
+            this.mentalBtn.TabIndex = 29;
+            this.mentalBtn.Text = "Fields of Wisdom";
+            this.mentalBtn.UseVisualStyleBackColor = false;
+            this.mentalBtn.Visible = false;
+            this.mentalBtn.Click += new System.EventHandler(this.mentalBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(992, 567);
+            this.Controls.Add(this.mentalBtn);
+            this.Controls.Add(this.physicalBtn);
+            this.Controls.Add(this.magicBtn);
+            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -518,6 +596,11 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button magicBtn;
+        private System.Windows.Forms.Button physicalBtn;
+        private System.Windows.Forms.Button mentalBtn;
     }
 }
 

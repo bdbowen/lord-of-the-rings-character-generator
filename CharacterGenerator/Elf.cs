@@ -15,7 +15,7 @@ namespace CharacterGenerator
         public bool OwnsRingOfPower { get; set; }
 
         //Abilities
-        public List<Mental> ScholarlyUnderstandings { get; } = new List<Mental>();
+        public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();
         public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
         public List<Magical> MagicalFeats { get; } = new List<Magical>();
 
@@ -59,6 +59,7 @@ namespace CharacterGenerator
 
         public void GenerateRandomElf(int numberOfPhysical, int numberOfMental, int numberOfMagical, Random rand)
         {
+            RaceType = "Elf";
             int index;
             //set Elf
             Name = GenerateElfName(Gender, rand);
@@ -78,7 +79,7 @@ namespace CharacterGenerator
 
             for (int i = 0; i < numberOfMental; i++)
             {
-                ScholarlyUnderstandings.Add(new Mental(rand));
+                FieldsOfWisdom.Add(new Mental(rand));
             }
 
             for (int i = 0; i < numberOfMagical; i++)
@@ -96,7 +97,7 @@ namespace CharacterGenerator
             }
 
             string mentalString = "";
-            foreach (Mental ment in ScholarlyUnderstandings)
+            foreach (Mental ment in FieldsOfWisdom)
             {
                 mentalString += ment.ToString();
             }

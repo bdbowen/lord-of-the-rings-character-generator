@@ -38,6 +38,10 @@ namespace CharacterGenerator
                 checkBox1.Checked = temp.OwnsRingOfPower;
                 checkBox1.Visible = true;
                 checkBox2.Visible = false;
+
+                mentalBtn.Visible = true;
+                physicalBtn.Visible = true;
+                magicBtn.Visible = true;
             }
             else if (isDwarfRadio.Checked)
             {
@@ -54,6 +58,10 @@ namespace CharacterGenerator
                 isEvil.Location = new System.Drawing.Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
+
+                mentalBtn.Visible = false;
+                physicalBtn.Visible = true;
+                magicBtn.Visible = false;
             }
             else if (isWizardRadio.Checked)
             {
@@ -71,6 +79,10 @@ namespace CharacterGenerator
                 isEvil.Location = new System.Drawing.Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
+
+                mentalBtn.Visible = false;
+                physicalBtn.Visible = true;
+                magicBtn.Visible = true;
             }
             else if (isHumanRadio.Checked)
             {
@@ -88,6 +100,10 @@ namespace CharacterGenerator
 
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
+
+                mentalBtn.Visible = false;
+                physicalBtn.Visible = true;
+                magicBtn.Visible = false;
             }
             else if (isHobbitRadio.Checked)
             {
@@ -111,6 +127,10 @@ namespace CharacterGenerator
                 checkBox2.Text = "Adventurer";
                 checkBox2.Checked = temp.IsAdventurer;
                 checkBox2.Visible = true;
+
+                mentalBtn.Visible = false;
+                physicalBtn.Visible = true;
+                magicBtn.Visible = false;
             }
             else
             {
@@ -151,6 +171,8 @@ namespace CharacterGenerator
             viewHome.Visible = true;
             viewPosition.Visible = true;
             viewAdventures.Visible = true;
+
+            editButton.Visible = true;
         }
 
         private void viewHome_Click(object sender, EventArgs e)
@@ -191,6 +213,249 @@ namespace CharacterGenerator
             eyeTxtBx.ReadOnly = false;
             genderTxtBx.ReadOnly = false;
             complexionTxtBx.ReadOnly = false;
+            WoCTxtBx.ReadOnly = false;
+            Attr1TxtBx.ReadOnly = false;
+
+            saveBtn.Visible = true;
+            cancelBtn.Visible = true;
+            editButton.Visible = false;
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            //make all fields read only
+            NametxtBx.ReadOnly = true;
+            ageTxtBx.ReadOnly = true;
+            hairTxtBx.ReadOnly = true;
+            eyeTxtBx.ReadOnly = true;
+            genderTxtBx.ReadOnly = true;
+            complexionTxtBx.ReadOnly = true;
+            WoCTxtBx.ReadOnly = true;
+            Attr1TxtBx.ReadOnly = true;
+
+            NametxtBx.Text = person.Name;
+            ageTxtBx.Text = person.Age.ToString();
+            hairTxtBx.Text = person.HairColor;
+            eyeTxtBx.Text = person.EyeColor;
+            genderTxtBx.Text = person.Gender;
+            complexionTxtBx.Text = person.SkinComplexion;
+            WoCTxtBx.Text = person.WeaponOfChoice;
+            isEvil.Checked = person.Evil;
+            
+            if(person.RaceType == "Hobbit")
+            {
+                Hobbit temp = (Hobbit)person;
+                Attr1TxtBx.Text = temp.HomeType;
+                checkBox1.Checked = temp.OwnsOneRing;
+                checkBox2.Checked = temp.IsAdventurer;
+
+            }
+
+            if (person.RaceType == "Elf")
+            {
+                Elf temp = (Elf)person;
+                Attr1TxtBx.Text = temp.ElfType;
+                checkBox1.Checked = temp.OwnsRingOfPower;
+            }
+
+            if (person.RaceType == "Human")
+            {
+                Human temp = (Human)person;
+                Attr1TxtBx.Text = temp.AncestralLine;
+            }
+            if (person.RaceType == "Dwarf")
+            {
+                Dwarf temp = (Dwarf)person;
+                Attr1TxtBx.Text = temp.DwarfGroup;
+            }
+            if (person.RaceType == "Wizard")
+            {
+                Wizard temp = (Wizard)person;
+                Attr1TxtBx.Text = temp.MagicType;
+            }
+            //display buttons
+            saveBtn.Visible = false;
+            cancelBtn.Visible = false;
+            editButton.Visible = true;
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            int result;
+            //make all fields editable
+            NametxtBx.ReadOnly = true;
+            ageTxtBx.ReadOnly = true;
+            hairTxtBx.ReadOnly = true;
+            eyeTxtBx.ReadOnly = true;
+            genderTxtBx.ReadOnly = true;
+            complexionTxtBx.ReadOnly = true;
+            WoCTxtBx.ReadOnly = true;
+            Attr1TxtBx.ReadOnly = true;
+
+            person.Name = NametxtBx.Text;
+
+            if (int.TryParse(ageTxtBx.Text, out result))
+            {
+                person.Age = result;
+            } else
+            {
+                ageTxtBx.Text = person.Age.ToString();
+                MessageBox.Show("Age must be a number! The previous age will be used.", "Error!");
+            }
+            person.HairColor = hairTxtBx.Text;
+            person.EyeColor = eyeTxtBx.Text;
+            if (genderTxtBx.Text.ToLower() == "male" || genderTxtBx.Text.ToLower() == "female")
+            {
+                person.Gender = genderTxtBx.Text;
+            } else
+            {
+                genderTxtBx.Text = person.Gender;
+                MessageBox.Show("Gender must be a 'male' or 'female'! Tolkein's mythology only allows for two genders.", "Error!");
+            }
+            person.SkinComplexion = complexionTxtBx.Text;
+            person.WeaponOfChoice = WoCTxtBx.Text;
+            person.Evil = isEvil.Checked;
+
+            if (person.RaceType == "Hobbit")
+            {
+                Hobbit temp = (Hobbit)person;
+                temp.HomeType = Attr1TxtBx.Text;
+                temp.OwnsOneRing = checkBox1.Checked;
+                temp.IsAdventurer = checkBox2.Checked;
+
+            }
+
+            if (person.RaceType == "Elf")
+            {
+                Elf temp = (Elf)person;
+                temp.ElfType = Attr1TxtBx.Text;
+                temp.OwnsRingOfPower = checkBox1.Checked;
+            }
+
+            if (person.RaceType == "Human")
+            {
+                Human temp = (Human)person;
+                temp.AncestralLine = Attr1TxtBx.Text;
+            }
+            if (person.RaceType == "Dwarf")
+            {
+                Dwarf temp = (Dwarf)person;
+                temp.DwarfGroup = Attr1TxtBx.Text;
+            }
+            if (person.RaceType == "Wizard")
+            {
+                Wizard temp = (Wizard)person;
+                temp.MagicType = Attr1TxtBx.Text;
+            }
+            //display buttons
+            saveBtn.Visible = false;
+            cancelBtn.Visible = false;
+            editButton.Visible = true;
+        }
+
+        private void magicBtn_Click(object sender, EventArgs e)
+        {
+            string message = "No Magical Abilities!";
+            string caption = "Error";
+
+            if (person.RaceType == "Elf")
+            {
+                Elf temp = (Elf)person;
+                foreach (Magical ability in temp.MagicalFeats)
+                {
+                    message = ability.ToString() + "\n\n";
+                }
+                caption = temp.Name + "'s Magical Feats";
+                
+            }
+
+            if (person.RaceType == "Wizard")
+            {
+                Wizard temp = (Wizard)person;
+                foreach (Magical ability in temp.MagicalFeats)
+                {
+                    message = ability.ToString() + "\n";
+                }
+                caption = temp.Name + "'s Magical Feats";
+            }
+
+            MessageBox.Show(message, caption);
+        }
+
+        private void physicalBtn_Click(object sender, EventArgs e)
+        {
+            string message = "No Magical Abilities!";
+            string caption = "Error";
+
+            if (person.RaceType == "Elf")
+            {
+                Elf temp = (Elf)person;
+                foreach (Physical ability in temp.PhysicalAbilities)
+                {
+                    message = ability.ToString() + "\n\n";
+                }
+                caption = temp.Name + "'s Physical Abilities";
+
+            }
+            if (person.RaceType == "Hobbit")
+            {
+                Hobbit temp = (Hobbit)person;
+                foreach (Physical ability in temp.PhysicalAbilities)
+                {
+                    message = ability.ToString() + "\n\n";
+                }
+                caption = temp.Name + "'s Physical Abilities";
+
+            }
+
+            if (person.RaceType == "Human")
+            {
+                Human temp = (Human)person;
+                foreach (Physical ability in temp.PhysicalAbilities)
+                {
+                    message = ability.ToString() + "\n\n";
+                }
+                caption = temp.Name + "'s Physical Abilities";
+            }
+            if (person.RaceType == "Dwarf")
+            {
+                Dwarf temp = (Dwarf)person;
+                foreach (Physical ability in temp.PhysicalAbilities)
+                {
+                    message = ability.ToString() + "\n\n";
+                }
+                caption = temp.Name + "'s Physical Abilities";
+            }
+            if (person.RaceType == "Wizard")
+            {
+                Wizard temp = (Wizard)person;
+                foreach (Physical ability in temp.PhysicalAbilities)
+                {
+                    message = ability.ToString() + "\n\n";
+                }
+                caption = temp.Name + "'s Physical Abilities";
+            }
+
+            MessageBox.Show(message, caption);
+        }
+
+        private void mentalBtn_Click(object sender, EventArgs e)
+        {
+            string message = "No Magical Abilities!";
+            string caption = "Error";
+
+            if (person.RaceType == "Elf")
+            {
+                Elf temp = (Elf)person;
+                foreach (Mental ability in temp.FieldsOfWisdom)
+                {
+                    message = ability.ToString() + "\n\n";
+                }
+                caption = temp.Name + "'s Scholarly Understandings";
+
+            }
+
+            MessageBox.Show(message, caption);
         }
     }
 }

@@ -51,6 +51,7 @@ namespace CharacterGenerator
 
         public void GenerateRandomWizard(int numberOfPhysical, int numberOfMagic, Random rand)
         {
+            RaceType = "Wizard";
             int index;
             //set wizard color
             index = rand.Next(0, WizardColors.Length);

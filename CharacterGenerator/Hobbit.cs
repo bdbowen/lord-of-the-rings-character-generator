@@ -42,6 +42,7 @@ namespace CharacterGenerator
 
         public void GenerateRandomHobbit(int numberOfAbilities, Random rand)
         {
+            RaceType = "Hobbit";
             int index;
 
             //set Name

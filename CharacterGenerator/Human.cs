@@ -41,6 +41,7 @@ namespace CharacterGenerator
 
         public void GenerateRandomHuman(int numberOfAbilities, Random rand)
         {
+            RaceType = "Human";
             int index;
             //set name
             Name = GenerateHumanName(Gender, rand);
