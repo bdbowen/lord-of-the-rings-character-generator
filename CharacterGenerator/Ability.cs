@@ -10,23 +10,44 @@ namespace CharacterGenerator
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public int DifficultyLevel { get; set; }
+        private int difficultyLevel;
+        public int DifficultyLevel { 
+            get { return difficultyLevel; } 
+            set { 
+                if (value > 10 || value < 1) 
+                {
+                    throw new Exception("Difficulty Level must be between 1 and 10!");
+                }
+                difficultyLevel = value;
+            } 
+        }
         public bool Exhausting { get; set; }
+        //random data values
+        public static string[] RaceOptions = new string[] { "Elf", "Dwarf", "Hobbit", "Wizard", "Human" };
 
         public Ability()
         {
-            //generate random ability with random values for each attribute
+            Random rand = new Random();
+            GenerateRandomAbility(rand);
         }
 
-        public void GenerateRandomAbility()
+        public Ability(Random rand)
         {
-            //assigns random values to all of the class attributes
+            GenerateRandomAbility(rand);
+        }
+        public void GenerateRandomAbility(Random rand)
+        {
+            //Title and description are set in sub classes
+            DifficultyLevel = rand.Next(1, 11);
+
+            Exhausting = rand.Next(2) == 1;
         }
 
         public override string ToString()
         {
-            //return a string that makes more sense for the ability class
-            return base.ToString();
+            string classString = "Title: " + Title + "\nDescription: " + Description + "\nDifficulty Level: " + DifficultyLevel.ToString()
+                + "\nExhausting: " + Exhausting;
+            return classString;
         }
     }
 }

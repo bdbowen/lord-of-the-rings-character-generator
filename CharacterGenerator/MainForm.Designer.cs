@@ -58,6 +58,7 @@
             this.Attr1Lbl = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.editButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,7 +181,7 @@
             // ageTxtBx
             // 
             this.ageTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageTxtBx.Location = new System.Drawing.Point(463, 104);
+            this.ageTxtBx.Location = new System.Drawing.Point(463, 102);
             this.ageTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ageTxtBx.Name = "ageTxtBx";
             this.ageTxtBx.ReadOnly = true;
@@ -193,7 +194,7 @@
             this.ageLbl.AutoSize = true;
             this.ageLbl.BackColor = System.Drawing.Color.Transparent;
             this.ageLbl.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageLbl.Location = new System.Drawing.Point(419, 106);
+            this.ageLbl.Location = new System.Drawing.Point(419, 104);
             this.ageLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ageLbl.Name = "ageLbl";
             this.ageLbl.Size = new System.Drawing.Size(40, 22);
@@ -204,7 +205,7 @@
             // hairTxtBx
             // 
             this.hairTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hairTxtBx.Location = new System.Drawing.Point(604, 144);
+            this.hairTxtBx.Location = new System.Drawing.Point(604, 145);
             this.hairTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.hairTxtBx.Name = "hairTxtBx";
             this.hairTxtBx.ReadOnly = true;
@@ -217,7 +218,7 @@
             this.hairLbl.AutoSize = true;
             this.hairLbl.BackColor = System.Drawing.Color.Transparent;
             this.hairLbl.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hairLbl.Location = new System.Drawing.Point(554, 149);
+            this.hairLbl.Location = new System.Drawing.Point(554, 147);
             this.hairLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.hairLbl.Name = "hairLbl";
             this.hairLbl.Size = new System.Drawing.Size(46, 22);
@@ -228,7 +229,7 @@
             // eyeTxtBx
             // 
             this.eyeTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eyeTxtBx.Location = new System.Drawing.Point(604, 104);
+            this.eyeTxtBx.Location = new System.Drawing.Point(604, 102);
             this.eyeTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.eyeTxtBx.Name = "eyeTxtBx";
             this.eyeTxtBx.ReadOnly = true;
@@ -242,7 +243,7 @@
             this.eyeLbl.AutoSize = true;
             this.eyeLbl.BackColor = System.Drawing.Color.Transparent;
             this.eyeLbl.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eyeLbl.Location = new System.Drawing.Point(560, 106);
+            this.eyeLbl.Location = new System.Drawing.Point(560, 104);
             this.eyeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.eyeLbl.Name = "eyeLbl";
             this.eyeLbl.Size = new System.Drawing.Size(40, 22);
@@ -253,7 +254,7 @@
             // complexionTxtBx
             // 
             this.complexionTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complexionTxtBx.Location = new System.Drawing.Point(463, 195);
+            this.complexionTxtBx.Location = new System.Drawing.Point(463, 194);
             this.complexionTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.complexionTxtBx.Name = "complexionTxtBx";
             this.complexionTxtBx.ReadOnly = true;
@@ -266,7 +267,7 @@
             this.complexionLbl.AutoSize = true;
             this.complexionLbl.BackColor = System.Drawing.Color.Transparent;
             this.complexionLbl.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complexionLbl.Location = new System.Drawing.Point(321, 197);
+            this.complexionLbl.Location = new System.Drawing.Point(321, 196);
             this.complexionLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.complexionLbl.Name = "complexionLbl";
             this.complexionLbl.Size = new System.Drawing.Size(141, 22);
@@ -278,7 +279,7 @@
             // 
             this.viewHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewHome.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewHome.Location = new System.Drawing.Point(787, 71);
+            this.viewHome.Location = new System.Drawing.Point(787, 60);
             this.viewHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewHome.Name = "viewHome";
             this.viewHome.Size = new System.Drawing.Size(140, 28);
@@ -292,7 +293,7 @@
             // 
             this.viewPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewPosition.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewPosition.Location = new System.Drawing.Point(787, 143);
+            this.viewPosition.Location = new System.Drawing.Point(787, 101);
             this.viewPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewPosition.Name = "viewPosition";
             this.viewPosition.Size = new System.Drawing.Size(140, 28);
@@ -305,7 +306,7 @@
             // genderTxtBx
             // 
             this.genderTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderTxtBx.Location = new System.Drawing.Point(463, 149);
+            this.genderTxtBx.Location = new System.Drawing.Point(463, 145);
             this.genderTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.genderTxtBx.Name = "genderTxtBx";
             this.genderTxtBx.ReadOnly = true;
@@ -318,7 +319,7 @@
             this.genderLbl.AutoSize = true;
             this.genderLbl.BackColor = System.Drawing.Color.Transparent;
             this.genderLbl.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLbl.Location = new System.Drawing.Point(397, 149);
+            this.genderLbl.Location = new System.Drawing.Point(397, 145);
             this.genderLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.genderLbl.Name = "genderLbl";
             this.genderLbl.Size = new System.Drawing.Size(65, 22);
@@ -330,7 +331,7 @@
             // 
             this.viewAdventures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewAdventures.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewAdventures.Location = new System.Drawing.Point(787, 208);
+            this.viewAdventures.Location = new System.Drawing.Point(787, 144);
             this.viewAdventures.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.viewAdventures.Name = "viewAdventures";
             this.viewAdventures.Size = new System.Drawing.Size(140, 28);
@@ -357,7 +358,7 @@
             // WoCTxtBx
             // 
             this.WoCTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WoCTxtBx.Location = new System.Drawing.Point(463, 245);
+            this.WoCTxtBx.Location = new System.Drawing.Point(463, 243);
             this.WoCTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WoCTxtBx.Name = "WoCTxtBx";
             this.WoCTxtBx.ReadOnly = true;
@@ -370,7 +371,7 @@
             this.WoCLbl.AutoSize = true;
             this.WoCLbl.BackColor = System.Drawing.Color.Transparent;
             this.WoCLbl.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WoCLbl.Location = new System.Drawing.Point(310, 247);
+            this.WoCLbl.Location = new System.Drawing.Point(310, 245);
             this.WoCLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.WoCLbl.Name = "WoCLbl";
             this.WoCLbl.Size = new System.Drawing.Size(149, 22);
@@ -382,7 +383,7 @@
             // 
             this.Attr1TxtBx.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Attr1TxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Attr1TxtBx.Location = new System.Drawing.Point(463, 295);
+            this.Attr1TxtBx.Location = new System.Drawing.Point(463, 289);
             this.Attr1TxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Attr1TxtBx.Name = "Attr1TxtBx";
             this.Attr1TxtBx.ReadOnly = true;
@@ -395,7 +396,7 @@
             this.Attr1Lbl.AutoSize = true;
             this.Attr1Lbl.BackColor = System.Drawing.Color.Transparent;
             this.Attr1Lbl.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Attr1Lbl.Location = new System.Drawing.Point(340, 297);
+            this.Attr1Lbl.Location = new System.Drawing.Point(340, 291);
             this.Attr1Lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Attr1Lbl.Name = "Attr1Lbl";
             this.Attr1Lbl.Size = new System.Drawing.Size(122, 22);
@@ -431,12 +432,26 @@
             this.checkBox2.UseVisualStyleBackColor = false;
             this.checkBox2.Visible = false;
             // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.editButton.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.Location = new System.Drawing.Point(628, 340);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(140, 28);
+            this.editButton.TabIndex = 24;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Visible = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(992, 567);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Attr1TxtBx);
@@ -502,6 +517,7 @@
         private System.Windows.Forms.Label Attr1Lbl;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button editButton;
     }
 }
 

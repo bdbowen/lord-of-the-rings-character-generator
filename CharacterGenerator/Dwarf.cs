@@ -34,7 +34,7 @@ namespace CharacterGenerator
             GenerateRandomDwarf(numberOfAbilities, new Random());
         }
 
-        public Dwarf(Random rand)
+        public Dwarf(Random rand) : base(rand)
         {
             GenerateRandomDwarf(rand.Next(5), rand);
         }
@@ -54,7 +54,7 @@ namespace CharacterGenerator
             //set abilities
             for (int i = 0; i < numberOfAbilities; i++)
             {
-                PhysicalAbilities.Add(new Physical());
+                PhysicalAbilities.Add(new Physical(rand));
             }
 
         }

@@ -39,7 +39,7 @@ namespace CharacterGenerator
             GenerateRandomElf(physical, mental, magical, rand);
         }
 
-        public Elf(Random rand)
+        public Elf(Random rand) : base(rand)
         {
             int physical = rand.Next(5);
             int mental = rand.Next(5);
@@ -73,17 +73,17 @@ namespace CharacterGenerator
             //set abilities
             for (int i = 0; i < numberOfPhysical; i++)
             {
-                PhysicalAbilities.Add(new Physical());
+                PhysicalAbilities.Add(new Physical(rand));
             }
 
             for (int i = 0; i < numberOfMental; i++)
             {
-                ScholarlyUnderstandings.Add(new Mental());
+                ScholarlyUnderstandings.Add(new Mental(rand));
             }
 
             for (int i = 0; i < numberOfMagical; i++)
             {
-                MagicalFeats.Add(new Magical());
+                MagicalFeats.Add(new Magical(rand));
             }
         }
 

@@ -31,7 +31,7 @@ namespace CharacterGenerator
             GenerateRandomWizard(physical, magical, rand);
         }
 
-        public Wizard(Random rand)
+        public Wizard(Random rand) : base(rand)
         {
             int physical = rand.Next(5);
             int magical = rand.Next(5);
@@ -66,12 +66,12 @@ namespace CharacterGenerator
             //set abilities
             for (int i = 0; i < numberOfPhysical; i++)
             {
-                PhysicalAbilities.Add(new Physical());
+                PhysicalAbilities.Add(new Physical(rand));
             }
 
             for (int i = 0; i < numberOfMagic; i++)
             {
-                MagicalFeats.Add(new Magical());
+                MagicalFeats.Add(new Magical(rand));
             }
         }
 

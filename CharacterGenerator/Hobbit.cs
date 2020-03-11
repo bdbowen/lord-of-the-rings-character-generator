@@ -30,7 +30,7 @@ namespace CharacterGenerator
             GenerateRandomHobbit(rand.Next(5), rand);
         }
 
-        public Hobbit(Random rand)
+        public Hobbit(Random rand) : base(rand)
         {
             GenerateRandomHobbit(rand.Next(5), rand);
         }
@@ -61,7 +61,7 @@ namespace CharacterGenerator
             //set abilities
             for (int i = 0; i < numberOfAbilities; i++)
             {
-                PhysicalAbilities.Add(new Physical());
+                PhysicalAbilities.Add(new Physical(rand));
             }
         }
 

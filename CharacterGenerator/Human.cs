@@ -30,7 +30,7 @@ namespace CharacterGenerator
             GenerateRandomHuman(rand.Next(5), rand);
         }
 
-        public Human(Random rand)
+        public Human(Random rand) : base(rand)
         {
             GenerateRandomHuman(rand.Next(5), rand);
         }
@@ -55,7 +55,7 @@ namespace CharacterGenerator
             //set abilities
             for (int i = 0; i < numberOfAbilities; i++)
             {
-                PhysicalAbilities.Add(new Physical());
+                PhysicalAbilities.Add(new Physical(rand));
             }
         }
 

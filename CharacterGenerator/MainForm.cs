@@ -181,5 +181,16 @@ namespace CharacterGenerator
         {
 
         }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            //make all fields editable
+            NametxtBx.ReadOnly = false;
+            ageTxtBx.ReadOnly = false;
+            hairTxtBx.ReadOnly = false;
+            eyeTxtBx.ReadOnly = false;
+            genderTxtBx.ReadOnly = false;
+            complexionTxtBx.ReadOnly = false;
+        }
     }
 }
