@@ -27,12 +27,12 @@ namespace CharacterGenerator
         public Hobbit()
         {
             Random rand = new Random();
-            GenerateRandomHobbit(rand.Next(5), rand);
+            GenerateRandomHobbit(rand.Next(1, 5), rand);
         }
 
         public Hobbit(Random rand) : base(rand)
         {
-            GenerateRandomHobbit(rand.Next(5), rand);
+            GenerateRandomHobbit(rand.Next(1, 5), rand);
         }
 
         public Hobbit(int numberOfAbilities)

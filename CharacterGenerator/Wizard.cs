@@ -27,18 +27,18 @@ namespace CharacterGenerator
         public Wizard()
         {
             Random rand = new Random();
-            int physical = rand.Next(5);
-            int magical = rand.Next(5);
-            int mental = rand.Next(5);
+            int physical = rand.Next(1, 5);
+            int magical = rand.Next(1, 5);
+            int mental = rand.Next(1, 5);
 
             GenerateRandomWizard(physical, magical, mental, rand);
         }
 
         public Wizard(Random rand) : base(rand)
         {
-            int physical = rand.Next(5);
-            int magical = rand.Next(5);
-            int mental = rand.Next(5);
+            int physical = rand.Next(1, 5);
+            int magical = rand.Next(1, 5);
+            int mental = rand.Next(1, 5);
 
             GenerateRandomWizard(physical, magical, mental, rand);
         }
@@ -81,7 +81,7 @@ namespace CharacterGenerator
             }
             for (int i = 0; i < numberOfMental; i++)
             {
-                MagicalFeats.Add(new Mental(rand));
+                FieldsOfWisdom.Add(new Mental(rand));
             }
         }
 

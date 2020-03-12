@@ -28,12 +28,12 @@ namespace CharacterGenerator
         {
             Random rand = new Random();
 
-            GenerateRandomHuman(rand.Next(5), rand.Next(5), rand);
+            GenerateRandomHuman(rand.Next(1, 5), rand.Next(1, 5), rand);
         }
 
         public Human(Random rand) : base(rand)
         {
-            GenerateRandomHuman(rand.Next(5), rand.Next(5), rand);
+            GenerateRandomHuman(rand.Next(1,5), rand.Next(1,5), rand);
         }
         public Human(int numberOfAbilities)
         {

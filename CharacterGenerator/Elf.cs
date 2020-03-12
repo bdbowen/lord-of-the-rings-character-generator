@@ -32,18 +32,18 @@ namespace CharacterGenerator
         public Elf()
         {
             Random rand = new Random();
-            int physical = rand.Next(5);
-            int mental = rand.Next(5);
-            int magical = rand.Next(5);
+            int physical = rand.Next(1, 5);
+            int mental = rand.Next(1, 5);
+            int magical = rand.Next(1, 5);
 
             GenerateRandomElf(physical, mental, magical, rand);
         }
 
         public Elf(Random rand) : base(rand)
         {
-            int physical = rand.Next(5);
-            int mental = rand.Next(5);
-            int magical = rand.Next(5);
+            int physical = rand.Next(1, 5);
+            int mental = rand.Next(1, 5);
+            int magical = rand.Next(1, 5);
 
             GenerateRandomElf(physical, mental, magical, rand);
         }

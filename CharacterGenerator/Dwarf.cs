@@ -27,7 +27,7 @@ namespace CharacterGenerator
         public Dwarf()
         {
             Random rand = new Random();
-            GenerateRandomDwarf(rand.Next(5), rand.Next(5), rand);
+            GenerateRandomDwarf(rand.Next(1, 5), rand.Next(1, 5), rand);
         }
 
         public Dwarf(int numberOfAbilities)
@@ -41,7 +41,7 @@ namespace CharacterGenerator
         }
         public Dwarf(Random rand) : base(rand)
         {
-            GenerateRandomDwarf(rand.Next(5), rand.Next(5), rand);
+            GenerateRandomDwarf(rand.Next(1, 5), rand.Next(1, 5), rand);
         }
 
         public void GenerateRandomDwarf(int numberOfPhysical, int numberOfMental, Random rand)

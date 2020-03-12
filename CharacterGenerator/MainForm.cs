@@ -59,7 +59,7 @@ namespace CharacterGenerator
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
 
-                mentalBtn.Visible = false;
+                mentalBtn.Visible = true;
                 physicalBtn.Visible = true;
                 magicBtn.Visible = false;
             }
@@ -80,7 +80,7 @@ namespace CharacterGenerator
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
 
-                mentalBtn.Visible = false;
+                mentalBtn.Visible = true;
                 physicalBtn.Visible = true;
                 magicBtn.Visible = true;
             }
@@ -101,7 +101,7 @@ namespace CharacterGenerator
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
 
-                mentalBtn.Visible = false;
+                mentalBtn.Visible = true;
                 physicalBtn.Visible = true;
                 magicBtn.Visible = false;
             }
@@ -361,9 +361,10 @@ namespace CharacterGenerator
             if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
+                message = "";
                 foreach (Magical ability in temp.MagicalFeats)
                 {
-                    message = ability.ToString() + "\n\n";
+                    message += ability.ToString() + "\n\n";
                 }
                 caption = temp.Name + "'s Magical Feats";
                 
@@ -372,9 +373,10 @@ namespace CharacterGenerator
             if (person.RaceType == "Wizard")
             {
                 Wizard temp = (Wizard)person;
+                message = "";
                 foreach (Magical ability in temp.MagicalFeats)
                 {
-                    message = ability.ToString() + "\n";
+                    message += ability.ToString() + "\n";
                 }
                 caption = temp.Name + "'s Magical Feats";
             }
@@ -390,9 +392,10 @@ namespace CharacterGenerator
             if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
+                message = "";
                 foreach (Physical ability in temp.PhysicalAbilities)
                 {
-                    message = ability.ToString() + "\n\n";
+                    message += ability.ToString() + "\n\n";
                 }
                 caption = temp.Name + "'s Physical Abilities";
 
@@ -400,9 +403,10 @@ namespace CharacterGenerator
             if (person.RaceType == "Hobbit")
             {
                 Hobbit temp = (Hobbit)person;
+                message = "";
                 foreach (Physical ability in temp.PhysicalAbilities)
                 {
-                    message = ability.ToString() + "\n\n";
+                    message += ability.ToString() + "\n\n";
                 }
                 caption = temp.Name + "'s Physical Abilities";
 
@@ -411,27 +415,30 @@ namespace CharacterGenerator
             if (person.RaceType == "Human")
             {
                 Human temp = (Human)person;
+                message = "";
                 foreach (Physical ability in temp.PhysicalAbilities)
                 {
-                    message = ability.ToString() + "\n\n";
+                    message += ability.ToString() + "\n\n";
                 }
                 caption = temp.Name + "'s Physical Abilities";
             }
             if (person.RaceType == "Dwarf")
             {
                 Dwarf temp = (Dwarf)person;
+                message = "";
                 foreach (Physical ability in temp.PhysicalAbilities)
                 {
-                    message = ability.ToString() + "\n\n";
+                    message += ability.ToString() + "\n\n";
                 }
                 caption = temp.Name + "'s Physical Abilities";
             }
             if (person.RaceType == "Wizard")
             {
                 Wizard temp = (Wizard)person;
+                message = "";
                 foreach (Physical ability in temp.PhysicalAbilities)
                 {
-                    message = ability.ToString() + "\n\n";
+                    message += ability.ToString() + "\n\n";
                 }
                 caption = temp.Name + "'s Physical Abilities";
             }
@@ -441,18 +448,48 @@ namespace CharacterGenerator
 
         private void mentalBtn_Click(object sender, EventArgs e)
         {
-            string message = "No Magical Abilities!";
-            string caption = "Error";
+            string message = "No Mental Abilities!";
+            string caption = person.Name + "'s Fields of Wisdom";
 
             if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
+                message = "";
                 foreach (Mental ability in temp.FieldsOfWisdom)
                 {
-                    message = ability.ToString() + "\n\n";
+                    message += ability.ToString() + "\n\n";
                 }
-                caption = temp.Name + "'s Scholarly Understandings";
 
+            }
+            if (person.RaceType == "Human")
+            {
+                Human temp = (Human)person;
+                message = "";
+                foreach (Mental ability in temp.FieldsOfWisdom)
+                {
+                    message += ability.ToString() + "\n\n";
+                }
+
+            }
+            if (person.RaceType == "Dwarf")
+            {
+                Dwarf temp = (Dwarf)person;
+                message = "";
+                foreach (Mental ability in temp.FieldsOfWisdom)
+                {
+                    message += ability.ToString() + "\n\n";
+                }
+
+            }
+            if (person.RaceType == "Wizard")
+            {
+                Wizard temp = (Wizard)person;
+                message = "";
+                foreach (Mental ability in temp.FieldsOfWisdom)
+                {
+                    message += ability.ToString() + "\n\n";
+                }
+            
             }
 
             MessageBox.Show(message, caption);
