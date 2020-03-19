@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterGenerator
 {
-    class Location
+    public class Location
     {
         public string Title { get; set; }
         private string inhabitantsPrimaryRace;
@@ -43,6 +43,17 @@ namespace CharacterGenerator
             {"The Misty Mountains and Surroundings", new string[] {"Rivendell", "The Mines of Moria", "Lothlorien"} },
             {"Rhun", new string[] {"The Iron Hills" } },
             {"Belarian", new string[] {"Angband", "Gondolin", "Angmar" } }
+        };
+        public static Dictionary<string, string> BackgroundImageLocationByRegion = new Dictionary<string, string>()
+        {
+            {"Shire", "eriador.jpg" },
+            { "Gondor", "gondor.jpg" },
+            {"Rohan", "rohan.jpg" },
+            {"Mordor", "mordor.jpg" },
+            {"Rhovanion", "rhovanion.jpg" },
+            {"The Misty Mountains and Surroundings", "mistymountains.jpg" },
+            {"Rhun", "rhun.jpg" },
+            {"Belarian", "background.jpg" }
         };
         public static Dictionary<string, string> RaceByLocation = new Dictionary<string, string>
         {

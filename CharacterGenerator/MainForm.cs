@@ -7,16 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CharacterGenerator.Domain;
 
 namespace CharacterGenerator
 {
     public partial class MainForm : Form
     {
         private Person person;
+        private int number;
         public MainForm()
         {
             InitializeComponent();
+            Random rand = new Random();
+            number = rand.Next(1, 5);
+            //set background image
+            string path = Application.StartupPath + "\\..\\..\\..\\Media\\" + "backgroundOpt" + number.ToString() + ".jpg";
+            BackgroundImage = Image.FromFile(path);
+            Size = BackgroundImage.Size;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -179,15 +185,14 @@ namespace CharacterGenerator
         private void viewHome_Click(object sender, EventArgs e)
         {
             string caption = person.Name + "'s Hometown";
-            MessageBox.Show(person.HomeTown.ToString(), caption);
+            LocationViewForm myForm = new LocationViewForm(person.HomeTown, caption, number);
+            myForm.ShowDialog();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Location
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LocationViewForm());
+            string caption = person.Name + "'s Position";
+            MessageBox.Show(person.Position.ToString(), caption);
         }
 
         private void viewAdventures_Click(object sender, EventArgs e)

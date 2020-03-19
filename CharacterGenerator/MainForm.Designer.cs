@@ -77,9 +77,9 @@
             this.groupBox1.Controls.Add(this.isElfRadio);
             this.groupBox1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(76, 34);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(150, 139);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -150,7 +150,7 @@
             this.generateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.generateBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generateBtn.Location = new System.Drawing.Point(96, 193);
-            this.generateBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.generateBtn.Margin = new System.Windows.Forms.Padding(2);
             this.generateBtn.Name = "generateBtn";
             this.generateBtn.Size = new System.Drawing.Size(130, 28);
             this.generateBtn.TabIndex = 1;
@@ -176,7 +176,7 @@
             this.NametxtBx.BackColor = System.Drawing.Color.WhiteSmoke;
             this.NametxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NametxtBx.Location = new System.Drawing.Point(463, 60);
-            this.NametxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NametxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.NametxtBx.Name = "NametxtBx";
             this.NametxtBx.ReadOnly = true;
             this.NametxtBx.Size = new System.Drawing.Size(305, 29);
@@ -187,7 +187,7 @@
             // 
             this.ageTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageTxtBx.Location = new System.Drawing.Point(463, 102);
-            this.ageTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ageTxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.ageTxtBx.Name = "ageTxtBx";
             this.ageTxtBx.ReadOnly = true;
             this.ageTxtBx.Size = new System.Drawing.Size(65, 29);
@@ -211,7 +211,7 @@
             // 
             this.hairTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hairTxtBx.Location = new System.Drawing.Point(604, 145);
-            this.hairTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hairTxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.hairTxtBx.Name = "hairTxtBx";
             this.hairTxtBx.ReadOnly = true;
             this.hairTxtBx.Size = new System.Drawing.Size(164, 29);
@@ -235,7 +235,7 @@
             // 
             this.eyeTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eyeTxtBx.Location = new System.Drawing.Point(604, 102);
-            this.eyeTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eyeTxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.eyeTxtBx.Name = "eyeTxtBx";
             this.eyeTxtBx.ReadOnly = true;
             this.eyeTxtBx.Size = new System.Drawing.Size(164, 29);
@@ -260,7 +260,7 @@
             // 
             this.complexionTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.complexionTxtBx.Location = new System.Drawing.Point(463, 194);
-            this.complexionTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.complexionTxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.complexionTxtBx.Name = "complexionTxtBx";
             this.complexionTxtBx.ReadOnly = true;
             this.complexionTxtBx.Size = new System.Drawing.Size(137, 29);
@@ -285,7 +285,7 @@
             this.viewHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewHome.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewHome.Location = new System.Drawing.Point(813, 60);
-            this.viewHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewHome.Margin = new System.Windows.Forms.Padding(2);
             this.viewHome.Name = "viewHome";
             this.viewHome.Size = new System.Drawing.Size(140, 28);
             this.viewHome.TabIndex = 12;
@@ -299,7 +299,7 @@
             this.viewPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewPosition.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewPosition.Location = new System.Drawing.Point(813, 101);
-            this.viewPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewPosition.Margin = new System.Windows.Forms.Padding(2);
             this.viewPosition.Name = "viewPosition";
             this.viewPosition.Size = new System.Drawing.Size(140, 28);
             this.viewPosition.TabIndex = 13;
@@ -312,7 +312,7 @@
             // 
             this.genderTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genderTxtBx.Location = new System.Drawing.Point(463, 145);
-            this.genderTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genderTxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.genderTxtBx.Name = "genderTxtBx";
             this.genderTxtBx.ReadOnly = true;
             this.genderTxtBx.Size = new System.Drawing.Size(65, 29);
@@ -337,7 +337,7 @@
             this.viewAdventures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewAdventures.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewAdventures.Location = new System.Drawing.Point(813, 144);
-            this.viewAdventures.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewAdventures.Margin = new System.Windows.Forms.Padding(2);
             this.viewAdventures.Name = "viewAdventures";
             this.viewAdventures.Size = new System.Drawing.Size(140, 28);
             this.viewAdventures.TabIndex = 16;
@@ -352,7 +352,7 @@
             this.isEvil.BackColor = System.Drawing.Color.Transparent;
             this.isEvil.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isEvil.Location = new System.Drawing.Point(625, 184);
-            this.isEvil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.isEvil.Margin = new System.Windows.Forms.Padding(2);
             this.isEvil.Name = "isEvil";
             this.isEvil.Size = new System.Drawing.Size(63, 26);
             this.isEvil.TabIndex = 17;
@@ -364,7 +364,7 @@
             // 
             this.WoCTxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WoCTxtBx.Location = new System.Drawing.Point(463, 243);
-            this.WoCTxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WoCTxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.WoCTxtBx.Name = "WoCTxtBx";
             this.WoCTxtBx.ReadOnly = true;
             this.WoCTxtBx.Size = new System.Drawing.Size(137, 29);
@@ -389,7 +389,7 @@
             this.Attr1TxtBx.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Attr1TxtBx.Font = new System.Drawing.Font("MV Boli", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Attr1TxtBx.Location = new System.Drawing.Point(463, 289);
-            this.Attr1TxtBx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Attr1TxtBx.Margin = new System.Windows.Forms.Padding(2);
             this.Attr1TxtBx.Name = "Attr1TxtBx";
             this.Attr1TxtBx.ReadOnly = true;
             this.Attr1TxtBx.Size = new System.Drawing.Size(305, 29);
@@ -554,7 +554,8 @@
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.generateBtn);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Fantasy Character Generator";
             this.groupBox1.ResumeLayout(false);
