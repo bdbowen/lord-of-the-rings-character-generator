@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CharacterGenerator.Domain;
 
 namespace CharacterGenerator
 {
@@ -183,8 +184,10 @@ namespace CharacterGenerator
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string caption = person.Name + "'s Position";
-            MessageBox.Show(person.Position.ToString(), caption);
+            Location
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LocationViewForm());
         }
 
         private void viewAdventures_Click(object sender, EventArgs e)
