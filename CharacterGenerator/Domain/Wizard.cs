@@ -65,6 +65,7 @@ namespace CharacterGenerator
             //set Name
             Name = GenerateWizardName(Gender, rand, WizardColor);
 
+
             //Generate Magic Type
             index = rand.Next(0, MagicTypeOptions.Length);
             MagicType = MagicTypeOptions[index];
@@ -82,6 +83,12 @@ namespace CharacterGenerator
             for (int i = 0; i < numberOfMental; i++)
             {
                 FieldsOfWisdom.Add(new Mental(rand));
+            }
+            
+            //add this wizard as first companion to each adventure
+            foreach (Adventure adventure in Adventures)
+            {
+                adventure.CompanionNames.Insert(0, Name);
             }
         }
 

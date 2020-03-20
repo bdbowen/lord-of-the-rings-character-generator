@@ -18,11 +18,11 @@ namespace CharacterGenerator
         public Adventure()
         {
             Random rand = new Random();
-            GenerateRandomAdventure(rand.Next(0, 20), rand);
+            GenerateRandomAdventure(rand.Next(1, 20), rand);
         }
         public Adventure(Random rand)
         {
-            GenerateRandomAdventure(rand.Next(0, 20), rand);
+            GenerateRandomAdventure(rand.Next(1, 20), rand);
         }
 
         public Adventure(int numberOfCompanions)
@@ -38,7 +38,7 @@ namespace CharacterGenerator
 
             //set WhereTo
             WhereTo = new Location(rand);
-
+            
             for (int i = 0; i < numberOfCompanions; i++)
             {
                 int randomNum = rand.Next(1, 5);
@@ -85,14 +85,32 @@ namespace CharacterGenerator
                     }
                     CompanionNames.Add(name);
                 }
-
+                
             }
-
+            
             //set Successful
             Successful = rand.Next(2) == 1;
 
             //set fatal - fatal cannot be true if successful is true because a successful adventure cannot be fatal, but a unsuccessful mission could be fatal, but doesn't have to be
             Fatal = Successful ? false : rand.Next(2) == 1;
+            if (Fatal)
+            {
+                bool leaderDead = rand.Next(2) == 1;
+                char deathDagger = (char)8224;
+                LeaderName = leaderDead ? LeaderName + deathDagger : LeaderName;
+                int numDeadCompanions = leaderDead ? rand.Next(CompanionNames.Count()) : rand.Next(0, CompanionNames.Count());
+                List<int> usedIndexes = new List<int>();
+                for (int i = 0; i < numDeadCompanions; i ++)
+                {
+                    int index;
+                    do
+                    {
+                        index = rand.Next(CompanionNames.Count());
+                    } while (usedIndexes.Contains(index));
+                    usedIndexes.Add(index);
+                    CompanionNames[index] = CompanionNames[index] + deathDagger;
+                }
+            }
         }
         public override string ToString()
         {

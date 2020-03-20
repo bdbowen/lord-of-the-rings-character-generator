@@ -53,6 +53,9 @@ namespace CharacterGenerator
             //reset age
             Age = rand.Next(1, MAXAGE);
 
+            //set Position
+            Position = new Role(Gender, Age);
+
             //set ancestral line
             index = rand.Next(0, AncestralLineOptions.Length);
             AncestralLine = AncestralLineOptions[index];
@@ -65,6 +68,12 @@ namespace CharacterGenerator
             for (int i = 0; i < numberOfMental; i++)
             {
                 FieldsOfWisdom.Add(new Mental(rand));
+            }
+
+            //add this human as first companion to each adventure
+            foreach (Adventure adventure in Adventures)
+            {
+                adventure.CompanionNames.Insert(0, Name);
             }
         }
 

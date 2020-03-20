@@ -365,27 +365,18 @@ namespace CharacterGenerator
             if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
-                message = "";
-                foreach (Magical ability in temp.MagicalFeats)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
                 caption = temp.Name + "'s Magical Feats";
-                
+                AbilityViewForm myForm = new AbilityViewForm(temp.MagicalFeats, caption, number);
+                myForm.ShowDialog();
             }
 
             if (person.RaceType == "Wizard")
             {
                 Wizard temp = (Wizard)person;
-                message = "";
-                foreach (Magical ability in temp.MagicalFeats)
-                {
-                    message += ability.ToString() + "\n";
-                }
                 caption = temp.Name + "'s Magical Feats";
+                AbilityViewForm myForm = new AbilityViewForm(temp.MagicalFeats, caption, number);
+                myForm.ShowDialog();
             }
-
-            MessageBox.Show(message, caption);
         }
 
         private void physicalBtn_Click(object sender, EventArgs e)
@@ -396,58 +387,43 @@ namespace CharacterGenerator
             if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
-                message = "";
-                foreach (Physical ability in temp.PhysicalAbilities)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
+               
                 caption = temp.Name + "'s Physical Abilities";
+                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
+                myForm.ShowDialog();
 
             }
             if (person.RaceType == "Hobbit")
             {
                 Hobbit temp = (Hobbit)person;
-                message = "";
-                foreach (Physical ability in temp.PhysicalAbilities)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
                 caption = temp.Name + "'s Physical Abilities";
+                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
+                myForm.ShowDialog();
 
             }
 
             if (person.RaceType == "Human")
             {
                 Human temp = (Human)person;
-                message = "";
-                foreach (Physical ability in temp.PhysicalAbilities)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
+
                 caption = temp.Name + "'s Physical Abilities";
+                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
+                myForm.ShowDialog();
             }
             if (person.RaceType == "Dwarf")
             {
                 Dwarf temp = (Dwarf)person;
-                message = "";
-                foreach (Physical ability in temp.PhysicalAbilities)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
                 caption = temp.Name + "'s Physical Abilities";
+                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
+                myForm.ShowDialog();
             }
             if (person.RaceType == "Wizard")
             {
                 Wizard temp = (Wizard)person;
-                message = "";
-                foreach (Physical ability in temp.PhysicalAbilities)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
                 caption = temp.Name + "'s Physical Abilities";
+                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
+                myForm.ShowDialog();
             }
-
-            MessageBox.Show(message, caption);
         }
 
         private void mentalBtn_Click(object sender, EventArgs e)
@@ -458,45 +434,31 @@ namespace CharacterGenerator
             if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
-                message = "";
-                foreach (Mental ability in temp.FieldsOfWisdom)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
+                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
+                myForm.ShowDialog();
 
             }
             if (person.RaceType == "Human")
             {
                 Human temp = (Human)person;
-                message = "";
-                foreach (Mental ability in temp.FieldsOfWisdom)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
+                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
+                myForm.ShowDialog();
 
             }
             if (person.RaceType == "Dwarf")
             {
                 Dwarf temp = (Dwarf)person;
-                message = "";
-                foreach (Mental ability in temp.FieldsOfWisdom)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
+                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
+                myForm.ShowDialog();
 
             }
             if (person.RaceType == "Wizard")
             {
                 Wizard temp = (Wizard)person;
-                message = "";
-                foreach (Mental ability in temp.FieldsOfWisdom)
-                {
-                    message += ability.ToString() + "\n\n";
-                }
-            
-            }
+                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
+                myForm.ShowDialog();
 
-            MessageBox.Show(message, caption);
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterGenerator
 {
-    class Physical : Ability
+    public class Physical : Ability
     {
         public string ToolRequired { get; set; }
         public string RaceOfOrigin { get; set; }

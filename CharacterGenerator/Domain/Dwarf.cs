@@ -54,6 +54,9 @@ namespace CharacterGenerator
             //reset age
             Age = rand.Next(1, MAXAGE);
 
+            //reset position
+            Position = new Role(Gender, Age);
+
             //set DwarfFamily
             index = rand.Next(0, DwarfGroupOptions.Length);
             DwarfGroup = DwarfGroupOptions[index];
@@ -67,6 +70,11 @@ namespace CharacterGenerator
                 FieldsOfWisdom.Add(new Mental(rand));
             }
 
+            //add this dwarf as first companion to each adventure
+            foreach (Adventure adventure in Adventures)
+            {
+                adventure.CompanionNames.Insert(0, Name);
+            }
         }
         public override string ToString()
         {

@@ -29,14 +29,13 @@ namespace CharacterGenerator
             CurrentAdventure = AdventureOptions[0];
             adventureIndex = 0;
             leaderTxtBx.Text = CurrentAdventure.LeaderName;
-            destinationTxtBx.Text = CurrentAdventure.WhereTo.Title;
 
             this.number = number;
             companionTxtBx.Lines = CurrentAdventure.CompanionNames.ToArray();
             successful.Checked = CurrentAdventure.Successful;
             fatal.Checked = CurrentAdventure.Fatal;
-            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString();
-            Name = caption;
+            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.WhereTo.Title;
+            Text = caption;
             //set background image
             string path = Application.StartupPath + "\\..\\..\\..\\Media\\" + "advBackgroundOpt" + number.ToString() + ".jpg";
             BackgroundImage = Image.FromFile(path);
@@ -59,8 +58,7 @@ namespace CharacterGenerator
             companionTxtBx.Lines = CurrentAdventure.CompanionNames.ToArray();
             successful.Checked = CurrentAdventure.Successful;
             fatal.Checked = CurrentAdventure.Fatal;
-            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString();
-            destinationTxtBx.Text = CurrentAdventure.WhereTo.Title;
+            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.WhereTo.Title;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -72,8 +70,7 @@ namespace CharacterGenerator
             companionTxtBx.Lines = CurrentAdventure.CompanionNames.ToArray();
             successful.Checked = CurrentAdventure.Successful;
             fatal.Checked = CurrentAdventure.Fatal;
-            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString();
-            destinationTxtBx.Text = CurrentAdventure.WhereTo.Title;
+            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.WhereTo.Title;
         }
     }
 }

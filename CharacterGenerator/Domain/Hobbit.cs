@@ -51,6 +51,9 @@ namespace CharacterGenerator
             //reset age
             Age = rand.Next(1, MAXAGE);
 
+            //reset position
+            Position = new Role(Gender, Age);
+
             //set Home type
             index = rand.Next(0, HomeTypeOptions.Length);
             HomeType = HomeTypeOptions[index];
@@ -63,6 +66,12 @@ namespace CharacterGenerator
             for (int i = 0; i < numberOfAbilities; i++)
             {
                 PhysicalAbilities.Add(new Physical(rand));
+            }
+
+            //add this hobbit as first companion to each adventure
+            foreach (Adventure adventure in Adventures)
+            {
+                adventure.CompanionNames.Insert(0, Name);
             }
         }
 

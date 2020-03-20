@@ -10,3 +10,4 @@ C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programm
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.LocationViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.PositionViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.AdventuresViewForm.resources
+C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.AbilityViewForm.resources

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterGenerator
 {
-    class Magical : Ability
+    public class Magical : Ability
     {
         public string MagicType { get; set; }
         public Location ArchiveLocation { get; set; }

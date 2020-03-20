@@ -86,6 +86,12 @@ namespace CharacterGenerator
             {
                 MagicalFeats.Add(new Magical(rand));
             }
+
+            //add this elf as first companion to each adventure
+            foreach (Adventure adventure in Adventures)
+            {
+                adventure.CompanionNames.Insert(0, Name);
+            }
         }
 
         public override string ToString()

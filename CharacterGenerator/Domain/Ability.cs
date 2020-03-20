@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterGenerator
 {
-    class Ability
+    public class Ability
     {
         public string Title { get; set; }
         public string Description { get; set; }

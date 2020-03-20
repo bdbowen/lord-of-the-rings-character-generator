@@ -54,12 +54,12 @@ namespace CharacterGenerator
         public Person()
         {
             Random rand = new Random();
-            GenerateRandomPerson(rand.Next(1, 5), rand);
+            GenerateRandomPerson(rand.Next(1, 11), rand);
         }
 
         public Person(Random rand)
         {
-            GenerateRandomPerson(rand.Next(1, 5), rand);
+            GenerateRandomPerson(rand.Next(1, 11), rand);
         }
         public Person(int numberOfAdventures)
         {
@@ -96,15 +96,13 @@ namespace CharacterGenerator
 
             //Adventures
 
-            int randIndex = rand.Next();
             int incrementValue = rand.Next();
             for (int i = 0; i < numberOfAdventures; i++)
             {
-                Random rand2 = new Random(randIndex);
-
-                Adventures.Add(new Adventure(rand2));
-                randIndex += incrementValue;
+                Adventure adventure = new Adventure(rand);
+                Adventures.Add(adventure);
             }
+
 
             //Weapon of Choice
             index = rand.Next(0, WeaponOfChoiceOptions.Length);

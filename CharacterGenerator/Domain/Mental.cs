@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterGenerator
 {
-    class Mental : Ability
+    public class Mental : Ability
     {
         public string RaceOfOrigin { get; set; }
         public string Subject { get; set; }
@@ -57,6 +57,8 @@ namespace CharacterGenerator
             index = rand.Next(0, titleOptions.Length);
             Title = titleOptions[index];
             Description = DescriptionOptions[Title];
+            index = rand.Next(0, RaceOptions.Length);
+            RaceOfOrigin = RaceOptions[index];
 
             //set School Location
             SchoolLocation = new Location(rand);
