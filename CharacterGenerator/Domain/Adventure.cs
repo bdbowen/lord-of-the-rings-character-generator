@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterGenerator
 {
-    class Adventure
+    public class Adventure
     {
         public string LeaderName { get; set; }
         public Location WhereTo { get; set; }

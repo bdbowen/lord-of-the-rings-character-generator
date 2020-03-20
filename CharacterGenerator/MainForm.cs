@@ -192,19 +192,15 @@ namespace CharacterGenerator
         private void button1_Click_1(object sender, EventArgs e)
         {
             string caption = person.Name + "'s Position";
-            MessageBox.Show(person.Position.ToString(), caption);
+            PositionViewForm myForm = new PositionViewForm(person.Position, caption, number);
+            myForm.ShowDialog();
         }
 
         private void viewAdventures_Click(object sender, EventArgs e)
         {
-            string adventures = "";
-            foreach (Adventure adven in person.Adventures)
-            {
-                adventures += adven + "\n\n";
-            }
             string caption = person.Name + "'s Adventures";
-
-            MessageBox.Show(adventures, caption);
+            AdventuresViewForm myForm = new AdventuresViewForm(person.Adventures, caption, number);
+            myForm.ShowDialog();
         }
 
         private void eyeTxtBx_TextChanged(object sender, EventArgs e)

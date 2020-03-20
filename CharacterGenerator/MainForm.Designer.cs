@@ -215,7 +215,7 @@
             this.hairTxtBx.Name = "hairTxtBx";
             this.hairTxtBx.ReadOnly = true;
             this.hairTxtBx.Size = new System.Drawing.Size(164, 29);
-            this.hairTxtBx.TabIndex = 7;
+            this.hairTxtBx.TabIndex = 11;
             this.hairTxtBx.Visible = false;
             // 
             // hairLbl
@@ -227,7 +227,7 @@
             this.hairLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.hairLbl.Name = "hairLbl";
             this.hairLbl.Size = new System.Drawing.Size(46, 22);
-            this.hairLbl.TabIndex = 6;
+            this.hairLbl.TabIndex = 10;
             this.hairLbl.Text = "Hair";
             this.hairLbl.Visible = false;
             // 
@@ -239,7 +239,7 @@
             this.eyeTxtBx.Name = "eyeTxtBx";
             this.eyeTxtBx.ReadOnly = true;
             this.eyeTxtBx.Size = new System.Drawing.Size(164, 29);
-            this.eyeTxtBx.TabIndex = 9;
+            this.eyeTxtBx.TabIndex = 7;
             this.eyeTxtBx.Visible = false;
             this.eyeTxtBx.TextChanged += new System.EventHandler(this.eyeTxtBx_TextChanged);
             // 
@@ -252,7 +252,7 @@
             this.eyeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.eyeLbl.Name = "eyeLbl";
             this.eyeLbl.Size = new System.Drawing.Size(40, 22);
-            this.eyeLbl.TabIndex = 8;
+            this.eyeLbl.TabIndex = 6;
             this.eyeLbl.Text = "Eye";
             this.eyeLbl.Visible = false;
             // 
@@ -264,7 +264,7 @@
             this.complexionTxtBx.Name = "complexionTxtBx";
             this.complexionTxtBx.ReadOnly = true;
             this.complexionTxtBx.Size = new System.Drawing.Size(137, 29);
-            this.complexionTxtBx.TabIndex = 11;
+            this.complexionTxtBx.TabIndex = 13;
             this.complexionTxtBx.Visible = false;
             // 
             // complexionLbl
@@ -276,7 +276,7 @@
             this.complexionLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.complexionLbl.Name = "complexionLbl";
             this.complexionLbl.Size = new System.Drawing.Size(141, 22);
-            this.complexionLbl.TabIndex = 10;
+            this.complexionLbl.TabIndex = 12;
             this.complexionLbl.Text = "Skin Complexion";
             this.complexionLbl.Visible = false;
             // 
@@ -288,7 +288,7 @@
             this.viewHome.Margin = new System.Windows.Forms.Padding(2);
             this.viewHome.Name = "viewHome";
             this.viewHome.Size = new System.Drawing.Size(140, 28);
-            this.viewHome.TabIndex = 12;
+            this.viewHome.TabIndex = 24;
             this.viewHome.Text = "View Hometown";
             this.viewHome.UseVisualStyleBackColor = false;
             this.viewHome.Visible = false;
@@ -302,7 +302,7 @@
             this.viewPosition.Margin = new System.Windows.Forms.Padding(2);
             this.viewPosition.Name = "viewPosition";
             this.viewPosition.Size = new System.Drawing.Size(140, 28);
-            this.viewPosition.TabIndex = 13;
+            this.viewPosition.TabIndex = 25;
             this.viewPosition.Text = "View Position";
             this.viewPosition.UseVisualStyleBackColor = false;
             this.viewPosition.Visible = false;
@@ -316,7 +316,7 @@
             this.genderTxtBx.Name = "genderTxtBx";
             this.genderTxtBx.ReadOnly = true;
             this.genderTxtBx.Size = new System.Drawing.Size(65, 29);
-            this.genderTxtBx.TabIndex = 15;
+            this.genderTxtBx.TabIndex = 9;
             this.genderTxtBx.Visible = false;
             // 
             // genderLbl
@@ -328,7 +328,7 @@
             this.genderLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.genderLbl.Name = "genderLbl";
             this.genderLbl.Size = new System.Drawing.Size(65, 22);
-            this.genderLbl.TabIndex = 14;
+            this.genderLbl.TabIndex = 148;
             this.genderLbl.Text = "Gender";
             this.genderLbl.Visible = false;
             // 
@@ -340,7 +340,7 @@
             this.viewAdventures.Margin = new System.Windows.Forms.Padding(2);
             this.viewAdventures.Name = "viewAdventures";
             this.viewAdventures.Size = new System.Drawing.Size(140, 28);
-            this.viewAdventures.TabIndex = 16;
+            this.viewAdventures.TabIndex = 26;
             this.viewAdventures.Text = "View Adventures";
             this.viewAdventures.UseVisualStyleBackColor = false;
             this.viewAdventures.Visible = false;
@@ -355,7 +355,7 @@
             this.isEvil.Margin = new System.Windows.Forms.Padding(2);
             this.isEvil.Name = "isEvil";
             this.isEvil.Size = new System.Drawing.Size(63, 26);
-            this.isEvil.TabIndex = 17;
+            this.isEvil.TabIndex = 14;
             this.isEvil.Text = "Evil";
             this.isEvil.UseVisualStyleBackColor = false;
             this.isEvil.Visible = false;
@@ -368,7 +368,7 @@
             this.WoCTxtBx.Name = "WoCTxtBx";
             this.WoCTxtBx.ReadOnly = true;
             this.WoCTxtBx.Size = new System.Drawing.Size(137, 29);
-            this.WoCTxtBx.TabIndex = 19;
+            this.WoCTxtBx.TabIndex = 16;
             this.WoCTxtBx.Visible = false;
             // 
             // WoCLbl
@@ -380,7 +380,7 @@
             this.WoCLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.WoCLbl.Name = "WoCLbl";
             this.WoCLbl.Size = new System.Drawing.Size(149, 22);
-            this.WoCLbl.TabIndex = 18;
+            this.WoCLbl.TabIndex = 15;
             this.WoCLbl.Text = "Weapon of Choice";
             this.WoCLbl.Visible = false;
             // 
@@ -393,7 +393,7 @@
             this.Attr1TxtBx.Name = "Attr1TxtBx";
             this.Attr1TxtBx.ReadOnly = true;
             this.Attr1TxtBx.Size = new System.Drawing.Size(305, 29);
-            this.Attr1TxtBx.TabIndex = 21;
+            this.Attr1TxtBx.TabIndex = 20;
             this.Attr1TxtBx.Visible = false;
             // 
             // Attr1Lbl
@@ -405,7 +405,7 @@
             this.Attr1Lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Attr1Lbl.Name = "Attr1Lbl";
             this.Attr1Lbl.Size = new System.Drawing.Size(122, 22);
-            this.Attr1Lbl.TabIndex = 20;
+            this.Attr1Lbl.TabIndex = 19;
             this.Attr1Lbl.Text = "SubClassAttr1";
             this.Attr1Lbl.Visible = false;
             // 
@@ -418,7 +418,7 @@
             this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(173, 26);
-            this.checkBox1.TabIndex = 22;
+            this.checkBox1.TabIndex = 17;
             this.checkBox1.Text = "Elven Ring Bearer";
             this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.Visible = false;
@@ -432,7 +432,7 @@
             this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(143, 26);
-            this.checkBox2.TabIndex = 23;
+            this.checkBox2.TabIndex = 18;
             this.checkBox2.Text = "SubClassBool2";
             this.checkBox2.UseVisualStyleBackColor = false;
             this.checkBox2.Visible = false;
@@ -444,7 +444,7 @@
             this.editButton.Location = new System.Drawing.Point(628, 340);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(140, 28);
-            this.editButton.TabIndex = 24;
+            this.editButton.TabIndex = 23;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Visible = false;
@@ -457,7 +457,7 @@
             this.saveBtn.Location = new System.Drawing.Point(463, 340);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(88, 28);
-            this.saveBtn.TabIndex = 25;
+            this.saveBtn.TabIndex = 21;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Visible = false;
@@ -470,7 +470,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(681, 340);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(87, 28);
-            this.cancelBtn.TabIndex = 26;
+            this.cancelBtn.TabIndex = 22;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Visible = false;

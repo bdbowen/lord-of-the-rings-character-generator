@@ -19,6 +19,7 @@ namespace CharacterGenerator
         public LocationViewForm(Location myLocation, string caption, int number)
         {
             InitializeComponent();
+            label1.Focus();
             TitleTxtBx.Text = myLocation.Title;
             raceTxtBx.Text = myLocation.InhabitantsPrimaryRace;
             quadrantTxtBx.Text = myLocation.RelativeMapPosition.ToString();

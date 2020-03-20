@@ -47,7 +47,7 @@
             this.TitleTxtBx.Name = "TitleTxtBx";
             this.TitleTxtBx.ReadOnly = true;
             this.TitleTxtBx.Size = new System.Drawing.Size(234, 32);
-            this.TitleTxtBx.TabIndex = 0;
+            this.TitleTxtBx.TabIndex = 1;
             // 
             // label1
             // 
@@ -57,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(186, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 22);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Title";
             // 
             // label2
@@ -79,7 +79,7 @@
             this.label3.Location = new System.Drawing.Point(4, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(230, 22);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Primary Race of Inhabitants";
             // 
             // label4
@@ -90,7 +90,7 @@
             this.label4.Location = new System.Drawing.Point(66, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(168, 22);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 6;
             this.label4.Text = "Quadrant of the map";
             // 
             // freeCheck
@@ -101,7 +101,7 @@
             this.freeCheck.Location = new System.Drawing.Point(365, 149);
             this.freeCheck.Name = "freeCheck";
             this.freeCheck.Size = new System.Drawing.Size(109, 26);
-            this.freeCheck.TabIndex = 5;
+            this.freeCheck.TabIndex = 0;
             this.freeCheck.Text = "Free Land";
             this.freeCheck.UseVisualStyleBackColor = false;
             this.freeCheck.CheckedChanged += new System.EventHandler(this.freeCheck_CheckedChanged);
@@ -113,7 +113,7 @@
             this.regionTxtBx.Name = "regionTxtBx";
             this.regionTxtBx.ReadOnly = true;
             this.regionTxtBx.Size = new System.Drawing.Size(234, 32);
-            this.regionTxtBx.TabIndex = 6;
+            this.regionTxtBx.TabIndex = 3;
             // 
             // raceTxtBx
             // 
@@ -122,7 +122,7 @@
             this.raceTxtBx.Name = "raceTxtBx";
             this.raceTxtBx.ReadOnly = true;
             this.raceTxtBx.Size = new System.Drawing.Size(234, 32);
-            this.raceTxtBx.TabIndex = 7;
+            this.raceTxtBx.TabIndex = 5;
             // 
             // quadrantTxtBx
             // 
@@ -131,7 +131,7 @@
             this.quadrantTxtBx.Name = "quadrantTxtBx";
             this.quadrantTxtBx.ReadOnly = true;
             this.quadrantTxtBx.Size = new System.Drawing.Size(41, 32);
-            this.quadrantTxtBx.TabIndex = 8;
+            this.quadrantTxtBx.TabIndex = 7;
             // 
             // LocationViewForm
             // 
