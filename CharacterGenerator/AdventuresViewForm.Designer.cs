@@ -46,19 +46,21 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 66);
+            this.label1.Location = new System.Drawing.Point(75, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 22);
+            this.label1.Size = new System.Drawing.Size(76, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Leader";
             // 
             // leaderTxtBx
             // 
             this.leaderTxtBx.Font = new System.Drawing.Font("MV Boli", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leaderTxtBx.Location = new System.Drawing.Point(125, 66);
+            this.leaderTxtBx.Location = new System.Drawing.Point(167, 81);
+            this.leaderTxtBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.leaderTxtBx.Name = "leaderTxtBx";
             this.leaderTxtBx.ReadOnly = true;
-            this.leaderTxtBx.Size = new System.Drawing.Size(245, 32);
+            this.leaderTxtBx.Size = new System.Drawing.Size(325, 38);
             this.leaderTxtBx.TabIndex = 1;
             // 
             // label2
@@ -66,43 +68,49 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 106);
+            this.label2.Location = new System.Drawing.Point(21, 130);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 22);
+            this.label2.Size = new System.Drawing.Size(126, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Companions";
             // 
             // companionTxtBx
             // 
             this.companionTxtBx.Font = new System.Drawing.Font("MV Boli", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companionTxtBx.Location = new System.Drawing.Point(125, 104);
+            this.companionTxtBx.Location = new System.Drawing.Point(167, 128);
+            this.companionTxtBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.companionTxtBx.Multiline = true;
             this.companionTxtBx.Name = "companionTxtBx";
             this.companionTxtBx.ReadOnly = true;
             this.companionTxtBx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.companionTxtBx.Size = new System.Drawing.Size(245, 122);
+            this.companionTxtBx.Size = new System.Drawing.Size(325, 149);
             this.companionTxtBx.TabIndex = 5;
             // 
             // successful
             // 
+            this.successful.AutoCheck = false;
             this.successful.AutoSize = true;
             this.successful.BackColor = System.Drawing.Color.Transparent;
             this.successful.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.successful.Location = new System.Drawing.Point(125, 232);
+            this.successful.Location = new System.Drawing.Point(167, 286);
+            this.successful.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.successful.Name = "successful";
-            this.successful.Size = new System.Drawing.Size(195, 26);
+            this.successful.Size = new System.Drawing.Size(236, 32);
             this.successful.TabIndex = 0;
             this.successful.Text = "Adventure Successful";
             this.successful.UseVisualStyleBackColor = false;
             // 
             // fatal
             // 
+            this.fatal.AutoCheck = false;
             this.fatal.AutoSize = true;
             this.fatal.BackColor = System.Drawing.Color.Transparent;
             this.fatal.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fatal.Location = new System.Drawing.Point(125, 264);
+            this.fatal.Location = new System.Drawing.Point(167, 325);
+            this.fatal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fatal.Name = "fatal";
-            this.fatal.Size = new System.Drawing.Size(72, 26);
+            this.fatal.Size = new System.Drawing.Size(87, 32);
             this.fatal.TabIndex = 7;
             this.fatal.Text = "Fatal";
             this.fatal.UseVisualStyleBackColor = false;
@@ -111,9 +119,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(426, 79);
+            this.button1.Location = new System.Drawing.Point(568, 97);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 31);
+            this.button1.Size = new System.Drawing.Size(275, 38);
             this.button1.TabIndex = 8;
             this.button1.Text = "Destination Details";
             this.button1.UseVisualStyleBackColor = false;
@@ -125,8 +134,9 @@
             this.titleLbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titleLbl.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLbl.Location = new System.Drawing.Point(0, 0);
+            this.titleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(685, 360);
+            this.titleLbl.Size = new System.Drawing.Size(913, 443);
             this.titleLbl.TabIndex = 7;
             this.titleLbl.Text = "Adventure X";
             this.titleLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -135,9 +145,10 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(426, 116);
+            this.button2.Location = new System.Drawing.Point(568, 143);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 31);
+            this.button2.Size = new System.Drawing.Size(275, 38);
             this.button2.TabIndex = 9;
             this.button2.Text = "Previous Adventure";
             this.button2.UseVisualStyleBackColor = false;
@@ -147,9 +158,10 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(426, 153);
+            this.button3.Location = new System.Drawing.Point(568, 188);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(206, 30);
+            this.button3.Size = new System.Drawing.Size(275, 37);
             this.button3.TabIndex = 10;
             this.button3.Text = "Next Adventure";
             this.button3.UseVisualStyleBackColor = false;
@@ -157,9 +169,9 @@
             // 
             // AdventuresViewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 360);
+            this.ClientSize = new System.Drawing.Size(913, 443);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -171,6 +183,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.titleLbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdventuresViewForm";
             this.Text = "AdventuresViewForm";
             this.ResumeLayout(false);

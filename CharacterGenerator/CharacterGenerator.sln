@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterGenerator", "CharacterGenerator.csproj", "{597FA201-F9CC-47A0-8D12-9DD8C3C50150}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI Presentation", "GUI Presentation.csproj", "{597FA201-F9CC-47A0-8D12-9DD8C3C50150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "..\Business\Business.csproj", "{5711BD67-5FBB-4700-AFB1-C66892EA4FB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "..\Data\Data.csproj", "{9E048934-D221-4FB9-B0E9-CFC46D8FDF5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{597FA201-F9CC-47A0-8D12-9DD8C3C50150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{597FA201-F9CC-47A0-8D12-9DD8C3C50150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{597FA201-F9CC-47A0-8D12-9DD8C3C50150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5711BD67-5FBB-4700-AFB1-C66892EA4FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5711BD67-5FBB-4700-AFB1-C66892EA4FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5711BD67-5FBB-4700-AFB1-C66892EA4FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5711BD67-5FBB-4700-AFB1-C66892EA4FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E048934-D221-4FB9-B0E9-CFC46D8FDF5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E048934-D221-4FB9-B0E9-CFC46D8FDF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E048934-D221-4FB9-B0E9-CFC46D8FDF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E048934-D221-4FB9-B0E9-CFC46D8FDF5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

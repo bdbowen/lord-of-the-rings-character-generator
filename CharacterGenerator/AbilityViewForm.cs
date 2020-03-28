@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Data.Domain;
 
 namespace CharacterGenerator
 {
     public partial class AbilityViewForm : Form
     {
         private string abilityType;
+        private Ability[] abilities;
+        private Ability CurrentAbility;
         private Mental[] mentals;
         private Mental CurrentMental;
         private Physical[] physicals;
@@ -49,13 +52,13 @@ namespace CharacterGenerator
             subAttr1Lbl.Location = new Point(100, 136);
 
             //fill in information
-            headingLbl.Text = "Field of Wisdom " + (AbilityIndex + 1).ToString() + ": " + CurrentMental.Title;
-            titleTxtBx.Text = CurrentMental.Title;
-            diffLvlTxtBx.Text = CurrentMental.DifficultyLevel.ToString();
+            headingLbl.Text = "Field of Wisdom " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+            titleTxtBx.Text = CurrentAbility.Title;
+            diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
             subAttr1TxtBx.Text = CurrentMental.Subject;
             subAttr2TxtBx.Text = CurrentMental.RaceOfOrigin;
-            descTxtBx.Text = CurrentMental.Description;
-            exhaustingCheck.Checked = CurrentMental.Exhausting;
+            descTxtBx.Text = CurrentAbility.Description;
+            exhaustingCheck.Checked = CurrentAbility.Exhausting;
             subBool1Check.Checked = CurrentMental.RequiresSubjectMastery;
 
             //set background image
@@ -87,12 +90,12 @@ namespace CharacterGenerator
             subAttr1Lbl.Location = new Point(67, 136);
 
             //fill in information
-            headingLbl.Text = "Magical Feat " + (AbilityIndex + 1).ToString() + ": " + CurrentSpell.Title;
-            titleTxtBx.Text = CurrentSpell.Title;
-            diffLvlTxtBx.Text = CurrentSpell.DifficultyLevel.ToString();
+            headingLbl.Text = "Magical Feat " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+            titleTxtBx.Text = CurrentAbility.Title;
+            diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
             subAttr1TxtBx.Text = CurrentSpell.MagicType;
-            descTxtBx.Text = CurrentSpell.Description;
-            exhaustingCheck.Checked = CurrentSpell.Exhausting;
+            descTxtBx.Text = CurrentAbility.Description;
+            exhaustingCheck.Checked = CurrentAbility.Exhausting;
             subBool1Check.Checked = CurrentSpell.LightMagic;
 
             //set background image
@@ -124,13 +127,13 @@ namespace CharacterGenerator
             subAttr2Lbl.Location = new Point(241, 98);
 
             //fill in information
-            headingLbl.Text = "Physical Ability " + (AbilityIndex + 1).ToString() + ": " + CurrentPhysical.Title;
-            titleTxtBx.Text = CurrentPhysical.Title;
-            diffLvlTxtBx.Text = CurrentPhysical.DifficultyLevel.ToString();
+            headingLbl.Text = "Physical Ability " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+            titleTxtBx.Text = CurrentAbility.Title;
+            diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
             subAttr1TxtBx.Text = CurrentPhysical.ToolRequired;
             subAttr2TxtBx.Text = CurrentPhysical.RaceOfOrigin;
-            descTxtBx.Text = CurrentPhysical.Description;
-            exhaustingCheck.Checked = CurrentPhysical.Exhausting;
+            descTxtBx.Text = CurrentAbility.Description;
+            exhaustingCheck.Checked = CurrentAbility.Exhausting;
             subBool1Check.Checked = CurrentPhysical.RequiresWeaponMastery;
             subBool2Check.Checked = CurrentPhysical.Fighting;
             subBool3Check.Checked = CurrentPhysical.Lethal;
@@ -145,20 +148,20 @@ namespace CharacterGenerator
         {
             if (abilityType == "mental")
             {
-                string caption = CurrentMental.Title + "'s School Location";
-                LocationViewForm myForm = new LocationViewForm(CurrentMental.SchoolLocation, caption, number);
+                string caption = CurrentAbility.Title + "'s School Location";
+                LocationViewForm myForm = new LocationViewForm(CurrentMental.Location, caption, number);
                 myForm.ShowDialog();
             }
             else if (abilityType == "physical")
             {
-                string caption = CurrentPhysical.Title + "'s Training Location";
-                LocationViewForm myForm = new LocationViewForm(CurrentPhysical.TrainingLocation, caption, number);
+                string caption = CurrentAbility.Title + "'s Training Location";
+                LocationViewForm myForm = new LocationViewForm(CurrentPhysical.Location, caption, number);
                 myForm.ShowDialog();
             }
             else if (abilityType == "magical")
             {
-                string caption = CurrentSpell.Title + "'s Archive Location";
-                LocationViewForm myForm = new LocationViewForm(CurrentSpell.ArchiveLocation, caption, number);
+                string caption = CurrentAbility.Title + "'s Archive Location";
+                LocationViewForm myForm = new LocationViewForm(CurrentSpell.Location, caption, number);
                 myForm.ShowDialog();
             }
             else
@@ -174,13 +177,13 @@ namespace CharacterGenerator
                 AbilityIndex = (AbilityIndex + mentals.Length - 1) % mentals.Length;
                 CurrentMental = mentals[AbilityIndex];
                 
-                headingLbl.Text = "Field of Wisdom " + (AbilityIndex + 1).ToString() + ": " + CurrentMental.Title;
-                titleTxtBx.Text = CurrentMental.Title;
-                diffLvlTxtBx.Text = CurrentMental.DifficultyLevel.ToString();
+                headingLbl.Text = "Field of Wisdom " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+                titleTxtBx.Text = CurrentAbility.Title;
+                diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
                 subAttr1TxtBx.Text = CurrentMental.Subject;
                 subAttr2TxtBx.Text = CurrentMental.RaceOfOrigin;
-                descTxtBx.Text = CurrentMental.Description;
-                exhaustingCheck.Checked = CurrentMental.Exhausting;
+                descTxtBx.Text = CurrentAbility.Description;
+                exhaustingCheck.Checked = CurrentAbility.Exhausting;
                 subBool1Check.Checked = CurrentMental.RequiresSubjectMastery;
             }
             if (abilityType == "magical")
@@ -188,12 +191,12 @@ namespace CharacterGenerator
                 AbilityIndex = (AbilityIndex + spells.Length - 1) % spells.Length;
                 CurrentSpell = spells[AbilityIndex];
 
-                headingLbl.Text = "Magical Feat " + (AbilityIndex + 1).ToString() + ": " + CurrentSpell.Title;
-                titleTxtBx.Text = CurrentSpell.Title;
-                diffLvlTxtBx.Text = CurrentSpell.DifficultyLevel.ToString();
+                headingLbl.Text = "Magical Feat " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+                titleTxtBx.Text = CurrentAbility.Title;
+                diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
                 subAttr1TxtBx.Text = CurrentSpell.MagicType;
-                descTxtBx.Text = CurrentSpell.Description;
-                exhaustingCheck.Checked = CurrentSpell.Exhausting;
+                descTxtBx.Text = CurrentAbility.Description;
+                exhaustingCheck.Checked = CurrentAbility.Exhausting;
                 subBool1Check.Checked = CurrentSpell.LightMagic;
             }
             if (abilityType == "physical")
@@ -201,13 +204,13 @@ namespace CharacterGenerator
                 AbilityIndex = (AbilityIndex + physicals.Length - 1) % physicals.Length;
                 CurrentPhysical = physicals[AbilityIndex];
 
-                headingLbl.Text = "Physical Ability " + (AbilityIndex + 1).ToString() + ": " + CurrentPhysical.Title;
-                titleTxtBx.Text = CurrentPhysical.Title;
-                diffLvlTxtBx.Text = CurrentPhysical.DifficultyLevel.ToString();
+                headingLbl.Text = "Physical Ability " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+                titleTxtBx.Text = CurrentAbility.Title;
+                diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
                 subAttr1TxtBx.Text = CurrentPhysical.ToolRequired;
                 subAttr2TxtBx.Text = CurrentPhysical.RaceOfOrigin;
-                descTxtBx.Text = CurrentPhysical.Description;
-                exhaustingCheck.Checked = CurrentPhysical.Exhausting;
+                descTxtBx.Text = CurrentAbility.Description;
+                exhaustingCheck.Checked = CurrentAbility.Exhausting;
                 subBool1Check.Checked = CurrentPhysical.RequiresWeaponMastery;
                 subBool2Check.Checked = CurrentPhysical.Fighting;
                 subBool3Check.Checked = CurrentPhysical.Lethal;
@@ -221,13 +224,13 @@ namespace CharacterGenerator
                 AbilityIndex = (AbilityIndex + 1) % mentals.Length;
                 CurrentMental = mentals[AbilityIndex];
 
-                headingLbl.Text = "Field of Wisdom " + (AbilityIndex + 1).ToString() + ": " + CurrentMental.Title;
-                titleTxtBx.Text = CurrentMental.Title;
-                diffLvlTxtBx.Text = CurrentMental.DifficultyLevel.ToString();
+                headingLbl.Text = "Field of Wisdom " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+                titleTxtBx.Text = CurrentAbility.Title;
+                diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
                 subAttr1TxtBx.Text = CurrentMental.Subject;
                 subAttr2TxtBx.Text = CurrentMental.RaceOfOrigin;
-                descTxtBx.Text = CurrentMental.Description;
-                exhaustingCheck.Checked = CurrentMental.Exhausting;
+                descTxtBx.Text = CurrentAbility.Description;
+                exhaustingCheck.Checked = CurrentAbility.Exhausting;
                 subBool1Check.Checked = CurrentMental.RequiresSubjectMastery;
             }
             if (abilityType == "magical")
@@ -235,12 +238,12 @@ namespace CharacterGenerator
                 AbilityIndex = (AbilityIndex + 1) % spells.Length;
                 CurrentSpell = spells[AbilityIndex];
 
-                headingLbl.Text = "Magical Feat " + (AbilityIndex + 1).ToString() + ": " + CurrentSpell.Title;
-                titleTxtBx.Text = CurrentSpell.Title;
-                diffLvlTxtBx.Text = CurrentSpell.DifficultyLevel.ToString();
+                headingLbl.Text = "Magical Feat " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+                titleTxtBx.Text = CurrentAbility.Title;
+                diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
                 subAttr1TxtBx.Text = CurrentSpell.MagicType;
-                descTxtBx.Text = CurrentSpell.Description;
-                exhaustingCheck.Checked = CurrentSpell.Exhausting;
+                descTxtBx.Text = CurrentAbility.Description;
+                exhaustingCheck.Checked = CurrentAbility.Exhausting;
                 subBool1Check.Checked = CurrentSpell.LightMagic;
             }
             if (abilityType == "physical")
@@ -248,13 +251,13 @@ namespace CharacterGenerator
                 AbilityIndex = (AbilityIndex + 1) % physicals.Length;
                 CurrentPhysical = physicals[AbilityIndex];
 
-                headingLbl.Text = "Physical Ability " + (AbilityIndex + 1).ToString() + ": " + CurrentPhysical.Title;
-                titleTxtBx.Text = CurrentPhysical.Title;
-                diffLvlTxtBx.Text = CurrentPhysical.DifficultyLevel.ToString();
+                headingLbl.Text = "Physical Ability " + (AbilityIndex + 1).ToString() + ": " + CurrentAbility.Title;
+                titleTxtBx.Text = CurrentAbility.Title;
+                diffLvlTxtBx.Text = CurrentAbility.DifficultyLevel.ToString();
                 subAttr1TxtBx.Text = CurrentPhysical.ToolRequired;
                 subAttr2TxtBx.Text = CurrentPhysical.RaceOfOrigin;
-                descTxtBx.Text = CurrentPhysical.Description;
-                exhaustingCheck.Checked = CurrentPhysical.Exhausting;
+                descTxtBx.Text = CurrentAbility.Description;
+                exhaustingCheck.Checked = CurrentAbility.Exhausting;
                 subBool1Check.Checked = CurrentPhysical.RequiresWeaponMastery;
                 subBool2Check.Checked = CurrentPhysical.Fighting;
                 subBool3Check.Checked = CurrentPhysical.Lethal;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Data.Domain;
 
 namespace CharacterGenerator
 {
@@ -31,10 +32,10 @@ namespace CharacterGenerator
             leaderTxtBx.Text = CurrentAdventure.LeaderName;
 
             this.number = number;
-            companionTxtBx.Lines = CurrentAdventure.CompanionNames.ToArray();
+            companionTxtBx.Lines = CurrentAdventure.CompanionNames.Split(',');
             successful.Checked = CurrentAdventure.Successful;
             fatal.Checked = CurrentAdventure.Fatal;
-            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.WhereTo.Title;
+            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.Location.Title;
             Text = caption;
             //set background image
             string path = Application.StartupPath + "\\..\\..\\..\\Media\\" + "advBackgroundOpt" + number.ToString() + ".jpg";
@@ -45,7 +46,7 @@ namespace CharacterGenerator
         private void button1_Click(object sender, EventArgs e)
         {
             string caption = titleLbl.Text + " Destination";
-            LocationViewForm myForm = new LocationViewForm(CurrentAdventure.WhereTo, caption, number);
+            LocationViewForm myForm = new LocationViewForm(CurrentAdventure.Location, caption, number);
             myForm.ShowDialog();
         }
 
@@ -55,10 +56,10 @@ namespace CharacterGenerator
             CurrentAdventure = AdventureOptions[adventureIndex];
 
             leaderTxtBx.Text = CurrentAdventure.LeaderName;
-            companionTxtBx.Lines = CurrentAdventure.CompanionNames.ToArray();
+            companionTxtBx.Lines = CurrentAdventure.CompanionNames.Split(',');
             successful.Checked = CurrentAdventure.Successful;
             fatal.Checked = CurrentAdventure.Fatal;
-            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.WhereTo.Title;
+            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.Location.Title;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -67,10 +68,10 @@ namespace CharacterGenerator
             CurrentAdventure = AdventureOptions[adventureIndex];
 
             leaderTxtBx.Text = CurrentAdventure.LeaderName;
-            companionTxtBx.Lines = CurrentAdventure.CompanionNames.ToArray();
+            companionTxtBx.Lines = CurrentAdventure.CompanionNames.Split(',');
             successful.Checked = CurrentAdventure.Successful;
             fatal.Checked = CurrentAdventure.Fatal;
-            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.WhereTo.Title;
+            titleLbl.Text = "Adventure " + (adventureIndex + 1).ToString() + ": Journey to " + CurrentAdventure.Location.Title;
         }
     }
 }

@@ -7,12 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Data.Domain;
 
 namespace CharacterGenerator
 {
     public partial class MainForm : Form
     {
+        private PersonLogic personLogic = new PersonLogic();
+        private ElfLogic elfLogic = new ElfLogic();
+        private DwarfLogic dwarfLogic = new DwarfLogic();
+        private HumanLogic humanLogic = new HumanLogic();
+        private HobbitLogic hobbitLogic = new HobbitLogic();
+        private WizardLogic wizardLogic = new WizardLogic();
         private Person person;
+        
+        private Elf elf;
+        private Dwarf dwarf;
+        private Hobbit hobbit;
+        private Human human;
+        private Wizard wizard;
+
         private int number;
         public MainForm()
         {
@@ -29,20 +43,21 @@ namespace CharacterGenerator
         {
             if (isElfRadio.Checked)
             {
-                person = new Elf();
-                Elf temp = (Elf)person;
+                Random rand = new Random();
+                elf = elfLogic.GenerateRandomElf(rand.Next(1, 7), rand.Next(1, 7), rand.Next(1, 7), rand);
+                person = personLogic.GetPerson(elf.PersonID);
                 
                 //elf specific Attributes
                 Attr1Lbl.Text = "Elf Type";
-                Attr1TxtBx.Text = temp.ElfType;
-                Attr1Lbl.Location = new System.Drawing.Point(382, 297);
+                Attr1TxtBx.Text = elf.ElfType;
+                Attr1Lbl.Location = new Point(382, 297);
                 Attr1TxtBx.Visible = true;
                 Attr1Lbl.Visible = true;
 
-                isEvil.Location = new System.Drawing.Point(625, 202);
-                checkBox1.Location = new System.Drawing.Point(625, 238);
+                isEvil.Location = new Point(625, 202);
+                checkBox1.Location = new Point(625, 238);
                 checkBox1.Text = "Elven Ring Bearer";
-                checkBox1.Checked = temp.OwnsRingOfPower;
+                checkBox1.Checked = elf.OwnsRingOfPower;
                 checkBox1.Visible = true;
                 checkBox2.Visible = false;
 
@@ -52,17 +67,18 @@ namespace CharacterGenerator
             }
             else if (isDwarfRadio.Checked)
             {
-                person = new Dwarf();
-                Dwarf temp = (Dwarf)person;
+                Random rand = new Random();
+                dwarf = dwarfLogic.GenerateRandomDwarf(rand.Next(1, 7), rand.Next(1, 7), rand);
+                person = personLogic.GetPerson(dwarf.PersonID); 
 
                 //elf specific Attributes
                 Attr1Lbl.Text = "Dwarf Type";
-                Attr1TxtBx.Text = temp.DwarfGroup;
-                Attr1Lbl.Location = new System.Drawing.Point(357, 297);
+                Attr1TxtBx.Text = dwarf.DwarfGroup;
+                Attr1Lbl.Location = new Point(357, 297);
                 Attr1TxtBx.Visible = true;
                 Attr1Lbl.Visible = true;
 
-                isEvil.Location = new System.Drawing.Point(625, 218);
+                isEvil.Location = new Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
 
@@ -72,18 +88,18 @@ namespace CharacterGenerator
             }
             else if (isWizardRadio.Checked)
             {
-                person = new Wizard();
-
-                Wizard temp = (Wizard)person;
+                Random rand = new Random();
+                wizard = wizardLogic.GenerateRandomWizard(rand.Next(1, 7), rand.Next(1, 7), rand.Next(1, 7), rand);
+                person = personLogic.GetPerson(wizard.PersonID);
 
                 //elf specific Attributes
                 Attr1Lbl.Text = "Primary Magic Type";
-                Attr1TxtBx.Text = temp.MagicType;
-                Attr1Lbl.Location = new System.Drawing.Point(291, 297);
+                Attr1TxtBx.Text = wizard.MagicType;
+                Attr1Lbl.Location = new Point(291, 297);
                 Attr1TxtBx.Visible = true;
                 Attr1Lbl.Visible = true;
 
-                isEvil.Location = new System.Drawing.Point(625, 218);
+                isEvil.Location = new Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
 
@@ -93,17 +109,18 @@ namespace CharacterGenerator
             }
             else if (isHumanRadio.Checked)
             {
-                person = new Human();
-                Human temp = (Human)person;
+                Random rand = new Random();
+                human = humanLogic.GenerateRandomHuman(rand.Next(1, 7), rand.Next(1, 7), rand);
+                person = personLogic.GetPerson(human.PersonID);
 
                 //elf specific Attributes
                 Attr1Lbl.Text = "Ancestral Line";
-                Attr1TxtBx.Text = temp.AncestralLine;
-                Attr1Lbl.Location = new System.Drawing.Point(333, 297);
+                Attr1TxtBx.Text = human.AncestralLine;
+                Attr1Lbl.Location = new Point(333, 297);
                 Attr1TxtBx.Visible = true;
                 Attr1Lbl.Visible = true;
                 
-                isEvil.Location = new System.Drawing.Point(625, 218);
+                isEvil.Location = new Point(625, 218);
 
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
@@ -114,25 +131,25 @@ namespace CharacterGenerator
             }
             else if (isHobbitRadio.Checked)
             {
-                person = new Hobbit();
-
-                Hobbit temp = (Hobbit)person;
+                Random rand = new Random();
+                hobbit = hobbitLogic.GenerateRandomHobbit(rand.Next(1, 7), rand);
+                person = personLogic.GetPerson(hobbit.PersonID);
 
                 //elf specific Attributes
                 Attr1Lbl.Text = "Home Type";
-                Attr1TxtBx.Text = temp.HomeType;
-                Attr1Lbl.Location = new System.Drawing.Point(363, 297);
+                Attr1TxtBx.Text = hobbit.HomeType;
+                Attr1Lbl.Location = new Point(363, 297);
                 Attr1TxtBx.Visible = true;
                 Attr1Lbl.Visible = true;
 
-                isEvil.Location = new System.Drawing.Point(625, 184);
-                checkBox1.Location = new System.Drawing.Point(625, 218);
-                checkBox2.Location = new System.Drawing.Point(625, 253);
+                isEvil.Location = new Point(625, 184);
+                checkBox1.Location = new Point(625, 218);
+                checkBox2.Location = new Point(625, 253);
                 checkBox1.Text = "The Ring Bearer";
-                checkBox1.Checked = temp.OwnsOneRing;
+                checkBox1.Checked = hobbit.OwnsOneRing;
                 checkBox1.Visible = true;
                 checkBox2.Text = "Adventurer";
-                checkBox2.Checked = temp.IsAdventurer;
+                checkBox2.Checked = hobbit.IsAdventurer;
                 checkBox2.Visible = true;
 
                 mentalBtn.Visible = false;
@@ -185,21 +202,21 @@ namespace CharacterGenerator
         private void viewHome_Click(object sender, EventArgs e)
         {
             string caption = person.Name + "'s Hometown";
-            LocationViewForm myForm = new LocationViewForm(person.HomeTown, caption, number);
+            LocationViewForm myForm = new LocationViewForm(person.Location, caption, number);
             myForm.ShowDialog();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             string caption = person.Name + "'s Position";
-            PositionViewForm myForm = new PositionViewForm(person.Position, caption, number);
+            PositionViewForm myForm = new PositionViewForm(person.Role, person.LengthOfRoleOccupancy, person.NumberOfSubordinates, caption, number);
             myForm.ShowDialog();
         }
 
         private void viewAdventures_Click(object sender, EventArgs e)
         {
             string caption = person.Name + "'s Adventures";
-            AdventuresViewForm myForm = new AdventuresViewForm(person.Adventures, caption, number);
+            AdventuresViewForm myForm = new AdventuresViewForm(person.Adventures.ToList(), caption, number);
             myForm.ShowDialog();
         }
 
@@ -220,6 +237,10 @@ namespace CharacterGenerator
             WoCTxtBx.ReadOnly = false;
             Attr1TxtBx.ReadOnly = false;
 
+            isEvil.AutoCheck = true;
+            checkBox1.AutoCheck = true;
+            checkBox2.AutoCheck = true;
+
             saveBtn.Visible = true;
             cancelBtn.Visible = true;
             editButton.Visible = false;
@@ -237,6 +258,10 @@ namespace CharacterGenerator
             WoCTxtBx.ReadOnly = true;
             Attr1TxtBx.ReadOnly = true;
 
+            isEvil.AutoCheck = false;
+            checkBox1.AutoCheck = false;
+            checkBox2.AutoCheck = false;
+
             NametxtBx.Text = person.Name;
             ageTxtBx.Text = person.Age.ToString();
             hairTxtBx.Text = person.HairColor;
@@ -248,34 +273,29 @@ namespace CharacterGenerator
             
             if(person.RaceType == "Hobbit")
             {
-                Hobbit temp = (Hobbit)person;
-                Attr1TxtBx.Text = temp.HomeType;
-                checkBox1.Checked = temp.OwnsOneRing;
-                checkBox2.Checked = temp.IsAdventurer;
+                Attr1TxtBx.Text = hobbit.HomeType;
+                checkBox1.Checked = hobbit.OwnsOneRing;
+                checkBox2.Checked = hobbit.IsAdventurer;
 
             }
 
             if (person.RaceType == "Elf")
             {
-                Elf temp = (Elf)person;
-                Attr1TxtBx.Text = temp.ElfType;
-                checkBox1.Checked = temp.OwnsRingOfPower;
+                Attr1TxtBx.Text = elf.ElfType;
+                checkBox1.Checked = elf.OwnsRingOfPower;
             }
 
             if (person.RaceType == "Human")
             {
-                Human temp = (Human)person;
-                Attr1TxtBx.Text = temp.AncestralLine;
+                Attr1TxtBx.Text = human.AncestralLine;
             }
             if (person.RaceType == "Dwarf")
             {
-                Dwarf temp = (Dwarf)person;
-                Attr1TxtBx.Text = temp.DwarfGroup;
+                Attr1TxtBx.Text = dwarf.DwarfGroup;
             }
             if (person.RaceType == "Wizard")
             {
-                Wizard temp = (Wizard)person;
-                Attr1TxtBx.Text = temp.MagicType;
+                Attr1TxtBx.Text = wizard.MagicType;
             }
             //display buttons
             saveBtn.Visible = false;
@@ -296,6 +316,10 @@ namespace CharacterGenerator
             WoCTxtBx.ReadOnly = true;
             Attr1TxtBx.ReadOnly = true;
 
+            isEvil.AutoCheck = false;
+            checkBox1.AutoCheck = false;
+            checkBox2.AutoCheck = false;
+
             person.Name = NametxtBx.Text;
 
             if (int.TryParse(ageTxtBx.Text, out result))
@@ -308,13 +332,13 @@ namespace CharacterGenerator
             }
             person.HairColor = hairTxtBx.Text;
             person.EyeColor = eyeTxtBx.Text;
-            if (genderTxtBx.Text.ToLower() == "male" || genderTxtBx.Text.ToLower() == "female")
+            if (genderTxtBx.Text == "M" || genderTxtBx.Text == "F")
             {
                 person.Gender = genderTxtBx.Text;
             } else
             {
                 genderTxtBx.Text = person.Gender;
-                MessageBox.Show("Gender must be a 'male' or 'female'! Tolkein's mythology only allows for two genders.", "Error!");
+                MessageBox.Show("Gender must be a 'M' or 'F'! Tolkein's mythology only allows for two genders.", "Error!");
             }
             person.SkinComplexion = complexionTxtBx.Text;
             person.WeaponOfChoice = WoCTxtBx.Text;
@@ -322,35 +346,36 @@ namespace CharacterGenerator
 
             if (person.RaceType == "Hobbit")
             {
-                Hobbit temp = (Hobbit)person;
-                temp.HomeType = Attr1TxtBx.Text;
-                temp.OwnsOneRing = checkBox1.Checked;
-                temp.IsAdventurer = checkBox2.Checked;
-
+                hobbit.HomeType = Attr1TxtBx.Text;
+                hobbit.OwnsOneRing = checkBox1.Checked;
+                hobbit.IsAdventurer = checkBox2.Checked;
+                hobbitLogic.UpdateHobbit();
             }
 
             if (person.RaceType == "Elf")
             {
-                Elf temp = (Elf)person;
-                temp.ElfType = Attr1TxtBx.Text;
-                temp.OwnsRingOfPower = checkBox1.Checked;
+                elf.ElfType = Attr1TxtBx.Text;
+                elf.OwnsRingOfPower = checkBox1.Checked;
+                elfLogic.UpdateElf();
             }
 
             if (person.RaceType == "Human")
             {
-                Human temp = (Human)person;
-                temp.AncestralLine = Attr1TxtBx.Text;
+                human.AncestralLine = Attr1TxtBx.Text;
+                humanLogic.UpdateHuman();
             }
             if (person.RaceType == "Dwarf")
             {
-                Dwarf temp = (Dwarf)person;
-                temp.DwarfGroup = Attr1TxtBx.Text;
+                dwarf.DwarfGroup = Attr1TxtBx.Text;
+                dwarfLogic.UpdateDwarf();
             }
             if (person.RaceType == "Wizard")
             {
-                Wizard temp = (Wizard)person;
-                temp.MagicType = Attr1TxtBx.Text;
+                wizard.MagicType = Attr1TxtBx.Text;
+                wizardLogic.UpdateWizard();
             }
+
+            personLogic.UpdatePerson();
             //display buttons
             saveBtn.Visible = false;
             cancelBtn.Visible = false;
@@ -359,24 +384,23 @@ namespace CharacterGenerator
 
         private void magicBtn_Click(object sender, EventArgs e)
         {
-            string message = "No Magical Abilities!";
+            string message = "Under Development!";
             string caption = "Error";
 
-            if (person.RaceType == "Elf")
+            //under development
+            /*if (person.RaceType == "Elf")
             {
-                Elf temp = (Elf)person;
-                caption = temp.Name + "'s Magical Feats";
+                caption = person.Name + "'s Magical Feats";
                 AbilityViewForm myForm = new AbilityViewForm(temp.MagicalFeats, caption, number);
                 myForm.ShowDialog();
             }
 
             if (person.RaceType == "Wizard")
             {
-                Wizard temp = (Wizard)person;
-                caption = temp.Name + "'s Magical Feats";
+                caption = person.Name + "'s Magical Feats";
                 AbilityViewForm myForm = new AbilityViewForm(temp.MagicalFeats, caption, number);
                 myForm.ShowDialog();
-            }
+            }*/
         }
 
         private void physicalBtn_Click(object sender, EventArgs e)
@@ -384,7 +408,7 @@ namespace CharacterGenerator
             string message = "No Magical Abilities!";
             string caption = "Error";
 
-            if (person.RaceType == "Elf")
+            /*if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
                
@@ -423,7 +447,7 @@ namespace CharacterGenerator
                 caption = temp.Name + "'s Physical Abilities";
                 AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
                 myForm.ShowDialog();
-            }
+            }*/
         }
 
         private void mentalBtn_Click(object sender, EventArgs e)
@@ -431,7 +455,7 @@ namespace CharacterGenerator
             string message = "No Mental Abilities!";
             string caption = person.Name + "'s Fields of Wisdom";
 
-            if (person.RaceType == "Elf")
+            /*if (person.RaceType == "Elf")
             {
                 Elf temp = (Elf)person;
                 AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
@@ -458,7 +482,7 @@ namespace CharacterGenerator
                 AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
                 myForm.ShowDialog();
 
-            }
+            }*/
         }
     }
 }
