@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data.Domain;
+using System.IO;
 
 namespace CharacterGenerator
 {
@@ -159,6 +160,7 @@ namespace CharacterGenerator
             else
             {
                 MessageBox.Show("Please select one of the races!");
+                return;
             }
             //show fields
             NametxtBx.Text = person.Name;
@@ -197,6 +199,7 @@ namespace CharacterGenerator
             viewAdventures.Visible = true;
 
             editButton.Visible = true;
+            exportBtn.Visible = true;
         }
 
         private void viewHome_Click(object sender, EventArgs e)
@@ -244,6 +247,7 @@ namespace CharacterGenerator
             saveBtn.Visible = true;
             cancelBtn.Visible = true;
             editButton.Visible = false;
+            exportBtn.Visible = false;
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -301,6 +305,7 @@ namespace CharacterGenerator
             saveBtn.Visible = false;
             cancelBtn.Visible = false;
             editButton.Visible = true;
+            exportBtn.Visible = true;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -380,6 +385,7 @@ namespace CharacterGenerator
             saveBtn.Visible = false;
             cancelBtn.Visible = false;
             editButton.Visible = true;
+            exportBtn.Visible = true;
         }
 
         private void magicBtn_Click(object sender, EventArgs e)
@@ -483,6 +489,127 @@ namespace CharacterGenerator
                 myForm.ShowDialog();
 
             }*/
+        }
+
+        private void exportBtn_Click(object sender, EventArgs e)
+        {
+            StreamWriter streamWriter;
+            string name = person.Name.Replace(",", "");
+            name = name.Replace(" ", "_");
+            saveFileDialog1.FileName = name;
+            saveFileDialog1.DefaultExt = "txt";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveFileDialog1.FileName;
+                if (fileName != null)
+                {
+                    streamWriter = new StreamWriter(fileName);
+                    try
+                    {
+                        //Personal Information
+                        streamWriter.WriteLine("PERSONAL INFORMATION");
+                        streamWriter.WriteLine("\tName: " + person.Name);
+                        streamWriter.WriteLine("\tAge: " + string.Format("{0:n0}", person.Age));
+                        string gender = person.Gender == "M" ? "Male" : person.Gender == "F" ? "Female" : "Invalid";
+                        streamWriter.WriteLine("\tGender: " + gender);
+                        string race = person.RaceType.First().ToString().ToUpper() + person.RaceType.Substring(1);
+                        streamWriter.WriteLine("\tRace: " + race);
+                        string evil = person.Evil ? "Yes" : "No";
+                        streamWriter.WriteLine("\tEvil: " + evil);
+                        streamWriter.WriteLine("\tWeapon of Choice: " + person.WeaponOfChoice);
+
+                        streamWriter.WriteLine("\nPHYSICAL DESCRIPTION");
+                        streamWriter.WriteLine("\tHair Color: " + person.HairColor);
+                        streamWriter.WriteLine("\tEye Color: " + person.EyeColor);
+                        streamWriter.WriteLine("\tSkin Complexion: " + person.SkinComplexion);
+
+                        streamWriter.WriteLine("\n" + race.ToUpper() + " INFORMATION");
+                        if (race == "Elf")
+                        {
+                            streamWriter.WriteLine("\tElf Type: " + elf.ElfType);
+                            string ringBearer = elf.OwnsRingOfPower ? "Yes" : "No";
+                            streamWriter.WriteLine("\tElven Ring Bearer: " + ringBearer);
+                        }
+                        else if (race == "Dwarf")
+                        {
+                            streamWriter.WriteLine("\tDwarf Type: " + dwarf.DwarfGroup);
+                        }
+                        else if (race == "Hobbit")
+                        {
+                            streamWriter.WriteLine("\tHome Type: " + hobbit.HomeType);
+                            string ringBearer = hobbit.OwnsOneRing ? "Yes" : "No";
+                            streamWriter.WriteLine("\tThe Ring Bearer: " + ringBearer);
+                            string adventurer = hobbit.IsAdventurer ? "Yes" : "No";
+                            streamWriter.WriteLine("\tAdventurer: " + adventurer);
+                        }
+                        else if (race == "Men")
+                        {
+                            streamWriter.WriteLine("\tAncestral Line: " + human.AncestralLine);
+                        }
+                        else if (race == "Wizard")
+                        {
+                            streamWriter.WriteLine("\tPrimary Magic Type: " + wizard.MagicType);
+                        }
+                        else
+                        {
+                            streamWriter.WriteLine("\tNo information on this race!");
+                        }
+
+                        streamWriter.WriteLine("\nHOME TOWN INFORMATION");
+                        streamWriter.WriteLine("\tName: " + person.Location.Title);
+                        streamWriter.WriteLine("\tRegion: " + person.Location.Region);
+                        streamWriter.WriteLine("\tQuadrant of Map: " + person.Location.RelativeMapPosition);
+                        string freeland = person.Location.FreeLand ? "Yes" : "No";
+                        streamWriter.WriteLine("\tFree Land: " + freeland);
+
+                        streamWriter.WriteLine("\nPOSITION INFORMATION");
+                        streamWriter.WriteLine("\tTitle: " + person.Role.Title);
+                        streamWriter.WriteLine("\tDescription: " + person.Role.Description);
+                        streamWriter.WriteLine("\tLength of Occupancy: " + string.Format("{0:n0}", person.LengthOfRoleOccupancy) + " years");
+                        string plural = person.Role.PrimaryRace == "Elf" ? "elves" : person.Role.PrimaryRace == "Dwarf" ? "dwarves" : person.Role.PrimaryRace == "Men" ? "men" : person.Role.PrimaryRace == "Wizard" ? "wizards" : person.Role.PrimaryRace == "Hobbit" ? "hobbits" : "people";
+                        streamWriter.WriteLine("\tNumber of Suboordinates: " + string.Format("{0:n0}", person.NumberOfSubordinates) + " " + plural);
+                        string supreme = person.Role.SupremeRole ? "Yes" : "No";
+                        streamWriter.WriteLine("\tSupreme Role: " + supreme);
+
+                        streamWriter.WriteLine("\nADVENTURES INFORMATION");
+                        int number = 1;
+                        foreach (Adventure adventure in person.Adventures)
+                        {
+                            streamWriter.WriteLine("\tADVENTURE " + number.ToString() + ": Journey To " + adventure.Location.Title);
+                            streamWriter.WriteLine("\t\tLeader Name: " + adventure.LeaderName);
+                            string separator = "\n\t\t\t";
+                            streamWriter.WriteLine("\t\tCompanion Names: \n\t\t\t" + string.Join(separator, adventure.CompanionNames.Split(',')));
+                            streamWriter.WriteLine("\t\tWhere To:");
+                            streamWriter.WriteLine("\t\t\tName: " + adventure.Location.Title);
+                            streamWriter.WriteLine("\t\t\tRegion: " + adventure.Location.Region);
+                            streamWriter.WriteLine("\t\t\tQuadrant of Map: " + adventure.Location.RelativeMapPosition);
+                            freeland = adventure.Location.FreeLand ? "Yes" : "No";
+                            streamWriter.WriteLine("\t\t\tFree Land: " + freeland);
+                            string successful = adventure.Successful ? "Yes" : "No";
+                            streamWriter.WriteLine("\t\tSuccessful: " + successful);
+                            string fatal = adventure.Fatal ? "Yes" : "No";
+                            streamWriter.WriteLine("\t\tFatal: " + fatal);
+                            streamWriter.WriteLine();
+                            number++;
+                        }
+
+                        streamWriter.WriteLine("\nABILITIES INFORMATION");
+                        streamWriter.WriteLine("\tComing Soon!");
+
+
+
+
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                    finally
+                    {
+                        streamWriter.Close();
+                    }
+                }
+            }
         }
     }
 }

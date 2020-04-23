@@ -81,7 +81,7 @@ namespace CharacterGenerator
             index = rand.Next(1, roles.Count());
             //Position
             person.PositionRoleID = roles.ElementAt(index).RoleID;
-            person.LengthOfRoleOccupancy = rand.Next(1, 100000);
+            person.LengthOfRoleOccupancy = rand.Next(1, person.Age);
             person.NumberOfSubordinates = rand.Next();
             //Adventures
 

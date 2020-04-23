@@ -94,7 +94,7 @@ namespace CharacterGenerator
         {
             string firstName, lastName;
             int index;
-            if (gender.ToLower() == "female")
+            if (gender.ToLower() == "f")
             {
                 index = rand.Next(0, FemaleFirstNames.Length);
                 firstName = FemaleFirstNames[index];
