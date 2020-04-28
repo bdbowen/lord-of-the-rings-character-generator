@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Domain;
-
+//test change
 namespace CharacterGenerator
 {
     public class DwarfLogic
