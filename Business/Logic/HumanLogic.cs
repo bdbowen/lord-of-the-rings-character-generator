@@ -55,18 +55,18 @@ namespace CharacterGenerator
         public Human Generate(Random rand, int numberOfPhysical, int numberOfMental, int numberOfMagical = 0)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.Generate(rand.Next(1, 10), "men", rand);
-            Human human = new Human();
-            person.RaceType = "men";
+
+            Human human = (Human)personLogic.Generate("men", rand, new Human());
+            human.RaceType = "men";
             int index;
             //set name
-            person.Name = GenerateName(person.Gender, rand);
+            human.Name = GenerateName(human.Gender, rand);
 
             //reset age
-            person.Age = rand.Next(1, MAXAGE);
+            human.Age = rand.Next(1, MAXAGE);
 
             //set Position
-            person.LengthOfRoleOccupancy = rand.Next(1, person.Age);
+            human.LengthOfRoleOccupancy = rand.Next(1, human.Age);
 
             //set ancestral line
             index = rand.Next(0, AncestralLineOptions.Length);
@@ -82,10 +82,9 @@ namespace CharacterGenerator
             {
                 FieldsOfWisdom.Add(new Mental(rand));
             }*/
-
-            personLogic.UpdatePerson();
-            human.PersonID = person.PersonID;
             AddHuman(human);
+
+            personLogic.GenerateAdventures(human.PersonID, rand.Next(1,10), rand);
             return human;
         }
 

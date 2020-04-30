@@ -58,14 +58,13 @@ namespace CharacterGenerator
         public Elf Generate(Random rand, int numberOfPhysical, int numberOfMental, int numberOfMagical)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.Generate(rand.Next(1, 10), "elf", rand);
-            Elf elfPerson = new Elf();
+            Elf elfPerson = (Elf) personLogic.Generate("elf", rand, new Elf());
 
-            person.RaceType = "elf";
+            elfPerson.RaceType = "elf";
             int index;
             //set Elf
-            person.Name = GenerateName(person.Gender, rand);
-
+            elfPerson.Name = GenerateName(elfPerson.Gender, rand);
+            
             //set Elf Type
             index = rand.Next(0, ElfTypeOptions.Length);
             elfPerson.ElfType = ElfTypeOptions[index];
@@ -89,10 +88,9 @@ namespace CharacterGenerator
                 MagicalFeats.Add(new Magical(rand));
             }*/
 
-            personLogic.UpdatePerson();
-            elfPerson.PersonID = person.PersonID;
-            Console.WriteLine(person.PersonID);
             AddElf(elfPerson);
+            personLogic.GenerateAdventures(elfPerson.PersonID, rand.Next(1, 10), rand);
+
             return elfPerson;
         }
 
@@ -114,6 +112,25 @@ namespace CharacterGenerator
             lastName = LastNames[index];
 
             return firstName + " " + lastName;
+        }
+        public static Elf ConvertToElf(Person person)
+        {
+            Elf elf = new Elf();
+            elf.Name = person.Name;
+            elf.Age = person.Age;
+            elf.RaceType = person.RaceType;
+            elf.HairColor = person.HairColor;
+            elf.EyeColor = person.EyeColor;
+            elf.SkinComplexion = person.SkinComplexion;
+            elf.Gender = person.Gender;
+            elf.HomeTownLocationID = person.HomeTownLocationID;
+            elf.PositionRoleID = person.PositionRoleID;
+            elf.LengthOfRoleOccupancy = person.LengthOfRoleOccupancy;
+            elf.NumberOfSubordinates = person.NumberOfSubordinates;
+            elf.WeaponOfChoice = person.WeaponOfChoice;
+            elf.Evil = person.Evil;
+
+            return elf;
         }
     }
 }

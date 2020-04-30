@@ -56,26 +56,26 @@ namespace CharacterGenerator
         public Dwarf Generate(Random rand, int numberOfPhysical, int numberOfMental, int numberOfMagical = 0)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.Generate(rand.Next(1,10), "dwarf", rand);
-            Dwarf dwarfPerson = new Dwarf();
+            //Person person =
+            Dwarf dwarfPerson = (Dwarf)personLogic.Generate("dwarf", rand, new Dwarf());;
             
-            person.RaceType = "dwarf";
+            dwarfPerson.RaceType = "dwarf";
             int index;
             //set name
-            person.Name = GenerateName(person.Gender, rand);
+            dwarfPerson.Name = GenerateName(dwarfPerson.Gender, rand);
 
             //reset age
-            person.Age = rand.Next(1, MAXAGE);
+            dwarfPerson.Age = rand.Next(1, MAXAGE);
 
             //reset position
-            person.LengthOfRoleOccupancy = rand.Next(1, person.Age);
+            dwarfPerson.LengthOfRoleOccupancy = rand.Next(1, dwarfPerson.Age);
 
             //set DwarfFamily
             index = rand.Next(0, DwarfGroupOptions.Length);
             dwarfPerson.DwarfGroup = DwarfGroupOptions[index];
-            dwarfPerson.PersonID = person.PersonID;
+
             AddDwarf(dwarfPerson);
-            personLogic.UpdatePerson();
+            personLogic.GenerateAdventures(dwarfPerson.PersonID, rand.Next(1,10), rand);
             //set abilities -> future
             /*for (int i = 0; i < numberOfPhysical; i++)
             {

@@ -53,19 +53,19 @@ namespace CharacterGenerator
         public Hobbit Generate(Random rand, int numberOfAbilities, int numberOfMagical = 0, int numberOfMental = 0)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.Generate(rand.Next(1, 10), "hobbit", rand);
-            Hobbit hobbit = new Hobbit();
-            person.RaceType = "Hobbit";
+
+            Hobbit hobbit = (Hobbit)personLogic.Generate("hobbit", rand, new Hobbit());
+            hobbit.RaceType = "Hobbit";
             int index;
 
             //set Name
-            person.Name = GenerateName(person.Gender, rand);
+            hobbit.Name = GenerateName(hobbit.Gender, rand);
 
             //reset age
-            person.Age = rand.Next(1, MAXAGE);
+            hobbit.Age = rand.Next(1, MAXAGE);
 
             //reset position
-            person.LengthOfRoleOccupancy = rand.Next(1, person.Age);
+            hobbit.LengthOfRoleOccupancy = rand.Next(1, hobbit.Age);
 
             //set Home type
             index = rand.Next(0, HomeTypeOptions.Length);
@@ -80,9 +80,9 @@ namespace CharacterGenerator
             {
                 PhysicalAbilities.Add(new Physical(rand));
             }*/
-            personLogic.UpdatePerson();
-            hobbit.PersonID = person.PersonID;
             AddHobbit(hobbit);
+
+            personLogic.GenerateAdventures(hobbit.PersonID, rand.Next(1,10), rand);
             return hobbit;
         }
 

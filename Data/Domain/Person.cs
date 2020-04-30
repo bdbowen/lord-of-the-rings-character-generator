@@ -7,7 +7,7 @@ namespace Data.Domain
     using System.Data.Entity.Spatial;
 
     [Table("Persons")]
-    public partial class Person
+    public abstract partial class Person
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Person()
@@ -60,10 +60,6 @@ namespace Data.Domain
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adventure> Adventures { get; set; }
-
-        public virtual Dwarf Dwarf { get; set; }
-
-        public virtual Elf Elf { get; set; }
 
         public virtual Location Location { get; set; }
 

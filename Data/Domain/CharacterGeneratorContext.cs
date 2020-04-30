@@ -175,14 +175,6 @@ namespace Data.Domain
                 .HasForeignKey(e => e.MainPersonID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Person>()
-                .HasOptional(e => e.Dwarf)
-                .WithRequired(e => e.Person);
-
-            modelBuilder.Entity<Person>()
-                .HasOptional(e => e.Elf)
-                .WithRequired(e => e.Person);
-
             modelBuilder.Entity<Physical>()
                 .Property(e => e.ToolRequired)
                 .IsUnicode(false);

@@ -6,12 +6,9 @@ namespace Data.Domain
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Hobbit
+    [Table("Hobbits")]
+    public partial class Hobbit : Person
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int PersonID { get; set; }
-
         [Required]
         [StringLength(50)]
         public string HomeType { get; set; }

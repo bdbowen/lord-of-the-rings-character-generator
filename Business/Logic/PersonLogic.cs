@@ -47,10 +47,10 @@ namespace CharacterGenerator
 
 
         
-        public Person Generate(int numberOfAdventures, string raceType, Random rand)
+        public Person Generate(string raceType, Random rand, Person person)
         {
             int index;
-            Person person = new Person();
+
             //Let Name be set by subclass
             person.Name = "n/a";
             //Randomize Age
@@ -86,7 +86,6 @@ namespace CharacterGenerator
             //Adventures
 
             int incrementValue = rand.Next();
-            AdventureLogic adventure = new AdventureLogic();
             
             //Weapon of Choice
             index = rand.Next(0, WeaponOfChoiceOptions.Length);
@@ -95,14 +94,15 @@ namespace CharacterGenerator
             //Evil 
             person.Evil = rand.Next(2) == 1;
 
-            AddPerson(person);
+            return person;
+        }
+        public void GenerateAdventures(int personID, int numberOfAdventures, Random rand)
+        {
+            AdventureLogic adventure = new AdventureLogic();
             for (int i = 0; i < numberOfAdventures; i++)
             {
-                adventure.Generate(rand.Next(1, 20), person.PersonID, rand);
+                adventure.Generate(rand.Next(1, 20), personID, rand);
             }
-
-            return person;
-
         }
     }
 }

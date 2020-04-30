@@ -55,17 +55,17 @@ namespace CharacterGenerator
         public Wizard Generate(Random rand, int numberOfPhysical, int numberOfMagic, int numberOfMental)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.Generate(rand.Next(1, 10), "wizard", rand);
-            Wizard wizard = new Wizard();
 
-            person.RaceType = "wizard";
+            Wizard wizard = (Wizard) personLogic.Generate("wizard", rand, new Wizard());
+
+            wizard.RaceType = "wizard";
             int index;
             //set wizard color
             index = rand.Next(0, WizardColors.Length);
             wizard.WizardColor = WizardColors[index];
 
             //set Name
-            person.Name = GenerateName(person.Gender, rand, wizard.WizardColor);
+            wizard.Name = GenerateName(wizard.Gender, rand, wizard.WizardColor);
 
 
             //Generate Magic Type
@@ -86,10 +86,10 @@ namespace CharacterGenerator
             {
                 FieldsOfWisdom.Add(new Mental(rand));
             }*/
-
-            personLogic.UpdatePerson();
-            wizard.PersonID = person.PersonID;
             AddWizard(wizard);
+
+
+            personLogic.GenerateAdventures(wizard.PersonID, rand.Next(1,10), rand);
             return wizard;
         }
         public string GenerateName(string gender, Random rand)
