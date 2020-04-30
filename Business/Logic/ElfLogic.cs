@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Data.Domain;
 namespace CharacterGenerator
 {
-    public class ElfLogic
+    public class ElfLogic : IGenerate<Elf>
     {
         private readonly CharacterGeneratorContext context = new CharacterGeneratorContext();
         //crud
@@ -55,16 +55,16 @@ namespace CharacterGenerator
         public static string[] ElfTypeOptions = new string[] { "Vanyar", "Noldor", "Teleri", "Avari", "Sindar", "Nandor - Silvan", "Nandor - Laiquendi", "Avari" };
 
         //constructors
-        public Elf GenerateRandomElf(int numberOfPhysical, int numberOfMental, int numberOfMagical, Random rand)
+        public Elf Generate(Random rand, int numberOfPhysical, int numberOfMental, int numberOfMagical)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.GenerateRandomPerson(rand.Next(1, 10), "elf", rand);
+            Person person = personLogic.Generate(rand.Next(1, 10), "elf", rand);
             Elf elfPerson = new Elf();
 
             person.RaceType = "elf";
             int index;
             //set Elf
-            person.Name = GenerateElfName(person.Gender, rand);
+            person.Name = GenerateName(person.Gender, rand);
 
             //set Elf Type
             index = rand.Next(0, ElfTypeOptions.Length);
@@ -96,7 +96,7 @@ namespace CharacterGenerator
             return elfPerson;
         }
 
-        public static string GenerateElfName(string gender, Random rand)
+        public string GenerateName(string gender, Random rand)
         {
             string firstName, lastName;
             int index;

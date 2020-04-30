@@ -7,7 +7,7 @@ using Data.Domain;
 //test change
 namespace CharacterGenerator
 {
-    public class DwarfLogic
+    public class DwarfLogic : IGenerate<Dwarf>
     {
         private readonly CharacterGeneratorContext context = new CharacterGeneratorContext();
         //crud
@@ -53,16 +53,16 @@ namespace CharacterGenerator
         "Grey Mountain Dwarf", "Iron Hill Dwarf"};
         //constructors
 
-        public Dwarf GenerateRandomDwarf(int numberOfPhysical, int numberOfMental, Random rand)
+        public Dwarf Generate(Random rand, int numberOfPhysical, int numberOfMental, int numberOfMagical = 0)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.GenerateRandomPerson(rand.Next(1,10), "dwarf", rand);
+            Person person = personLogic.Generate(rand.Next(1,10), "dwarf", rand);
             Dwarf dwarfPerson = new Dwarf();
             
             person.RaceType = "dwarf";
             int index;
             //set name
-            person.Name = GenerateDwarfName(person.Gender, rand);
+            person.Name = GenerateName(person.Gender, rand);
 
             //reset age
             person.Age = rand.Next(1, MAXAGE);
@@ -89,7 +89,7 @@ namespace CharacterGenerator
             return dwarfPerson;
         }
 
-        public static string GenerateDwarfName(string gender, Random rand)
+        public string GenerateName(string gender, Random rand)
         {
             string firstName, lastName;
             int index;

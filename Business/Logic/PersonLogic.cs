@@ -47,7 +47,7 @@ namespace CharacterGenerator
 
 
         
-        public Person GenerateRandomPerson(int numberOfAdventures, string raceType, Random rand)
+        public Person Generate(int numberOfAdventures, string raceType, Random rand)
         {
             int index;
             Person person = new Person();
@@ -98,7 +98,7 @@ namespace CharacterGenerator
             AddPerson(person);
             for (int i = 0; i < numberOfAdventures; i++)
             {
-                adventure.GenerateRandomAdventure(rand.Next(1, 20), person.PersonID, rand);
+                adventure.Generate(rand.Next(1, 20), person.PersonID, rand);
             }
 
             return person;

@@ -7,7 +7,7 @@ using Data.Domain;
 
 namespace CharacterGenerator
 {
-    public class WizardLogic
+    public class WizardLogic : IGenerate<Wizard>
     {
         private readonly CharacterGeneratorContext context = new CharacterGeneratorContext();
         //crud
@@ -52,10 +52,10 @@ namespace CharacterGenerator
             "Silver", "Purple"};
         public static string[] MagicTypeOptions = new string[] { "Ainur Magic", "Elven Magic", "Dwarven Magic", "Dark Magic" };
 
-        public Wizard GenerateRandomWizard(int numberOfPhysical, int numberOfMagic, int numberOfMental, Random rand)
+        public Wizard Generate(Random rand, int numberOfPhysical, int numberOfMagic, int numberOfMental)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.GenerateRandomPerson(rand.Next(1, 10), "wizard", rand);
+            Person person = personLogic.Generate(rand.Next(1, 10), "wizard", rand);
             Wizard wizard = new Wizard();
 
             person.RaceType = "wizard";
@@ -65,7 +65,7 @@ namespace CharacterGenerator
             wizard.WizardColor = WizardColors[index];
 
             //set Name
-            person.Name = GenerateWizardName(person.Gender, rand, wizard.WizardColor);
+            person.Name = GenerateName(person.Gender, rand, wizard.WizardColor);
 
 
             //Generate Magic Type
@@ -92,8 +92,14 @@ namespace CharacterGenerator
             AddWizard(wizard);
             return wizard;
         }
+        public string GenerateName(string gender, Random rand)
+        {
+            int index = rand.Next(0, WizardColors.Length);
+            string color = WizardColors[index];
 
-        public static string GenerateWizardName(string gender, Random rand, string color = null)
+            return GenerateName(gender, rand, color);
+        }
+        public string GenerateName(string gender, Random rand, string color)
         {
             string firstName;
             int index;
@@ -106,11 +112,6 @@ namespace CharacterGenerator
             {
                 index = rand.Next(0, MaleFirstNames.Length);
                 firstName = MaleFirstNames[index];
-            }
-            if (color == null)
-            {
-                index = rand.Next(0, WizardColors.Length);
-                color = WizardColors[index];
             }
 
             return firstName + ", the " + color;

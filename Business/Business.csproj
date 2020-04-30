@@ -57,6 +57,7 @@
     <Compile Include="Logic\ElfLogic.cs" />
     <Compile Include="Logic\HobbitLogic.cs" />
     <Compile Include="Logic\HumanLogic.cs" />
+    <Compile Include="Logic\IGenerate.cs" />
     <Compile Include="Logic\LocationLogic.cs" />
     <Compile Include="Logic\MagicalLogic.cs" />
     <Compile Include="Logic\MentalLogic.cs" />

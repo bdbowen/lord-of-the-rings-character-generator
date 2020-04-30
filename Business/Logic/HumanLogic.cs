@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Data.Domain;
 namespace CharacterGenerator
 {
-    public class HumanLogic
+    public class HumanLogic : IGenerate<Human>
     {
         private readonly CharacterGeneratorContext context = new CharacterGeneratorContext();
         //crud
@@ -52,15 +52,15 @@ namespace CharacterGenerator
             "Gryedabyevu", "Horazor","Gendilbo", "Nen"  };
         public static string[] AncestralLineOptions = new string[] {"Dunadain", "Black Numenorians", "Haradrim", "Easterlings", "Northmen", "Dunlendings",
             "Druedain"};
-        public Human GenerateRandomHuman(int numberOfPhysical, int numberOfMental, Random rand)
+        public Human Generate(Random rand, int numberOfPhysical, int numberOfMental, int numberOfMagical = 0)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.GenerateRandomPerson(rand.Next(1, 10), "men", rand);
+            Person person = personLogic.Generate(rand.Next(1, 10), "men", rand);
             Human human = new Human();
             person.RaceType = "men";
             int index;
             //set name
-            person.Name = GenerateHumanName(person.Gender, rand);
+            person.Name = GenerateName(person.Gender, rand);
 
             //reset age
             person.Age = rand.Next(1, MAXAGE);
@@ -90,7 +90,7 @@ namespace CharacterGenerator
         }
 
 
-        public static string GenerateHumanName(string gender, Random rand)
+        public string GenerateName(string gender, Random rand)
         {
             string firstName, lastName;
             int index;

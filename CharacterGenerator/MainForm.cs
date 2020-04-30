@@ -45,7 +45,7 @@ namespace CharacterGenerator
             if (isElfRadio.Checked)
             {
                 Random rand = new Random();
-                elf = elfLogic.GenerateRandomElf(rand.Next(1, 7), rand.Next(1, 7), rand.Next(1, 7), rand);
+                elf = elfLogic.Generate(rand, rand.Next(1, 7), rand.Next(1, 7), rand.Next(1, 7));
                 person = personLogic.GetPerson(elf.PersonID);
                 
                 //elf specific Attributes
@@ -69,7 +69,7 @@ namespace CharacterGenerator
             else if (isDwarfRadio.Checked)
             {
                 Random rand = new Random();
-                dwarf = dwarfLogic.GenerateRandomDwarf(rand.Next(1, 7), rand.Next(1, 7), rand);
+                dwarf = dwarfLogic.Generate(rand, rand.Next(1, 7), rand.Next(1, 7));
                 person = personLogic.GetPerson(dwarf.PersonID); 
 
                 //elf specific Attributes
@@ -90,7 +90,7 @@ namespace CharacterGenerator
             else if (isWizardRadio.Checked)
             {
                 Random rand = new Random();
-                wizard = wizardLogic.GenerateRandomWizard(rand.Next(1, 7), rand.Next(1, 7), rand.Next(1, 7), rand);
+                wizard = wizardLogic.Generate(rand, rand.Next(1, 7), rand.Next(1, 7), rand.Next(1, 7));
                 person = personLogic.GetPerson(wizard.PersonID);
 
                 //elf specific Attributes
@@ -111,7 +111,7 @@ namespace CharacterGenerator
             else if (isHumanRadio.Checked)
             {
                 Random rand = new Random();
-                human = humanLogic.GenerateRandomHuman(rand.Next(1, 7), rand.Next(1, 7), rand);
+                human = humanLogic.Generate(rand, rand.Next(1, 7), rand.Next(1, 7));
                 person = personLogic.GetPerson(human.PersonID);
 
                 //elf specific Attributes
@@ -133,7 +133,7 @@ namespace CharacterGenerator
             else if (isHobbitRadio.Checked)
             {
                 Random rand = new Random();
-                hobbit = hobbitLogic.GenerateRandomHobbit(rand.Next(1, 7), rand);
+                hobbit = hobbitLogic.Generate(rand, rand.Next(1, 7));
                 person = personLogic.GetPerson(hobbit.PersonID);
 
                 //elf specific Attributes

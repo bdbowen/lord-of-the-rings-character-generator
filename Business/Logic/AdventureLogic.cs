@@ -36,12 +36,18 @@ namespace CharacterGenerator
             context.Adventures.Remove(myAdventure);
             context.SaveChanges();
         }
-        public Adventure GenerateRandomAdventure(int numberOfCompanions, int personID, Random rand)
+        public Adventure Generate(int numberOfCompanions, int personID, Random rand)
         {
             Adventure adventure = new Adventure();
+            ElfLogic elfLogic = new ElfLogic();
+            DwarfLogic dwarfLogic = new DwarfLogic();
+            HobbitLogic hobbitLogic = new HobbitLogic();
+            HumanLogic humanLogic = new HumanLogic();
+            WizardLogic wizardLogic = new WizardLogic();
+
             List<string> CompanionNames = new List<string>();
             //randomly assign leader 
-            adventure.LeaderName = WizardLogic.GenerateWizardName(rand.Next(2) == 1 ? "female" : "male", rand);
+            adventure.LeaderName = wizardLogic.GenerateName(rand.Next(2) == 1 ? "female" : "male", rand);
 
             LocationLogic locationLogic = new LocationLogic();
             IEnumerable<Location> locations = locationLogic.GetAllLocations();
@@ -56,30 +62,30 @@ namespace CharacterGenerator
                 string name;
                 if (randomNum == 1)
                 {
-                    name = HobbitLogic.GenerateHobbitName(gender, rand);
+                    name = hobbitLogic.GenerateName(gender, rand);
 
                     while (CompanionNames.Contains(name))
                     {
-                        name = HobbitLogic.GenerateHobbitName(gender, rand);
+                        name = hobbitLogic.GenerateName(gender, rand);
                     }
                     CompanionNames.Add(name);
                 }
                 else if (randomNum == 2)
                 {
-                    name = ElfLogic.GenerateElfName(gender, rand);
+                    name = elfLogic.GenerateName(gender, rand);
 
                     CompanionNames.Add(name);
 
                 }
                 else if (randomNum == 3)
                 {
-                    name = DwarfLogic.GenerateDwarfName(gender, rand);
+                    name = dwarfLogic.GenerateName(gender, rand);
 
                     CompanionNames.Add(name);
                 }
                 else if (randomNum == 4)
                 {
-                    name = HumanLogic.GenerateHumanName(gender, rand);
+                    name = humanLogic.GenerateName(gender, rand);
 
                     CompanionNames.Add(name);
                 }

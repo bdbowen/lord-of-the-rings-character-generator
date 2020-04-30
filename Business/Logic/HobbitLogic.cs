@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Data.Domain;
 namespace CharacterGenerator
 {
-    public class HobbitLogic
+    public class HobbitLogic : IGenerate<Hobbit>
     {
         private readonly CharacterGeneratorContext context = new CharacterGeneratorContext();
         //crud
@@ -50,16 +50,16 @@ namespace CharacterGenerator
         public static string[] HomeTypeOptions = new string[] { "Hobbit Hole", "Above Ground House" };
         //constructors
 
-        public Hobbit GenerateRandomHobbit(int numberOfAbilities, Random rand)
+        public Hobbit Generate(Random rand, int numberOfAbilities, int numberOfMagical = 0, int numberOfMental = 0)
         {
             PersonLogic personLogic = new PersonLogic();
-            Person person = personLogic.GenerateRandomPerson(rand.Next(1, 10), "hobbit", rand);
+            Person person = personLogic.Generate(rand.Next(1, 10), "hobbit", rand);
             Hobbit hobbit = new Hobbit();
             person.RaceType = "Hobbit";
             int index;
 
             //set Name
-            person.Name = GenerateHobbitName(person.Gender, rand);
+            person.Name = GenerateName(person.Gender, rand);
 
             //reset age
             person.Age = rand.Next(1, MAXAGE);
@@ -86,7 +86,7 @@ namespace CharacterGenerator
             return hobbit;
         }
 
-        public static string GenerateHobbitName(string gender, Random rand)
+        public string GenerateName(string gender, Random rand)
         {
             string firstName, lastName;
             int index;
