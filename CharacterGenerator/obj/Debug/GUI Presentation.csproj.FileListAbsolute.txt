@@ -9,7 +9,6 @@ C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programm
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.AbilityViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.AdventuresViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.LocationViewForm.resources
-C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.MainForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.PositionViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.Properties.Resources.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\GUI Presentation.csproj.GenerateResource.cache
@@ -22,3 +21,6 @@ C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programm
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\bin\Debug\Business.dll.config
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\bin\Debug\Data.pdb
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\bin\Debug\Data.dll.config
+C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.HomeForm.resources
+C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.MainForm.resources
+C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.HistoryForm.resources

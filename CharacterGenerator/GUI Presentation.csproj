@@ -69,11 +69,29 @@
     <Compile Include="AdventuresViewForm.Designer.cs">
       <DependentUpon>AdventuresViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocationDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocationDataForm.Designer.cs">
+      <DependentUpon>LocationDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocationViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LocationViewForm.Designer.cs">
       <DependentUpon>LocationViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -95,8 +113,17 @@
     <EmbeddedResource Include="AdventuresViewForm.resx">
       <DependentUpon>AdventuresViewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocationDataForm.resx">
+      <DependentUpon>LocationDataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LocationViewForm.resx">
       <DependentUpon>LocationViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
