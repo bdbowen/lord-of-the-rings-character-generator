@@ -7,13 +7,14 @@ namespace Data.Domain
     using System.Data.Entity.Spatial;
 
     [Table("Wizards")]
+
     public partial class Wizard : Person
     {
-        [Column(Order = 0)]
+        [Key]
         [StringLength(50)]
         public string MagicType { get; set; }
 
-        [Column(Order = 1)]
+        [Key]
         [StringLength(50)]
         public string WizardColor { get; set; }
     }

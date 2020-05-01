@@ -28,8 +28,6 @@ namespace Data.Domain
 
         public bool RequiresWeaponMastery { get; set; }
 
-        public virtual Ability Ability { get; set; }
-
         public virtual Location Location { get; set; }
     }
 }

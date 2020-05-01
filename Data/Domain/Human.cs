@@ -9,7 +9,7 @@ namespace Data.Domain
     [Table("Humans")]
     public partial class Human : Person
     {
-        [Required]
+        [Key]
         [StringLength(50)]
         public string AncestralLine { get; set; }
     }

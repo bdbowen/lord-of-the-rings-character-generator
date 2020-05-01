@@ -8,12 +8,6 @@ namespace Data.Domain
 
     public partial class Ability
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ability()
-        {
-            Persons = new HashSet<Person>();
-        }
-
         public int AbilityID { get; set; }
 
         [Required]
@@ -35,10 +29,5 @@ namespace Data.Domain
         public virtual Magical Magical { get; set; }
 
         public virtual Mental Mental { get; set; }
-
-        public virtual Physical Physical { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> Persons { get; set; }
     }
 }

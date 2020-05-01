@@ -7,9 +7,10 @@ namespace Data.Domain
     using System.Data.Entity.Spatial;
 
     [Table("Dwarves")]
+
     public partial class Dwarf : Person
     {
-        [Required]
+        [Key]
         [StringLength(50)]
         public string DwarfGroup { get; set; }
     }

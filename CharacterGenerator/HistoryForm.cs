@@ -733,14 +733,8 @@ namespace CharacterGenerator
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            AdventureLogic adventureLogic = new AdventureLogic();
             if (currentRace == "elf")
             {
-                foreach (Adventure adventure in currentElf.Adventures)
-                {
-                    Adventure myAdventure = adventureLogic.GetAdventure(adventure.AdventureID);
-                    adventureLogic.DeleteAdventure(myAdventure);
-                }
                 elfLogic.DeleteElf(currentElf);
                 isElfRadio.Checked = true;
             }

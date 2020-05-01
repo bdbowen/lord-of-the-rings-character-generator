@@ -14,16 +14,17 @@ namespace Data.Domain
 
         public virtual DbSet<Ability> Abilities { get; set; }
         public virtual DbSet<Adventure> Adventures { get; set; }
-        public virtual DbSet<Dwarf> Dwarves { get; set; }
-        public virtual DbSet<Elf> Elves { get; set; }
-        public virtual DbSet<Hobbit> Hobbits { get; set; }
-        public virtual DbSet<Human> Humans { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Magical> Magicals { get; set; }
         public virtual DbSet<Mental> Mentals { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
         public virtual DbSet<Physical> Physicals { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Dwarf> Dwarves { get; set; }
+        public virtual DbSet<Elf> Elves { get; set; }
+        public virtual DbSet<Hobbit> Hobbits { get; set; }
+        public virtual DbSet<Human> Humans { get; set; }
         public virtual DbSet<Wizard> Wizards { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -46,16 +47,8 @@ namespace Data.Domain
 
             modelBuilder.Entity<Ability>()
                 .HasOptional(e => e.Mental)
-                .WithRequired(e => e.Ability);
-
-            modelBuilder.Entity<Ability>()
-                .HasOptional(e => e.Physical)
-                .WithRequired(e => e.Ability);
-
-            modelBuilder.Entity<Ability>()
-                .HasMany(e => e.Persons)
-                .WithMany(e => e.Abilities)
-                .Map(m => m.ToTable("PersonAbilityXref").MapLeftKey("AbilityID").MapRightKey("PersonID"));
+                .WithRequired(e => e.Ability)
+                .WillCascadeOnDelete();
 
             modelBuilder.Entity<Adventure>()
                 .Property(e => e.LeaderName)
@@ -63,22 +56,6 @@ namespace Data.Domain
 
             modelBuilder.Entity<Adventure>()
                 .Property(e => e.CompanionNames)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Dwarf>()
-                .Property(e => e.DwarfGroup)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Elf>()
-                .Property(e => e.ElfType)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Hobbit>()
-                .Property(e => e.HomeType)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Human>()
-                .Property(e => e.AncestralLine)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Location>()
@@ -107,26 +84,22 @@ namespace Data.Domain
             modelBuilder.Entity<Location>()
                 .HasMany(e => e.Magicals)
                 .WithRequired(e => e.Location)
-                .HasForeignKey(e => e.ArchiveLocationID)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.ArchiveLocationID);
 
             modelBuilder.Entity<Location>()
                 .HasMany(e => e.Mentals)
                 .WithRequired(e => e.Location)
-                .HasForeignKey(e => e.SchoolLocationID)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.SchoolLocationID);
 
             modelBuilder.Entity<Location>()
                 .HasMany(e => e.Persons)
                 .WithRequired(e => e.Location)
-                .HasForeignKey(e => e.HomeTownLocationID)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.HomeTownLocationID);
 
             modelBuilder.Entity<Location>()
                 .HasMany(e => e.Physicals)
                 .WithRequired(e => e.Location)
-                .HasForeignKey(e => e.TrainingLocationID)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.TrainingLocationID);
 
             modelBuilder.Entity<Magical>()
                 .Property(e => e.MagicType)
@@ -172,8 +145,7 @@ namespace Data.Domain
             modelBuilder.Entity<Person>()
                 .HasMany(e => e.Adventures)
                 .WithRequired(e => e.Person)
-                .HasForeignKey(e => e.MainPersonID)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.MainPersonID);
 
             modelBuilder.Entity<Physical>()
                 .Property(e => e.ToolRequired)
@@ -203,8 +175,23 @@ namespace Data.Domain
             modelBuilder.Entity<Role>()
                 .HasMany(e => e.Persons)
                 .WithRequired(e => e.Role)
-                .HasForeignKey(e => e.PositionRoleID)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.PositionRoleID);
+
+            modelBuilder.Entity<Dwarf>()
+                .Property(e => e.DwarfGroup)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Elf>()
+                .Property(e => e.ElfType)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Hobbit>()
+                .Property(e => e.HomeType)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Human>()
+                .Property(e => e.AncestralLine)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Wizard>()
                 .Property(e => e.MagicType)

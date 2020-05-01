@@ -36,6 +36,24 @@ namespace CharacterGenerator
 
         private void searchIDBtn_Click(object sender, EventArgs e)
         {
+            if(Int32.TryParse(idTxtBx.Text, out int result))
+            {
+                currentLocation = locationLogic.GetLocation(result);
+                if (currentLocation != null)
+                {
+                    Display();
+                    prevBtn.Visible = false;
+                    nextBtn.Visible = false;
+                } else
+                {
+                    MessageBox.Show("Location not found!", "Error 404");
+                }
+
+            } else
+            {
+                MessageBox.Show("ID must be numeric!", "Error");
+
+            }
 
         }
 
@@ -83,6 +101,7 @@ namespace CharacterGenerator
         {
             ReadOnlyValues(false);
             ChangeToEditMode(true);
+            deleteBtn.Visible = false;
             TitleTxtBx.Text = "";
             raceTxtBx.Text = "";
             quadrantTxtBx.Text = "";
@@ -97,11 +116,11 @@ namespace CharacterGenerator
             ReadOnlyValues(false);
             ChangeToEditMode(true);
         }
-        private void Reload(int index)
+        private void Reload()
         {
             locations = locationLogic.GetAllLocations();
             index = 0;
-            currentLocation = locations.ElementAt(index);
+            currentLocation = locations.First();
             Display();
         }
         private void saveBtn_Click(object sender, EventArgs e)
@@ -115,12 +134,15 @@ namespace CharacterGenerator
             currentLocation.FreeLand = freeCheck.Checked;
             if (newLocation)
             {
-                locationLogic.UpdateLocation();
-            } else
-            {
                 locationLogic.AddLocation(currentLocation);
             }
-            Reload(index);
+            else
+            {
+                locationLogic.UpdateLocation();
+            }
+            MessageBox.Show("Successfully saved the Location.", "Success!");
+
+            Reload();
             newLocation = false;
         }
 
@@ -128,11 +150,17 @@ namespace CharacterGenerator
         {
             ReadOnlyValues(true);
             ChangeToEditMode(false);
-            TitleTxtBx.Text = currentLocation.Title;
-            raceTxtBx.Text = currentLocation.InhabitantsPrimaryRace;
-            quadrantTxtBx.Text = currentLocation.RelativeMapPosition;
-            regionTxtBx.Text = currentLocation.Region;
-            freeCheck.Checked = currentLocation.FreeLand;
+            if (newLocation)
+            {
+                Reload();
+            } else
+            {
+                TitleTxtBx.Text = currentLocation.Title;
+                raceTxtBx.Text = currentLocation.InhabitantsPrimaryRace;
+                quadrantTxtBx.Text = currentLocation.RelativeMapPosition;
+                regionTxtBx.Text = currentLocation.Region;
+                freeCheck.Checked = currentLocation.FreeLand;
+            }
             newLocation = false;
         }
 
@@ -148,6 +176,30 @@ namespace CharacterGenerator
             index = (index + 1) % locations.Count();
             currentLocation = locations.ElementAt(index);
             Display();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reload();
+            prevBtn.Visible = true;
+            nextBtn.Visible = true;
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            ReadOnlyValues(true);
+            ChangeToEditMode(false);
+            AdventureLogic adventureLogic = new AdventureLogic();
+
+            foreach (Adventure adventure in currentLocation.Adventures)
+            {
+                Adventure myAdventure = adventureLogic.GetAdventure(adventure.AdventureID);
+                adventureLogic.DeleteAdventure(myAdventure);
+            }
+
+            locationLogic.DeleteLocation(currentLocation);
+            MessageBox.Show("Location has been deleted", "Success");
+            Reload();
         }
     }
 }

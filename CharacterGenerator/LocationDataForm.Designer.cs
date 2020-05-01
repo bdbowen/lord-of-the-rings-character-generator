@@ -48,6 +48,7 @@
             this.titleLbl = new System.Windows.Forms.Label();
             this.prevBtn = new System.Windows.Forms.Button();
             this.nextBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // quadrantTxtBx
@@ -199,14 +200,15 @@
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Visible = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // searchIDBtn
             // 
             this.searchIDBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.searchIDBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchIDBtn.Location = new System.Drawing.Point(65, 108);
+            this.searchIDBtn.Location = new System.Drawing.Point(44, 108);
             this.searchIDBtn.Name = "searchIDBtn";
-            this.searchIDBtn.Size = new System.Drawing.Size(126, 28);
+            this.searchIDBtn.Size = new System.Drawing.Size(147, 28);
             this.searchIDBtn.TabIndex = 189;
             this.searchIDBtn.Text = "Search By ID";
             this.searchIDBtn.UseVisualStyleBackColor = false;
@@ -252,9 +254,9 @@
             // 
             this.prevBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.prevBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prevBtn.Location = new System.Drawing.Point(65, 143);
+            this.prevBtn.Location = new System.Drawing.Point(44, 210);
             this.prevBtn.Name = "prevBtn";
-            this.prevBtn.Size = new System.Drawing.Size(126, 28);
+            this.prevBtn.Size = new System.Drawing.Size(147, 28);
             this.prevBtn.TabIndex = 196;
             this.prevBtn.Text = "Previous";
             this.prevBtn.UseVisualStyleBackColor = false;
@@ -264,19 +266,32 @@
             // 
             this.nextBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nextBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextBtn.Location = new System.Drawing.Point(65, 181);
+            this.nextBtn.Location = new System.Drawing.Point(44, 176);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(126, 28);
+            this.nextBtn.Size = new System.Drawing.Size(147, 28);
             this.nextBtn.TabIndex = 197;
             this.nextBtn.Text = "Next";
             this.nextBtn.UseVisualStyleBackColor = false;
             this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(44, 142);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 28);
+            this.button1.TabIndex = 198;
+            this.button1.Text = "Find All Locations";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LocationDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 567);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.prevBtn);
             this.Controls.Add(this.EditBtn);
@@ -327,5 +342,6 @@
         private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.Button prevBtn;
         private System.Windows.Forms.Button nextBtn;
+        private System.Windows.Forms.Button button1;
     }
 }
