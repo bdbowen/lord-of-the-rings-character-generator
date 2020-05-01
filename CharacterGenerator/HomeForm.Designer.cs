@@ -61,9 +61,6 @@
             this.editButton = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.magicBtn = new System.Windows.Forms.Button();
-            this.physicalBtn = new System.Windows.Forms.Button();
-            this.mentalBtn = new System.Windows.Forms.Button();
             this.exportBtn = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label1 = new System.Windows.Forms.Label();
@@ -294,7 +291,7 @@
             // 
             this.viewHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewHome.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewHome.Location = new System.Drawing.Point(813, 72);
+            this.viewHome.Location = new System.Drawing.Point(810, 141);
             this.viewHome.Margin = new System.Windows.Forms.Padding(2);
             this.viewHome.Name = "viewHome";
             this.viewHome.Size = new System.Drawing.Size(140, 28);
@@ -308,7 +305,7 @@
             // 
             this.viewPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewPosition.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewPosition.Location = new System.Drawing.Point(813, 113);
+            this.viewPosition.Location = new System.Drawing.Point(810, 182);
             this.viewPosition.Margin = new System.Windows.Forms.Padding(2);
             this.viewPosition.Name = "viewPosition";
             this.viewPosition.Size = new System.Drawing.Size(140, 28);
@@ -348,7 +345,7 @@
             // 
             this.viewAdventures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewAdventures.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewAdventures.Location = new System.Drawing.Point(813, 156);
+            this.viewAdventures.Location = new System.Drawing.Point(810, 225);
             this.viewAdventures.Margin = new System.Windows.Forms.Padding(2);
             this.viewAdventures.Name = "viewAdventures";
             this.viewAdventures.Size = new System.Drawing.Size(140, 28);
@@ -498,48 +495,6 @@
             this.cancelBtn.Visible = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // magicBtn
-            // 
-            this.magicBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.magicBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.magicBtn.Location = new System.Drawing.Point(813, 228);
-            this.magicBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.magicBtn.Name = "magicBtn";
-            this.magicBtn.Size = new System.Drawing.Size(140, 28);
-            this.magicBtn.TabIndex = 27;
-            this.magicBtn.Text = "Magical Feats";
-            this.magicBtn.UseVisualStyleBackColor = false;
-            this.magicBtn.Visible = false;
-            this.magicBtn.Click += new System.EventHandler(this.magicBtn_Click);
-            // 
-            // physicalBtn
-            // 
-            this.physicalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.physicalBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.physicalBtn.Location = new System.Drawing.Point(813, 265);
-            this.physicalBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.physicalBtn.Name = "physicalBtn";
-            this.physicalBtn.Size = new System.Drawing.Size(140, 28);
-            this.physicalBtn.TabIndex = 28;
-            this.physicalBtn.Text = "Physical Abilities";
-            this.physicalBtn.UseVisualStyleBackColor = false;
-            this.physicalBtn.Visible = false;
-            this.physicalBtn.Click += new System.EventHandler(this.physicalBtn_Click);
-            // 
-            // mentalBtn
-            // 
-            this.mentalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mentalBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mentalBtn.Location = new System.Drawing.Point(813, 303);
-            this.mentalBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.mentalBtn.Name = "mentalBtn";
-            this.mentalBtn.Size = new System.Drawing.Size(140, 28);
-            this.mentalBtn.TabIndex = 29;
-            this.mentalBtn.Text = "Fields of Wisdom";
-            this.mentalBtn.UseVisualStyleBackColor = false;
-            this.mentalBtn.Visible = false;
-            this.mentalBtn.Click += new System.EventHandler(this.mentalBtn_Click);
-            // 
             // exportBtn
             // 
             this.exportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -585,9 +540,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(992, 567);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.mentalBtn);
-            this.Controls.Add(this.physicalBtn);
-            this.Controls.Add(this.magicBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.checkBox2);
@@ -663,9 +615,6 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button magicBtn;
-        private System.Windows.Forms.Button physicalBtn;
-        private System.Windows.Forms.Button mentalBtn;
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label1;

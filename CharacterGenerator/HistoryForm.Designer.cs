@@ -56,9 +56,6 @@
             this.NametxtBx = new System.Windows.Forms.TextBox();
             this.nameLbl = new System.Windows.Forms.Label();
             this.exportBtn = new System.Windows.Forms.Button();
-            this.mentalBtn = new System.Windows.Forms.Button();
-            this.physicalBtn = new System.Windows.Forms.Button();
-            this.magicBtn = new System.Windows.Forms.Button();
             this.viewAdventures = new System.Windows.Forms.Button();
             this.viewPosition = new System.Windows.Forms.Button();
             this.viewHome = new System.Windows.Forms.Button();
@@ -427,50 +424,11 @@
             this.exportBtn.Visible = false;
             this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
-            // mentalBtn
-            // 
-            this.mentalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mentalBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mentalBtn.Location = new System.Drawing.Point(821, 301);
-            this.mentalBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.mentalBtn.Name = "mentalBtn";
-            this.mentalBtn.Size = new System.Drawing.Size(140, 28);
-            this.mentalBtn.TabIndex = 177;
-            this.mentalBtn.Text = "Fields of Wisdom";
-            this.mentalBtn.UseVisualStyleBackColor = false;
-            this.mentalBtn.Visible = false;
-            // 
-            // physicalBtn
-            // 
-            this.physicalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.physicalBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.physicalBtn.Location = new System.Drawing.Point(821, 263);
-            this.physicalBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.physicalBtn.Name = "physicalBtn";
-            this.physicalBtn.Size = new System.Drawing.Size(140, 28);
-            this.physicalBtn.TabIndex = 176;
-            this.physicalBtn.Text = "Physical Abilities";
-            this.physicalBtn.UseVisualStyleBackColor = false;
-            this.physicalBtn.Visible = false;
-            // 
-            // magicBtn
-            // 
-            this.magicBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.magicBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.magicBtn.Location = new System.Drawing.Point(821, 226);
-            this.magicBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.magicBtn.Name = "magicBtn";
-            this.magicBtn.Size = new System.Drawing.Size(140, 28);
-            this.magicBtn.TabIndex = 175;
-            this.magicBtn.Text = "Magical Feats";
-            this.magicBtn.UseVisualStyleBackColor = false;
-            this.magicBtn.Visible = false;
-            // 
             // viewAdventures
             // 
             this.viewAdventures.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewAdventures.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewAdventures.Location = new System.Drawing.Point(821, 154);
+            this.viewAdventures.Location = new System.Drawing.Point(815, 231);
             this.viewAdventures.Margin = new System.Windows.Forms.Padding(2);
             this.viewAdventures.Name = "viewAdventures";
             this.viewAdventures.Size = new System.Drawing.Size(140, 28);
@@ -484,7 +442,7 @@
             // 
             this.viewPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewPosition.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewPosition.Location = new System.Drawing.Point(821, 111);
+            this.viewPosition.Location = new System.Drawing.Point(815, 188);
             this.viewPosition.Margin = new System.Windows.Forms.Padding(2);
             this.viewPosition.Name = "viewPosition";
             this.viewPosition.Size = new System.Drawing.Size(140, 28);
@@ -498,7 +456,7 @@
             // 
             this.viewHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.viewHome.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewHome.Location = new System.Drawing.Point(821, 70);
+            this.viewHome.Location = new System.Drawing.Point(815, 147);
             this.viewHome.Margin = new System.Windows.Forms.Padding(2);
             this.viewHome.Name = "viewHome";
             this.viewHome.Size = new System.Drawing.Size(140, 28);
@@ -633,9 +591,6 @@
             this.Controls.Add(this.searchRaceBtn);
             this.Controls.Add(this.idTxtBx);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.mentalBtn);
-            this.Controls.Add(this.physicalBtn);
-            this.Controls.Add(this.magicBtn);
             this.Controls.Add(this.viewAdventures);
             this.Controls.Add(this.viewPosition);
             this.Controls.Add(this.viewHome);
@@ -704,9 +659,6 @@
         private System.Windows.Forms.TextBox NametxtBx;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Button exportBtn;
-        private System.Windows.Forms.Button mentalBtn;
-        private System.Windows.Forms.Button physicalBtn;
-        private System.Windows.Forms.Button magicBtn;
         private System.Windows.Forms.Button viewAdventures;
         private System.Windows.Forms.Button viewPosition;
         private System.Windows.Forms.Button viewHome;

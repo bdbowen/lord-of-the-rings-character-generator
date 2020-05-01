@@ -126,10 +126,6 @@ namespace CharacterGenerator
                 checkBox1.Checked = currentElf.OwnsRingOfPower;
                 checkBox1.Visible = true;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = true;
             }
             else if (currentRace == "dwarf")
             {
@@ -144,10 +140,6 @@ namespace CharacterGenerator
                 isEvil.Location = new Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = false;
             }
             else if (currentRace == "wizard")
             {
@@ -162,10 +154,6 @@ namespace CharacterGenerator
                 isEvil.Location = new Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = true;
             }
             else if (currentRace == "human")
             {
@@ -182,10 +170,6 @@ namespace CharacterGenerator
 
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = false;
             }
             else if (currentRace == "hobbit")
             {
@@ -207,10 +191,6 @@ namespace CharacterGenerator
                 checkBox2.Text = "Adventurer";
                 checkBox2.Checked = currentHobbit.IsAdventurer;
                 checkBox2.Visible = true;
-
-                mentalBtn.Visible = false;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = false;
             }
             else
             {

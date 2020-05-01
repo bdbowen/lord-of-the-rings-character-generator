@@ -6,7 +6,6 @@ C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programm
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\bin\Debug\EntityFramework.xml
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\GUI Presentation.csprojAssemblyReference.cache
-C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.AbilityViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.AdventuresViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.LocationViewForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.PositionViewForm.resources

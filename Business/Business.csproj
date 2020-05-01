@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\AbilityLogic.cs" />
     <Compile Include="Logic\AdventureLogic.cs" />
     <Compile Include="Logic\DwarfLogic.cs" />
     <Compile Include="Logic\ElfLogic.cs" />
@@ -59,10 +58,7 @@
     <Compile Include="Logic\HumanLogic.cs" />
     <Compile Include="Logic\IGenerate.cs" />
     <Compile Include="Logic\LocationLogic.cs" />
-    <Compile Include="Logic\MagicalLogic.cs" />
-    <Compile Include="Logic\MentalLogic.cs" />
     <Compile Include="Logic\PersonLogic.cs" />
-    <Compile Include="Logic\PhysicalLogic.cs" />
     <Compile Include="Logic\RoleLogic.cs" />
     <Compile Include="Logic\WizardLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -39,9 +39,7 @@ namespace CharacterGenerator
         }
         //class attributes
         public static int MAXAGE = 100;
-       
-        /*public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
-        public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();*/
+
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] { "Theodred", "Aragorn", "Arathorn", "Boromir", "Faramir", "Denathor", "Beren", "Eomer", "Theoden",
@@ -72,16 +70,6 @@ namespace CharacterGenerator
             index = rand.Next(0, AncestralLineOptions.Length);
             human.AncestralLine = AncestralLineOptions[index];
 
-            //set abilities -> future
-            /*
-            for (int i = 0; i < numberOfPhysical; i++)
-            {
-                PhysicalAbilities.Add(new Physical(rand));
-            }
-            for (int i = 0; i < numberOfMental; i++)
-            {
-                FieldsOfWisdom.Add(new Mental(rand));
-            }*/
             AddHuman(human);
 
             personLogic.GenerateAdventures(human.PersonID, rand.Next(1,10), rand);

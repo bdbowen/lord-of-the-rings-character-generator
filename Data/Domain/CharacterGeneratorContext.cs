@@ -12,13 +12,9 @@ namespace Data.Domain
         {
         }
 
-        public virtual DbSet<Ability> Abilities { get; set; }
         public virtual DbSet<Adventure> Adventures { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<Magical> Magicals { get; set; }
-        public virtual DbSet<Mental> Mentals { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
-        public virtual DbSet<Physical> Physicals { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Dwarf> Dwarves { get; set; }
@@ -29,27 +25,6 @@ namespace Data.Domain
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Ability>()
-                .Property(e => e.Title)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Ability>()
-                .Property(e => e.Description)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Ability>()
-                .Property(e => e.abilityType)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Ability>()
-                .HasOptional(e => e.Magical)
-                .WithRequired(e => e.Ability);
-
-            modelBuilder.Entity<Ability>()
-                .HasOptional(e => e.Mental)
-                .WithRequired(e => e.Ability)
-                .WillCascadeOnDelete();
-
             modelBuilder.Entity<Adventure>()
                 .Property(e => e.LeaderName)
                 .IsUnicode(false);
@@ -82,36 +57,9 @@ namespace Data.Domain
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Location>()
-                .HasMany(e => e.Magicals)
-                .WithRequired(e => e.Location)
-                .HasForeignKey(e => e.ArchiveLocationID);
-
-            modelBuilder.Entity<Location>()
-                .HasMany(e => e.Mentals)
-                .WithRequired(e => e.Location)
-                .HasForeignKey(e => e.SchoolLocationID);
-
-            modelBuilder.Entity<Location>()
                 .HasMany(e => e.Persons)
                 .WithRequired(e => e.Location)
                 .HasForeignKey(e => e.HomeTownLocationID);
-
-            modelBuilder.Entity<Location>()
-                .HasMany(e => e.Physicals)
-                .WithRequired(e => e.Location)
-                .HasForeignKey(e => e.TrainingLocationID);
-
-            modelBuilder.Entity<Magical>()
-                .Property(e => e.MagicType)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Mental>()
-                .Property(e => e.RaceOfOrigin)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Mental>()
-                .Property(e => e.Subject)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Person>()
                 .Property(e => e.Name)
@@ -146,14 +94,6 @@ namespace Data.Domain
                 .HasMany(e => e.Adventures)
                 .WithRequired(e => e.Person)
                 .HasForeignKey(e => e.MainPersonID);
-
-            modelBuilder.Entity<Physical>()
-                .Property(e => e.ToolRequired)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Physical>()
-                .Property(e => e.RaceOfOrigin)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Role>()
                 .Property(e => e.Title)

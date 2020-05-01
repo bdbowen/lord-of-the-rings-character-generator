@@ -38,10 +38,6 @@ namespace CharacterGenerator
             context.Wizards.Remove(myWizard);
             context.SaveChanges();
         }
-       
-        /*public List<Magical> MagicalFeats { get; } = new List<Magical>();
-        public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
-        public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();*/
 
         //data for randomization 
         public static string[] MaleFirstNames = new string[] { "Gandalf", "Saruman", "Radagast", "Ikron", "Obus", "Grumaex", "Ageor", "Ifaris", "Vraxeor",
@@ -71,21 +67,6 @@ namespace CharacterGenerator
             //Generate Magic Type
             index = rand.Next(0, MagicTypeOptions.Length);
             wizard.MagicType = MagicTypeOptions[index];
-
-            //set abilities -> future
-            /*for (int i = 0; i < numberOfPhysical; i++)
-            {
-                PhysicalAbilities.Add(new Physical(rand));
-            }
-
-            for (int i = 0; i < numberOfMagic; i++)
-            {
-                MagicalFeats.Add(new Magical(rand));
-            }
-            for (int i = 0; i < numberOfMental; i++)
-            {
-                FieldsOfWisdom.Add(new Mental(rand));
-            }*/
             AddWizard(wizard);
 
 

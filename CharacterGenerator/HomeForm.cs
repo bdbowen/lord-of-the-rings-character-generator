@@ -65,10 +65,6 @@ namespace CharacterGenerator
                 checkBox1.Checked = elf.OwnsRingOfPower;
                 checkBox1.Visible = true;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = true;
             }
             else if (isDwarfRadio.Checked)
             {
@@ -85,10 +81,6 @@ namespace CharacterGenerator
                 isEvil.Location = new Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = false;
             }
             else if (isWizardRadio.Checked)
             {
@@ -105,10 +97,6 @@ namespace CharacterGenerator
                 isEvil.Location = new Point(625, 218);
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = true;
             }
             else if (isHumanRadio.Checked)
             {
@@ -126,10 +114,6 @@ namespace CharacterGenerator
 
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
-
-                mentalBtn.Visible = true;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = false;
             }
             else if (isHobbitRadio.Checked)
             {
@@ -152,10 +136,6 @@ namespace CharacterGenerator
                 checkBox2.Text = "Adventurer";
                 checkBox2.Checked = hobbit.IsAdventurer;
                 checkBox2.Visible = true;
-
-                mentalBtn.Visible = false;
-                physicalBtn.Visible = true;
-                magicBtn.Visible = false;
             }
             else
             {
@@ -407,109 +387,6 @@ namespace CharacterGenerator
                 MessageBox.Show("Changes have been saved", "Success");
             }
 
-        }
-
-        private void magicBtn_Click(object sender, EventArgs e)
-        {
-            string message = "Under Development!";
-            string caption = "Error";
-
-            //under development
-            /*if (person.RaceType == "Elf")
-            {
-                caption = person.Name + "'s Magical Feats";
-                AbilityViewForm myForm = new AbilityViewForm(temp.MagicalFeats, caption, number);
-                myForm.ShowDialog();
-            }
-
-            if (person.RaceType == "Wizard")
-            {
-                caption = person.Name + "'s Magical Feats";
-                AbilityViewForm myForm = new AbilityViewForm(temp.MagicalFeats, caption, number);
-                myForm.ShowDialog();
-            }*/
-        }
-
-        private void physicalBtn_Click(object sender, EventArgs e)
-        {
-            string message = "No Magical Abilities!";
-            string caption = "Error";
-
-            /*if (person.RaceType == "Elf")
-            {
-                Elf temp = (Elf)person;
-               
-                caption = temp.Name + "'s Physical Abilities";
-                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
-                myForm.ShowDialog();
-
-            }
-            if (person.RaceType == "Hobbit")
-            {
-                Hobbit temp = (Hobbit)person;
-                caption = temp.Name + "'s Physical Abilities";
-                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
-                myForm.ShowDialog();
-
-            }
-
-            if (person.RaceType == "Human")
-            {
-                Human temp = (Human)person;
-
-                caption = temp.Name + "'s Physical Abilities";
-                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
-                myForm.ShowDialog();
-            }
-            if (person.RaceType == "Dwarf")
-            {
-                Dwarf temp = (Dwarf)person;
-                caption = temp.Name + "'s Physical Abilities";
-                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
-                myForm.ShowDialog();
-            }
-            if (person.RaceType == "Wizard")
-            {
-                Wizard temp = (Wizard)person;
-                caption = temp.Name + "'s Physical Abilities";
-                AbilityViewForm myForm = new AbilityViewForm(temp.PhysicalAbilities, caption, number);
-                myForm.ShowDialog();
-            }*/
-        }
-
-        private void mentalBtn_Click(object sender, EventArgs e)
-        {
-            string message = "No Mental Abilities!";
-            string caption = person.Name + "'s Fields of Wisdom";
-
-            /*if (person.RaceType == "Elf")
-            {
-                Elf temp = (Elf)person;
-                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
-                myForm.ShowDialog();
-
-            }
-            if (person.RaceType == "Human")
-            {
-                Human temp = (Human)person;
-                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
-                myForm.ShowDialog();
-
-            }
-            if (person.RaceType == "Dwarf")
-            {
-                Dwarf temp = (Dwarf)person;
-                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
-                myForm.ShowDialog();
-
-            }
-            if (person.RaceType == "Wizard")
-            {
-                Wizard temp = (Wizard)person;
-                AbilityViewForm myForm = new AbilityViewForm(temp.FieldsOfWisdom, caption, number);
-                myForm.ShowDialog();
-
-            }*/
         }
 
         private void exportBtn_Click(object sender, EventArgs e)

@@ -57,12 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbilityViewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AbilityViewForm.Designer.cs">
-      <DependentUpon>AbilityViewForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdventureHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +113,6 @@
     <Compile Include="RoleDataForm.Designer.cs">
       <DependentUpon>RoleDataForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AbilityViewForm.resx">
-      <DependentUpon>AbilityViewForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdventureHistoryForm.resx">
       <DependentUpon>AdventureHistoryForm.cs</DependentUpon>
     </EmbeddedResource>

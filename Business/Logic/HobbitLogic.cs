@@ -38,7 +38,6 @@ namespace CharacterGenerator
             context.Hobbits.Remove(myHobbit);
             context.SaveChanges();
         }
-        public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] { "Frodo", "Bilbo", "Samwise", "Perigrin", "Lotho", "Radigis", "Ramnulf", "Humbert",
@@ -75,11 +74,6 @@ namespace CharacterGenerator
             hobbit.OwnsOneRing = rand.Next(2) == 1;
             hobbit.IsAdventurer = rand.Next(2) == 1;
 
-            //set abilities - future
-            /*for (int i = 0; i < numberOfAbilities; i++)
-            {
-                PhysicalAbilities.Add(new Physical(rand));
-            }*/
             AddHobbit(hobbit);
 
             personLogic.GenerateAdventures(hobbit.PersonID, rand.Next(1,10), rand);

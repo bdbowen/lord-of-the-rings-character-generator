@@ -12,10 +12,7 @@ namespace Data.Domain
         public Location()
         {
             Adventures = new HashSet<Adventure>();
-            Magicals = new HashSet<Magical>();
-            Mentals = new HashSet<Mental>();
             Persons = new HashSet<Person>();
-            Physicals = new HashSet<Physical>();
         }
 
         public int LocationID { get; set; }
@@ -42,15 +39,6 @@ namespace Data.Domain
         public virtual ICollection<Adventure> Adventures { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Magical> Magicals { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mental> Mentals { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> Persons { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Physical> Physicals { get; set; }
     }
 }

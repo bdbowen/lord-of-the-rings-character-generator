@@ -36,14 +36,6 @@ namespace CharacterGenerator
             context.Elves.Remove(myElf);
             context.SaveChanges();
         }
-        //TODO: add error checking for all the getter and setter methods
-        //Elf Attributes
-        //Personal Information
-
-        //Abilities
-        /*public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();
-        public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
-        public List<Magical> MagicalFeats { get; } = new List<Magical>();*/
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] {"Elrond", "Mithrandir", "Sylvan", "Legolas", "Glorfindel", "Gildor", "Elrohir", "Thranduil", "Elkhazel",
@@ -71,22 +63,6 @@ namespace CharacterGenerator
 
             //set owns ring of power
             elfPerson.OwnsRingOfPower = rand.Next(2) == 1;
-
-            //set abilities -> future
-            /*for (int i = 0; i < numberOfPhysical; i++)
-            {
-                PhysicalAbilities.Add(new Physical(rand));
-            }
-
-            for (int i = 0; i < numberOfMental; i++)
-            {
-                FieldsOfWisdom.Add(new Mental(rand));
-            }
-
-            for (int i = 0; i < numberOfMagical; i++)
-            {
-                MagicalFeats.Add(new Magical(rand));
-            }*/
 
             AddElf(elfPerson);
             personLogic.GenerateAdventures(elfPerson.PersonID, rand.Next(1, 10), rand);

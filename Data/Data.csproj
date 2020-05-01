@@ -60,7 +60,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Ability.cs" />
     <Compile Include="Domain\Adventure.cs" />
     <Compile Include="Domain\CharacterGeneratorContext.cs" />
     <Compile Include="Domain\Dwarf.cs" />
@@ -68,10 +67,7 @@
     <Compile Include="Domain\Hobbit.cs" />
     <Compile Include="Domain\Human.cs" />
     <Compile Include="Domain\Location.cs" />
-    <Compile Include="Domain\Magical.cs" />
-    <Compile Include="Domain\Mental.cs" />
     <Compile Include="Domain\Person.cs" />
-    <Compile Include="Domain\Physical.cs" />
     <Compile Include="Domain\Role.cs" />
     <Compile Include="Domain\sysdiagram.cs" />
     <Compile Include="Domain\Wizard.cs" />

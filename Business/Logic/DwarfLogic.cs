@@ -39,8 +39,6 @@ namespace CharacterGenerator
         }
         //Class Attributes
         public static int MAXAGE = 250;
-        public List<Physical> PhysicalAbilities { get; } = new List<Physical>();
-        public List<Mental> FieldsOfWisdom { get; } = new List<Mental>();
 
         //data for randomization
         public static string[] MaleFirstNames = new string[] { "Gimli", "Thorin", "Thrain", "Thror", "Fili", "Kili", "Bifur", "Bofur", "Bombur", "Oin",
@@ -76,16 +74,7 @@ namespace CharacterGenerator
 
             AddDwarf(dwarfPerson);
             personLogic.GenerateAdventures(dwarfPerson.PersonID, rand.Next(1,10), rand);
-            //set abilities -> future
-            /*for (int i = 0; i < numberOfPhysical; i++)
-            {
-                PhysicalAbilities.Add(new Physical(rand));
-            }
-            for (int i = 0; i < numberOfMental; i++)
-            {
-                FieldsOfWisdom.Add(new Mental(rand));
-            }
-            */
+
             return dwarfPerson;
         }
 
