@@ -31,14 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.locationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dwarfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.humanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hobbitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.locationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,41 @@
             this.historyToolStripMenuItem.Text = "History of Generation";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
+            // elfToolStripMenuItem
+            // 
+            this.elfToolStripMenuItem.Name = "elfToolStripMenuItem";
+            this.elfToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.elfToolStripMenuItem.Text = "Elf";
+            this.elfToolStripMenuItem.Click += new System.EventHandler(this.elfToolStripMenuItem_Click);
+            // 
+            // dwarfToolStripMenuItem
+            // 
+            this.dwarfToolStripMenuItem.Name = "dwarfToolStripMenuItem";
+            this.dwarfToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.dwarfToolStripMenuItem.Text = "Dwarf";
+            this.dwarfToolStripMenuItem.Click += new System.EventHandler(this.dwarfToolStripMenuItem_Click);
+            // 
+            // wizardToolStripMenuItem
+            // 
+            this.wizardToolStripMenuItem.Name = "wizardToolStripMenuItem";
+            this.wizardToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.wizardToolStripMenuItem.Text = "Wizard";
+            this.wizardToolStripMenuItem.Click += new System.EventHandler(this.wizardToolStripMenuItem_Click);
+            // 
+            // humanToolStripMenuItem
+            // 
+            this.humanToolStripMenuItem.Name = "humanToolStripMenuItem";
+            this.humanToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.humanToolStripMenuItem.Text = "Human";
+            this.humanToolStripMenuItem.Click += new System.EventHandler(this.humanToolStripMenuItem_Click);
+            // 
+            // hobbitToolStripMenuItem
+            // 
+            this.hobbitToolStripMenuItem.Name = "hobbitToolStripMenuItem";
+            this.hobbitToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.hobbitToolStripMenuItem.Text = "Hobbit";
+            this.hobbitToolStripMenuItem.Click += new System.EventHandler(this.hobbitToolStripMenuItem_Click);
+            // 
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -97,43 +132,9 @@
             // rolesToolStripMenuItem
             // 
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rolesToolStripMenuItem.Text = "Roles";
-            // 
-            // elfToolStripMenuItem
-            // 
-            this.elfToolStripMenuItem.Name = "elfToolStripMenuItem";
-            this.elfToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.elfToolStripMenuItem.Text = "Elf";
-            this.elfToolStripMenuItem.Click += new System.EventHandler(this.elfToolStripMenuItem_Click);
-            // 
-            // dwarfToolStripMenuItem
-            // 
-            this.dwarfToolStripMenuItem.Name = "dwarfToolStripMenuItem";
-            this.dwarfToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dwarfToolStripMenuItem.Text = "Dwarf";
-            this.dwarfToolStripMenuItem.Click += new System.EventHandler(this.dwarfToolStripMenuItem_Click);
-            // 
-            // wizardToolStripMenuItem
-            // 
-            this.wizardToolStripMenuItem.Name = "wizardToolStripMenuItem";
-            this.wizardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.wizardToolStripMenuItem.Text = "Wizard";
-            this.wizardToolStripMenuItem.Click += new System.EventHandler(this.wizardToolStripMenuItem_Click);
-            // 
-            // humanToolStripMenuItem
-            // 
-            this.humanToolStripMenuItem.Name = "humanToolStripMenuItem";
-            this.humanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.humanToolStripMenuItem.Text = "Human";
-            this.humanToolStripMenuItem.Click += new System.EventHandler(this.humanToolStripMenuItem_Click);
-            // 
-            // hobbitToolStripMenuItem
-            // 
-            this.hobbitToolStripMenuItem.Name = "hobbitToolStripMenuItem";
-            this.hobbitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hobbitToolStripMenuItem.Text = "Hobbit";
-            this.hobbitToolStripMenuItem.Click += new System.EventHandler(this.hobbitToolStripMenuItem_Click);
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // MainForm
             // 

@@ -29,11 +29,6 @@ namespace CharacterGenerator
             Size = BackgroundImage.Size;
         }
 
-        private void PrevBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void searchIDBtn_Click(object sender, EventArgs e)
         {
             if(Int32.TryParse(idTxtBx.Text, out int result))
@@ -125,25 +120,47 @@ namespace CharacterGenerator
         }
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            ReadOnlyValues(true);
-            ChangeToEditMode(false);
-            currentLocation.Title = TitleTxtBx.Text;
-            currentLocation.InhabitantsPrimaryRace = raceTxtBx.Text;
-            currentLocation.RelativeMapPosition = quadrantTxtBx.Text;
-            currentLocation.Region = regionTxtBx.Text;
-            currentLocation.FreeLand = freeCheck.Checked;
-            if (newLocation)
+            if (TitleTxtBx.Text == "" ||
+                raceTxtBx.Text == "" ||
+                quadrantTxtBx.Text == "" ||
+                regionTxtBx.Text == "")
             {
-                locationLogic.AddLocation(currentLocation);
+                MessageBox.Show("Please fill out all fields before submitting to the database!", "Invalid Data");
+
+            }
+            else if (raceTxtBx.Text.ToLower() != "elf" &&
+                raceTxtBx.Text.ToLower() != "dwarf" &&
+                raceTxtBx.Text.ToLower() != "wizard" &&
+                raceTxtBx.Text.ToLower() != "hobbit" &&
+                raceTxtBx.Text.ToLower() != "men"
+                )
+            {
+                MessageBox.Show("Race must be set to 'elf', 'dwarf', 'hobbit', 'wizard', or 'men'!", "Invalid Data");
             }
             else
             {
-                locationLogic.UpdateLocation();
-            }
-            MessageBox.Show("Successfully saved the Location.", "Success!");
+                ReadOnlyValues(true);
+                ChangeToEditMode(false);
+                currentLocation.Title = TitleTxtBx.Text;
+                currentLocation.InhabitantsPrimaryRace = raceTxtBx.Text;
+                currentLocation.RelativeMapPosition = quadrantTxtBx.Text;
+                currentLocation.Region = regionTxtBx.Text;
+                currentLocation.FreeLand = freeCheck.Checked;
+                if (newLocation)
+                {
+                    locationLogic.AddLocation(currentLocation);
+                    MessageBox.Show("Successfully added a new Location", "Success!");
 
-            Reload();
-            newLocation = false;
+                    Reload();
+                }
+                else
+                {
+                    locationLogic.UpdateLocation();
+                    MessageBox.Show("Successfully saved the Location.", "Success!");
+                }
+
+                newLocation = false;
+            }
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

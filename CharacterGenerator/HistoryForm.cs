@@ -584,89 +584,104 @@ namespace CharacterGenerator
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            int result;
-            Person person = ReturnPerson();
-            //make all fields editable
-            NametxtBx.ReadOnly = true;
-            ageTxtBx.ReadOnly = true;
-            hairTxtBx.ReadOnly = true;
-            eyeTxtBx.ReadOnly = true;
-            genderTxtBx.ReadOnly = true;
-            complexionTxtBx.ReadOnly = true;
-            WoCTxtBx.ReadOnly = true;
-            Attr1TxtBx.ReadOnly = true;
-
-            isEvil.AutoCheck = false;
-            checkBox1.AutoCheck = false;
-            checkBox2.AutoCheck = false;
-
-            person.Name = NametxtBx.Text;
-
-            if (int.TryParse(ageTxtBx.Text, out result))
+            if (NametxtBx.Text == "" ||
+                ageTxtBx.Text == "" ||
+                hairTxtBx.Text == "" ||
+                eyeTxtBx.Text == "" ||
+                genderTxtBx.Text == "" ||
+                complexionTxtBx.Text == "" ||
+                WoCTxtBx.Text == "" ||
+                Attr1TxtBx.Text == ""
+                )
             {
-                person.Age = result;
+                MessageBox.Show("Please fill out all fields before saving to the database!", "Invalid Data");
             }
             else
             {
-                ageTxtBx.Text = person.Age.ToString();
-                MessageBox.Show("Age must be a number! The previous age will be used.", "Error!");
-            }
-            person.HairColor = hairTxtBx.Text;
-            person.EyeColor = eyeTxtBx.Text;
-            if (genderTxtBx.Text == "M" || genderTxtBx.Text == "F")
-            {
-                person.Gender = genderTxtBx.Text;
-            }
-            else
-            {
-                genderTxtBx.Text = person.Gender;
-                MessageBox.Show("Gender must be a 'M' or 'F'! Tolkein's mythology only allows for two genders.", "Error!");
-            }
-            person.SkinComplexion = complexionTxtBx.Text;
-            person.WeaponOfChoice = WoCTxtBx.Text;
-            person.Evil = isEvil.Checked;
+                int result;
+                Person person = ReturnPerson();
+                //make all fields editable
+                NametxtBx.ReadOnly = true;
+                ageTxtBx.ReadOnly = true;
+                hairTxtBx.ReadOnly = true;
+                eyeTxtBx.ReadOnly = true;
+                genderTxtBx.ReadOnly = true;
+                complexionTxtBx.ReadOnly = true;
+                WoCTxtBx.ReadOnly = true;
+                Attr1TxtBx.ReadOnly = true;
 
-            if (currentRace == "hobbit")
-            {
-                currentHobbit.HomeType = Attr1TxtBx.Text;
-                currentHobbit.OwnsOneRing = checkBox1.Checked;
-                currentHobbit.IsAdventurer = checkBox2.Checked;
-                hobbitLogic.UpdateHobbit();
-            }
+                isEvil.AutoCheck = false;
+                checkBox1.AutoCheck = false;
+                checkBox2.AutoCheck = false;
 
-            if (currentRace == "elf")
-            {
-                currentElf.ElfType = Attr1TxtBx.Text;
-                currentElf.OwnsRingOfPower = checkBox1.Checked;
-                elfLogic.UpdateElf();
-            }
+                person.Name = NametxtBx.Text;
 
-            if (currentRace == "human")
-            {
-                currentHuman.AncestralLine = Attr1TxtBx.Text;
-                humanLogic.UpdateHuman();
-            }
-            if (currentRace == "dwarf")
-            {
-                currentDwarf.DwarfGroup = Attr1TxtBx.Text;
-                dwarfLogic.UpdateDwarf();
-            }
-            if (currentRace == "wizard")
-            {
-                currentWizard.MagicType = Attr1TxtBx.Text;
-                wizardLogic.UpdateWizard();
-            }
+                if (int.TryParse(ageTxtBx.Text, out result))
+                {
+                    person.Age = result;
+                }
+                else
+                {
+                    ageTxtBx.Text = person.Age.ToString();
+                    MessageBox.Show("Age must be a number! The previous age will be used.", "Error!");
+                }
+                person.HairColor = hairTxtBx.Text;
+                person.EyeColor = eyeTxtBx.Text;
+                if (genderTxtBx.Text == "M" || genderTxtBx.Text == "F")
+                {
+                    person.Gender = genderTxtBx.Text;
+                }
+                else
+                {
+                    genderTxtBx.Text = person.Gender;
+                    MessageBox.Show("Gender must be a 'M' or 'F'! Tolkein's mythology only allows for two genders.", "Error!");
+                }
+                person.SkinComplexion = complexionTxtBx.Text;
+                person.WeaponOfChoice = WoCTxtBx.Text;
+                person.Evil = isEvil.Checked;
 
-            //display buttons
-            saveBtn.Visible = false;
-            cancelBtn.Visible = false;
-            deleteBtn.Visible = false;
-            editBtn.Visible = true;
-            exportBtn.Visible = true;
-            NextBtn.Visible = true;
-            PrevBtn.Visible = true;
+                if (currentRace == "hobbit")
+                {
+                    currentHobbit.HomeType = Attr1TxtBx.Text;
+                    currentHobbit.OwnsOneRing = checkBox1.Checked;
+                    currentHobbit.IsAdventurer = checkBox2.Checked;
+                    hobbitLogic.UpdateHobbit();
+                }
 
-            MessageBox.Show("Changes have been saved", "Success");
+                if (currentRace == "elf")
+                {
+                    currentElf.ElfType = Attr1TxtBx.Text;
+                    currentElf.OwnsRingOfPower = checkBox1.Checked;
+                    elfLogic.UpdateElf();
+                }
+
+                if (currentRace == "human")
+                {
+                    currentHuman.AncestralLine = Attr1TxtBx.Text;
+                    humanLogic.UpdateHuman();
+                }
+                if (currentRace == "dwarf")
+                {
+                    currentDwarf.DwarfGroup = Attr1TxtBx.Text;
+                    dwarfLogic.UpdateDwarf();
+                }
+                if (currentRace == "wizard")
+                {
+                    currentWizard.MagicType = Attr1TxtBx.Text;
+                    wizardLogic.UpdateWizard();
+                }
+
+                //display buttons
+                saveBtn.Visible = false;
+                cancelBtn.Visible = false;
+                deleteBtn.Visible = false;
+                editBtn.Visible = true;
+                exportBtn.Visible = true;
+                NextBtn.Visible = true;
+                PrevBtn.Visible = true;
+
+                MessageBox.Show("Changes have been saved", "Success");
+            }
         }
 
         private void cancelBtn_Click_1(object sender, EventArgs e)

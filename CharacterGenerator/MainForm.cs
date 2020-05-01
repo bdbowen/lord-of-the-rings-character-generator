@@ -21,6 +21,7 @@ namespace CharacterGenerator
         private HomeForm homeScreen;
         private HistoryForm historyScreen;
         private LocationDataForm locDataScreen;
+        private RoleDataForm roleDataScreen;
 
         private int number;
 
@@ -140,11 +141,7 @@ namespace CharacterGenerator
             }
             if (RoleData)
             {
-                //roleDataScreen.Close();
-            }
-            if (AbilityData)
-            {
-                //abilityDataScreen.Close();
+                roleDataScreen.Close();
             }
         }
 
@@ -168,11 +165,25 @@ namespace CharacterGenerator
             {
                 CloseCurrentWindow();
                 ResetViewBools();
-                history = true;
+                LocData = true;
                 locDataScreen = new LocationDataForm(number);
                 locDataScreen.MdiParent = this;
                 locDataScreen.Dock = DockStyle.Top;
                 locDataScreen.Show();
+            }
+        }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!RoleData)
+            {
+                CloseCurrentWindow();
+                ResetViewBools();
+                RoleData = true;
+                roleDataScreen = new RoleDataForm(number);
+                roleDataScreen.MdiParent = this;
+                roleDataScreen.Dock = DockStyle.Top;
+                roleDataScreen.Show();
             }
         }
     }

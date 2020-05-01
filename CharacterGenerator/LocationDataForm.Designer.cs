@@ -167,7 +167,7 @@
             // 
             this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cancelBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(271, 193);
+            this.cancelBtn.Location = new System.Drawing.Point(271, 159);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(84, 28);
             this.cancelBtn.TabIndex = 192;
@@ -180,7 +180,7 @@
             // 
             this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.saveBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(271, 125);
+            this.saveBtn.Location = new System.Drawing.Point(271, 91);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(84, 28);
             this.saveBtn.TabIndex = 191;
@@ -193,7 +193,7 @@
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.deleteBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Location = new System.Drawing.Point(271, 159);
+            this.deleteBtn.Location = new System.Drawing.Point(271, 125);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(84, 28);
             this.deleteBtn.TabIndex = 190;
@@ -218,7 +218,7 @@
             // 
             this.newBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.newBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newBtn.Location = new System.Drawing.Point(271, 57);
+            this.newBtn.Location = new System.Drawing.Point(271, 108);
             this.newBtn.Name = "newBtn";
             this.newBtn.Size = new System.Drawing.Size(84, 28);
             this.newBtn.TabIndex = 193;
@@ -230,7 +230,7 @@
             // 
             this.EditBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.EditBtn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBtn.Location = new System.Drawing.Point(271, 91);
+            this.EditBtn.Location = new System.Drawing.Point(271, 142);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(84, 28);
             this.EditBtn.TabIndex = 194;
@@ -291,10 +291,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 567);
+            this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.prevBtn);
-            this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.newBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
