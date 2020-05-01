@@ -51,6 +51,7 @@
             this.label1.Size = new System.Drawing.Size(63, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Leader";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // leaderTxtBx
             // 
@@ -60,6 +61,7 @@
             this.leaderTxtBx.ReadOnly = true;
             this.leaderTxtBx.Size = new System.Drawing.Size(245, 32);
             this.leaderTxtBx.TabIndex = 1;
+            this.leaderTxtBx.TextChanged += new System.EventHandler(this.leaderTxtBx_TextChanged);
             // 
             // label2
             // 
@@ -71,6 +73,7 @@
             this.label2.Size = new System.Drawing.Size(103, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Companions";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // companionTxtBx
             // 
@@ -82,6 +85,7 @@
             this.companionTxtBx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.companionTxtBx.Size = new System.Drawing.Size(245, 122);
             this.companionTxtBx.TabIndex = 5;
+            this.companionTxtBx.TextChanged += new System.EventHandler(this.companionTxtBx_TextChanged);
             // 
             // successful
             // 
@@ -95,6 +99,7 @@
             this.successful.TabIndex = 0;
             this.successful.Text = "Adventure Successful";
             this.successful.UseVisualStyleBackColor = false;
+            this.successful.CheckedChanged += new System.EventHandler(this.successful_CheckedChanged);
             // 
             // fatal
             // 
@@ -108,6 +113,7 @@
             this.fatal.TabIndex = 7;
             this.fatal.Text = "Fatal";
             this.fatal.UseVisualStyleBackColor = false;
+            this.fatal.CheckedChanged += new System.EventHandler(this.fatal_CheckedChanged);
             // 
             // button1
             // 

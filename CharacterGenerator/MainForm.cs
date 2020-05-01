@@ -16,12 +16,13 @@ namespace CharacterGenerator
         private bool history = false;
         private bool LocData = false;
         private bool RoleData = false;
-        private bool AbilityData = false;
+        private bool adventureHistory = false;
 
         private HomeForm homeScreen;
         private HistoryForm historyScreen;
         private LocationDataForm locDataScreen;
         private RoleDataForm roleDataScreen;
+        private AdventureHistoryForm advHistScreen;
 
         private int number;
 
@@ -67,7 +68,7 @@ namespace CharacterGenerator
             history = false;
             LocData = false;
             RoleData = false;
-            AbilityData = false;
+            adventureHistory = false;
         }
 
         private void dwarfToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,6 +144,10 @@ namespace CharacterGenerator
             {
                 roleDataScreen.Close();
             }
+            if (adventureHistory)
+            {
+                advHistScreen.Close();
+            }
         }
 
         private void elfToolStripMenuItem_Click(object sender, EventArgs e)
@@ -184,6 +189,20 @@ namespace CharacterGenerator
                 roleDataScreen.MdiParent = this;
                 roleDataScreen.Dock = DockStyle.Top;
                 roleDataScreen.Show();
+            }
+        }
+
+        private void allAdventuresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!adventureHistory)
+            {
+                CloseCurrentWindow();
+                ResetViewBools();
+                adventureHistory = true;
+                advHistScreen = new AdventureHistoryForm(number);
+                advHistScreen.MdiParent = this;
+                advHistScreen.Dock = DockStyle.Top;
+                advHistScreen.Show();
             }
         }
     }

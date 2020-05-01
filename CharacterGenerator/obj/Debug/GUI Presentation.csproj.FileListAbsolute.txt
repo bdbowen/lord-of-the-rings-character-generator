@@ -26,3 +26,4 @@ C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programm
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.HistoryForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.LocationDataForm.resources
 C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.RoleDataForm.resources
+C:\Users\tubab\OneDrive\Documents\School\College\Computer Science Major\Programming III\lord-of-the-rings-character-generator\CharacterGenerator\obj\Debug\CharacterGenerator.AdventureHistoryForm.resources

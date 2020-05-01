@@ -63,6 +63,12 @@
     <Compile Include="AbilityViewForm.Designer.cs">
       <DependentUpon>AbilityViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdventureHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdventureHistoryForm.Designer.cs">
+      <DependentUpon>AdventureHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdventuresViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="AbilityViewForm.resx">
       <DependentUpon>AbilityViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdventureHistoryForm.resx">
+      <DependentUpon>AdventureHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdventuresViewForm.resx">
       <DependentUpon>AdventuresViewForm.cs</DependentUpon>

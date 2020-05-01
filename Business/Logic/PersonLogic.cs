@@ -46,7 +46,13 @@ namespace CharacterGenerator
             "Ring of Power"};
 
 
-        
+        public int GetRandomID(Random rand)
+        {
+            IEnumerable<Person> people = GetAllPersons();
+            Person randomSelection = people.ElementAt(rand.Next(0, people.Count()));
+            return randomSelection.PersonID;
+        }
+
         public Person Generate(string raceType, Random rand, Person person)
         {
             int index;

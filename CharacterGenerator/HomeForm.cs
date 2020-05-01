@@ -204,22 +204,25 @@ namespace CharacterGenerator
 
         private void viewHome_Click(object sender, EventArgs e)
         {
+            LocationLogic locationLogic = new LocationLogic();
             string caption = person.Name + "'s Hometown";
-            LocationViewForm myForm = new LocationViewForm(person.Location, caption, number);
+            LocationViewForm myForm = new LocationViewForm(locationLogic.GetLocation(person.HomeTownLocationID), caption, number);
             myForm.ShowDialog();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            RoleLogic roleLogic = new RoleLogic();
             string caption = person.Name + "'s Position";
-            PositionViewForm myForm = new PositionViewForm(person.Role, person.LengthOfRoleOccupancy, person.NumberOfSubordinates, caption, number);
+            PositionViewForm myForm = new PositionViewForm(roleLogic.GetRole(person.PositionRoleID), person.LengthOfRoleOccupancy, person.NumberOfSubordinates, caption, number);
             myForm.ShowDialog();
         }
 
         private void viewAdventures_Click(object sender, EventArgs e)
         {
+            AdventureLogic adventureLogic = new AdventureLogic();
             string caption = person.Name + "'s Adventures";
-            AdventuresViewForm myForm = new AdventuresViewForm(person.Adventures.ToList(), caption, number);
+            AdventuresViewForm myForm = new AdventuresViewForm(adventureLogic.GetAllAdventuresByPersonID(person.PersonID).ToList(), caption, number);
             myForm.ShowDialog();
         }
 

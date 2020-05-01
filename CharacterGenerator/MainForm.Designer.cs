@@ -39,6 +39,7 @@
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.locationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allAdventuresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             this.dwarfToolStripMenuItem,
             this.wizardToolStripMenuItem,
             this.humanToolStripMenuItem,
-            this.hobbitToolStripMenuItem});
+            this.hobbitToolStripMenuItem,
+            this.allAdventuresToolStripMenuItem});
             this.historyToolStripMenuItem.Font = new System.Drawing.Font("Monotype Corsiva", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
             this.historyToolStripMenuItem.Size = new System.Drawing.Size(160, 21);
@@ -136,6 +138,13 @@
             this.rolesToolStripMenuItem.Text = "Roles";
             this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
+            // allAdventuresToolStripMenuItem
+            // 
+            this.allAdventuresToolStripMenuItem.Name = "allAdventuresToolStripMenuItem";
+            this.allAdventuresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allAdventuresToolStripMenuItem.Text = "All Adventures";
+            this.allAdventuresToolStripMenuItem.Click += new System.EventHandler(this.allAdventuresToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,5 +176,6 @@
         private System.Windows.Forms.ToolStripMenuItem wizardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem humanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hobbitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allAdventuresToolStripMenuItem;
     }
 }

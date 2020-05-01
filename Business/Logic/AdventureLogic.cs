@@ -20,6 +20,12 @@ namespace CharacterGenerator
             var adventures = context.Adventures.ToList();
             return adventures;
         }
+
+        public IEnumerable<Adventure> GetAllAdventuresByPersonID(int personID)
+        {
+            var adventures = context.Adventures.Where(c=>c.MainPersonID == personID).ToList();
+            return adventures;
+        }
         public void AddAdventure(Adventure myAdventure)
         {
             context.Adventures.Add(myAdventure);
