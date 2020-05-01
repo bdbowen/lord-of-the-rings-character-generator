@@ -20,6 +20,7 @@ namespace CharacterGenerator
 
         private HomeForm homeScreen;
         private HistoryForm historyScreen;
+        private LocationDataForm locDataScreen;
 
         private int number;
 
@@ -135,7 +136,7 @@ namespace CharacterGenerator
             }
             if (LocData)
             {
-                //locDataScreen.Close();
+                locDataScreen.Close();
             }
             if (RoleData)
             {
@@ -163,7 +164,16 @@ namespace CharacterGenerator
 
         private void locationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (!LocData)
+            {
+                CloseCurrentWindow();
+                ResetViewBools();
+                history = true;
+                locDataScreen = new LocationDataForm(number);
+                locDataScreen.MdiParent = this;
+                locDataScreen.Dock = DockStyle.Top;
+                locDataScreen.Show();
+            }
         }
     }
 }
